@@ -1,0 +1,83 @@
+@import "tailwindcss";
+@import "yet-another-react-lightbox/styles.css";
+
+:root {
+  --background: #f6efe6;
+  --foreground: #1a1410;
+  --muted-foreground: #645646;
+  --surface: #efe4d6;
+  --surface-strong: #0d0a09;
+  --accent: #e7d5bf;
+  --accent-strong: #c48e66;
+  --accent-soft: #f1e3ce;
+  --accent-soft-strong: #b38461;
+  --accent-contrast: #15110d;
+  --border: rgba(64, 44, 28, 0.1);
+  --border-strong: rgba(64, 44, 28, 0.18);
+  --ring: rgba(196, 142, 102, 0.45);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-manrope);
+  --font-display: var(--font-cormorant);
+}
+
+* {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #080706;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.72), transparent 32%),
+    linear-gradient(180deg, #f9f4ed 0%, #f3e9dd 100%);
+  color: var(--foreground);
+  font-family: var(--font-manrope), sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+.font-display {
+  font-family: var(--font-cormorant), serif;
+}
+
+.glass-panel {
+  background: rgba(255, 255, 255, 0.48);
+  backdrop-filter: blur(22px);
+}
+
+::selection {
+  background: rgba(196, 142, 102, 0.28);
+}
+
+[data-cursor="luxury"] a,
+[data-cursor="luxury"] button {
+  cursor: none;
+}
+
+.yarl__container {
+  --yarl__color_backdrop: rgba(5, 5, 5, 0.94);
+  --yarl__color_button: rgba(255, 244, 230, 0.85);
+  --yarl__color_button_active: rgba(255, 244, 230, 1);
+  --yarl__color_button_disabled: rgba(255, 244, 230, 0.28);
+  --yarl__color_icon: rgba(255, 244, 230, 0.92);
+  --yarl__slide_title_color: rgba(255, 244, 230, 0.96);
+  --yarl__slide_description_color: rgba(255, 244, 230, 0.68);
+}
+
+.yarl__thumbnails_container,
+.yarl__toolbar {
+  backdrop-filter: blur(18px);
+}

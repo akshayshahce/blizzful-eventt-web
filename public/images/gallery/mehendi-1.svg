@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1500" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#173020"/>
+      <stop offset="52%" stop-color="#3e7352"/>
+      <stop offset="100%" stop-color="#dfc39a"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(900 260) rotate(123) scale(620 520)">
+      <stop stop-color="white" stop-opacity="0.36"/>
+      <stop offset="1" stop-color="white" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="1500" fill="url(#bg)"/>
+  <rect width="1200" height="1500" fill="url(#glow)"/>
+  <path d="M-70 1100C145 940 308 910 480 1034C697 1190 881 1243 1263 1041V1590H-70V1100Z" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="305" cy="384" r="148" fill="rgba(255,255,255,0.12)"/>
+  <circle cx="910" cy="1128" r="232" fill="rgba(255,255,255,0.08)"/>
+  <rect x="104" y="124" width="992" height="1252" rx="54" fill="rgba(8,8,8,0.14)" stroke="rgba(255,255,255,0.26)"/>
+  <rect x="154" y="174" width="892" height="1152" rx="34" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.18)"/>
+  <text x="600" y="412" fill="rgba(255,255,255,0.72)" font-size="34" font-family="Georgia, serif" text-anchor="middle" letter-spacing="8">MEHENDI</text>
+  <text x="600" y="640" fill="white" font-size="124" font-family="Georgia, serif" text-anchor="middle">Henna lounge</text>
+  <text x="600" y="712" fill="rgba(255,255,255,0.7)" font-size="28" font-family="Arial, sans-serif" text-anchor="middle" letter-spacing="10">BLIZZFUL PINK EVENTT</text>
+  <line x1="304" y1="820" x2="896" y2="820" stroke="rgba(255,255,255,0.28)"/>
+  <text x="600" y="904" fill="rgba(255,255,255,0.74)" font-size="28" font-family="Arial, sans-serif" text-anchor="middle">Premium placeholder artwork for Phase 1 gallery architecture</text>
+</svg>

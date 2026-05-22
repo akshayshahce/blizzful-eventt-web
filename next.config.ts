@@ -1,0 +1,16 @@
+import type { NextConfig } from "next";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
+
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+
+const nextConfig: NextConfig = {
+  allowedDevOrigins: ["127.0.0.1"],
+  devIndicators: false,
+  reactCompiler: true,
+  turbopack: {
+    root: dirname,
+  },
+};
+
+export default nextConfig;
