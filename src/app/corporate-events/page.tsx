@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { PageHero } from "@/components/sections/page-hero";
 import { ServiceGrid } from "@/components/sections/service-grid";
 import { Container } from "@/components/ui/container";
@@ -7,7 +8,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { MarqueeStrip } from "@/components/sections/marquee-strip";
 import { Wisteria } from "@/components/ui/wisteria";
-import { corporateServices, featuredExperiences, partners } from "@/data/site-data";
+import { corporateServices, featuredExperiences } from "@/data/site-data";
 
 export const metadata: Metadata = {
   title: "Corporate Events",
@@ -91,16 +92,22 @@ export default function CorporateEventsPage() {
             }
             description="Empanelled and partnered with leading institutions like BSE, NSE, Maharashtra Shasan, plus marquee corporate offices including Tata Motors, Kotak, and many more."
           />
-          <div className="mt-14 flex flex-wrap gap-3">
-            {partners.map((partner) => (
-              <span
-                key={partner}
-                className="rounded-full border border-[var(--navy)]/15 bg-[var(--ivory)] px-5 py-2.5 text-[0.74rem] font-medium text-[var(--navy)]/85"
-              >
-                {partner}
-              </span>
-            ))}
-          </div>
+          <Reveal className="mt-14">
+            <div className="overflow-hidden rounded-[2rem] border border-[var(--navy)]/10 bg-white p-4 shadow-[0_24px_80px_rgba(20,36,70,0.08)] sm:p-6 lg:p-8">
+              <Image
+                src="/images/partners/partner-board.png"
+                alt="Partner logos from the Blizzful Pink Eventt company profile, including BSE, NSE, Tata Motors, Kotak Mahindra Bank, Morningstar, MentorMyBoard, GIA, Senco Gold & Diamonds, and other institutional and corporate partners."
+                width={1360}
+                height={880}
+                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 92vw, 1200px"
+                className="h-auto w-full rounded-[1.5rem] object-contain"
+                priority
+              />
+            </div>
+            <p className="mt-5 text-center text-sm leading-7 text-[var(--navy)]/68">
+              Partner logos shown from the company profile, featuring institutions and brands such as BSE, NSE, Maharashtra Shasan, Tata Motors, Kotak Mahindra Bank, Morningstar, MentorMyBoard, GIA, Senco Gold & Diamonds, and more.
+            </p>
+          </Reveal>
         </Container>
       </section>
 

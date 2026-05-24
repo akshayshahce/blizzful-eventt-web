@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import { FiArrowUpRight, FiPhone } from "react-icons/fi";
 import { company } from "@/data/site-data";
 import { Wisteria } from "@/components/ui/wisteria";
-import { LogoMark } from "@/components/ui/logo";
 
 export function HomeHero() {
   return (
@@ -23,14 +22,9 @@ export function HomeHero() {
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-              className="flex items-center gap-3"
+              className="text-[0.62rem] uppercase tracking-[0.46em] text-[var(--forest-soft)]"
             >
-              <span className="block h-12 w-12 sm:h-14 sm:w-14">
-                <LogoMark />
-              </span>
-              <span className="text-[0.62rem] uppercase tracking-[0.46em] text-[var(--forest-soft)]">
-                Blizzful Pink Eventt · Wedding Planner
-              </span>
+              Wedding Planner · Mumbai
             </motion.div>
 
             <motion.h1

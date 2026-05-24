@@ -198,13 +198,6 @@ export const testimonials = [
   },
 ];
 
-export const partners = [
-  "BSE", "NSE", "Maharashtra Shasan", "Mahalaxmi Saras", "MAVIM",
-  "Tata Motors", "Kotak Mahindra Bank", "Tisser", "Morningstar",
-  "MentorMyBoard", "VyapaarJagat", "Senco Gold & Diamonds",
-  "Neha Lulla Jewellery", "Beau Jewels", "GIA",
-];
-
 export const galleryItems: GalleryItem[] = [
   { id: 1, title: "Roka / God Dhana", category: "Roka", location: "Mumbai", src: "/images/events/roka.jpg", ratio: "portrait", description: "An auspicious start — Ganesh blessings, floral garlands, and a soft pink and ivory palette." },
   { id: 2, title: "Engagement Ceremony", category: "Engagement", location: "Mumbai", src: "/images/events/engagement.jpg", ratio: "portrait", description: "Personalised ring plate styling, floral hoops, and an elegant ceremony set." },
