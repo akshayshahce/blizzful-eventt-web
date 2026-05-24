@@ -203,3 +203,64 @@ button {
     animation: none;
   }
 }
+
+/* ── Glow text utilities ─────────────────────────────────────── */
+
+.glow-purple {
+  text-shadow:
+    0 0 8px rgba(168, 85, 247, 0.7),
+    0 0 20px rgba(168, 85, 247, 0.4),
+    0 0 45px rgba(168, 85, 247, 0.2);
+}
+
+.glow-blue {
+  text-shadow:
+    0 0 8px rgba(79, 114, 245, 0.75),
+    0 0 22px rgba(79, 114, 245, 0.45),
+    0 0 50px rgba(79, 114, 245, 0.2);
+}
+
+.glow-green {
+  text-shadow:
+    0 0 8px rgba(74, 222, 128, 0.7),
+    0 0 20px rgba(74, 222, 128, 0.4),
+    0 0 40px rgba(74, 222, 128, 0.18);
+}
+
+.glow-white {
+  text-shadow:
+    0 0 6px rgba(228, 236, 255, 0.6),
+    0 0 18px rgba(228, 236, 255, 0.3),
+    0 0 40px rgba(228, 236, 255, 0.1);
+}
+
+/* Glow chip — used for tag pills on about page */
+.glow-chip {
+  position: relative;
+  transition:
+    transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    color 0.35s ease,
+    background-color 0.35s ease;
+}
+
+.glow-chip:hover {
+  transform: translateY(-4px) scale(1.08);
+  color: var(--ivory);
+  border-color: var(--wisteria-deep);
+  background: rgba(168, 85, 247, 0.12);
+  box-shadow:
+    0 0 12px rgba(168, 85, 247, 0.55),
+    0 0 30px rgba(168, 85, 247, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  text-shadow:
+    0 0 8px rgba(168, 85, 247, 0.8),
+    0 0 20px rgba(168, 85, 247, 0.45);
+}
+
+/* Pulsing glow ring on active chip */
+@keyframes glow-pulse {
+  0%, 100% { box-shadow: 0 0 10px rgba(168, 85, 247, 0.4), 0 0 28px rgba(168, 85, 247, 0.15); }
+  50%       { box-shadow: 0 0 18px rgba(168, 85, 247, 0.65), 0 0 42px rgba(168, 85, 247, 0.28); }
+}

@@ -42,23 +42,23 @@ export default function AboutPage() {
                 eyebrow="Identity"
                 title={
                   <>
-                    Emotion-led for celebrations.
+                    <span className="glow-white">Emotion-led</span> for celebrations.
                     <br />
-                    <span className="italic">Process-led</span> for productions.
+                    <span className="italic glow-blue">Process-led</span> for productions.
                   </>
                 }
                 description="The studio carries dual fluency — equally at home shaping family rituals and orchestrating boardroom-scale events. The result is a partner who can switch registers without losing taste."
               />
             </div>
             <Reveal className="lg:col-span-5" delay={0.15}>
-              <div className="space-y-6 rounded-[1.8rem] border border-[var(--navy)]/12 bg-[var(--sky-soft)] p-9">
-                <p className="text-[1rem] leading-[1.9] text-[var(--ink)]/85">
+              <div className="space-y-6 rounded-[1.8rem] border border-[var(--ivory)]/8 bg-[rgba(255,255,255,0.03)] p-9">
+                <p className="text-[1rem] leading-[1.9] text-[var(--ivory)]/80">
                   Wedding work draws from rituals, fashion, floral language,
                   and emotional staging. Corporate work draws from technical
                   programming, vendor empanelment, and brand hospitality. The
                   shared layer is taste — every detail composed.
                 </p>
-                <p className="text-[0.95rem] leading-[1.85] text-[var(--ink)]/70">
+                <p className="text-[0.95rem] leading-[1.85] text-[var(--ivory)]/60">
                   We collaborate with discerning families, leading institutions,
                   and brands who treat their events as part of their identity.
                 </p>
@@ -80,29 +80,29 @@ export default function AboutPage() {
             title={
               <>
                 Trusted across{" "}
-                <span className="font-script italic text-[var(--wisteria-deep)]">150+ brands</span>{" "}
+                <span className="font-script italic text-[var(--wisteria-deep)] glow-purple">150+ brands</span>{" "}
                 and counting.
               </>
             }
             description="A decade of celebrations and corporate productions — quietly shaping one of Mumbai's most trusted event execution rosters."
           />
-          <div className="mt-16 grid gap-px border border-[var(--navy)]/12 bg-[var(--navy)]/12 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="mt-16 grid gap-px border border-[var(--ivory)]/8 bg-[var(--ivory)]/4 sm:grid-cols-2 lg:grid-cols-4">
             {stats.map((stat, index) => (
               <Reveal
                 key={stat.label}
                 delay={index * 0.06}
-                className="relative bg-[var(--surface)] p-9 sm:p-11"
+                className="relative bg-[rgba(255,255,255,0.03)] p-9 sm:p-11"
               >
-                <p className="text-[0.58rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
+                <p className="text-[0.58rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)] glow-purple">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-7 font-display text-5xl tracking-tight text-[var(--ivory)] sm:text-6xl">
+                <p className="mt-7 font-display text-5xl tracking-tight text-[var(--ivory)] glow-white sm:text-6xl">
                   {stat.value}
                 </p>
-                <p className="mt-3 text-[0.62rem] uppercase tracking-[0.36em] text-[var(--ink)]/65">
+                <p className="mt-3 text-[0.62rem] uppercase tracking-[0.36em] text-[var(--forest-soft)]">
                   {stat.label}
                 </p>
-                <p className="mt-4 text-sm leading-[1.8] text-[var(--ink)]/70">
+                <p className="mt-4 text-sm leading-[1.8] text-[var(--ivory)]/55">
                   {stat.detail}
                 </p>
               </Reveal>
@@ -118,7 +118,7 @@ export default function AboutPage() {
             title={
               <>
                 Three event{" "}
-                <span className="italic text-[var(--wisteria-deep)]">disciplines</span>,
+                <span className="italic text-[var(--wisteria-deep)] glow-purple">disciplines</span>,
                 <br /> composed under one studio.
               </>
             }
@@ -140,20 +140,20 @@ export default function AboutPage() {
                         : "lg:col-span-5"
                     }
                   >
-                    <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
+                    <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)] glow-purple">
                       {String(index + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="mt-5 font-display text-4xl leading-[1.04] tracking-tight text-[var(--ivory)] sm:text-5xl">
+                    <h3 className="mt-5 font-display text-4xl leading-[1.04] tracking-tight text-[var(--ivory)] glow-white sm:text-5xl">
                       {experience.title}
                     </h3>
-                    <p className="mt-5 max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/72">
+                    <p className="mt-5 max-w-md text-[1rem] leading-[1.9] text-[var(--ivory)]/65">
                       {experience.description}
                     </p>
-                    <div className="mt-7 flex flex-wrap gap-2 text-[0.6rem] uppercase tracking-[0.34em] text-[var(--ivory)]/40">
+                    <div className="mt-7 flex flex-wrap gap-2.5">
                       {experience.points.map((point) => (
                         <span
                           key={point}
-                          className="rounded-full border border-[var(--navy)]/20 px-4 py-2"
+                          className="glow-chip cursor-default rounded-full border border-[var(--ivory)]/18 px-4 py-2 text-[0.6rem] uppercase tracking-[0.34em] text-[var(--ivory)]/60"
                         >
                           {point}
                         </span>
@@ -161,7 +161,7 @@ export default function AboutPage() {
                     </div>
                   </div>
                   <div className={reverse ? "lg:order-1 lg:col-span-7" : "lg:col-span-7"}>
-                    <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] ring-1 ring-[var(--navy)]/10">
+                    <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] ring-1 ring-[var(--ivory)]/8">
                       <Image
                         src={experienceImages[index] ?? experienceImages[0]}
                         alt={experience.title}
@@ -169,7 +169,7 @@ export default function AboutPage() {
                         sizes="(max-width: 768px) 100vw, 60vw"
                         className="object-cover"
                       />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.4))]" />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(8,11,20,0.6))]" />
                     </div>
                   </div>
                 </Reveal>

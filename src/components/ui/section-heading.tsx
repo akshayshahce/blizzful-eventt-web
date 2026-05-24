@@ -52,7 +52,7 @@ export function SectionHeading({
         transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
         className={cn(
           "font-display text-4xl leading-[1.02] sm:text-5xl lg:text-[4.2rem]",
-          dark ? "text-[var(--ivory)]" : "text-[var(--navy)]",
+          dark ? "text-[var(--ivory)]" : "text-[var(--ivory)]",
         )}
       >
         {title}
@@ -67,7 +67,7 @@ export function SectionHeading({
           className={cn(
             "max-w-2xl text-base leading-[1.85] sm:text-[1.02rem]",
             align === "center" && "mx-auto",
-            dark ? "text-[var(--ivory)]/68" : "text-[var(--ink)]/72",
+            dark ? "text-[var(--ivory)]/68" : "text-[var(--ivory)]/60",
           )}
         >
           {description}
