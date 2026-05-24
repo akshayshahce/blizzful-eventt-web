@@ -37,7 +37,7 @@ export default function WeddingEventsPage() {
         meta="A complete wedding weekend"
       />
 
-      <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -right-10 -top-6 h-80 w-60" opacity={0.32} />
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">

@@ -23,7 +23,7 @@ export default function WhyChooseUsPage() {
         meta="Six commitments"
       />
 
-      <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -right-12 -top-10 h-80 w-60" opacity={0.3} />
         <Container>
           <SectionHeading
@@ -42,7 +42,7 @@ export default function WhyChooseUsPage() {
               <Reveal
                 key={reason.title}
                 delay={index * 0.05}
-                className="group bg-[var(--ivory)] p-9 transition-colors duration-500 hover:bg-[var(--sky-soft)] sm:p-11"
+                className="group bg-[var(--surface)] p-9 transition-colors duration-500 hover:bg-[var(--sky-soft)] sm:p-11"
               >
                 <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
                   {String.fromCharCode(65 + index)}

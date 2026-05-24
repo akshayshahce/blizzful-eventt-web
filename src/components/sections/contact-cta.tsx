@@ -8,12 +8,12 @@ import { Wisteria } from "@/components/ui/wisteria";
 
 export function ContactCta() {
   return (
-    <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--navy)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--navy)] sm:py-32 lg:py-36">
       <Wisteria className="absolute -left-12 -top-10 h-80 w-60" opacity={0.42} />
       <Wisteria variant="right" className="absolute -right-12 -top-10 h-80 w-60" opacity={0.42} />
 
       <div className="relative mx-auto w-full max-w-[80rem] px-5 sm:px-8 lg:px-12">
-        <div className="rounded-[2.2rem] bg-[var(--sky-soft)] px-8 py-16 text-center ring-1 ring-[var(--navy)]/8 sm:px-16 sm:py-20 lg:py-24">
+        <div className="rounded-[2.2rem] bg-[linear-gradient(135deg,var(--wisteria-soft),var(--charcoal))] px-8 py-16 text-center ring-1 ring-[var(--navy)]/25 sm:px-16 sm:py-20 lg:py-24">
           <div className="inline-flex items-center gap-4 text-[0.62rem] uppercase tracking-[0.46em] text-[var(--wisteria-deep)]">
             <span className="editorial-rule" />
             Contact Us

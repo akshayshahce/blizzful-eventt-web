@@ -24,35 +24,35 @@ export function HomeHero() {
               transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
               className="text-[0.62rem] uppercase tracking-[0.46em] text-[var(--forest-soft)]"
             >
-              Wedding Planner · Mumbai
+              Event Management · Mumbai
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-7 font-display text-[clamp(2.4rem,7.2vw,6.8rem)] font-medium leading-[0.98] tracking-tight text-[var(--navy)]"
+              className="mt-7 font-display text-[clamp(2.4rem,7.2vw,6.8rem)] font-medium leading-[0.98] tracking-tight text-[var(--ivory)]"
             >
-              Creating
+              Crafting
               <br />
               <span className="font-script text-[1.15em] font-normal italic text-[var(--wisteria-deep)]">
-                timeless
+                extraordinary
               </span>{" "}
-              memories
+              events
               <br />
-              for your <span className="italic text-[var(--royal)]">happily ever after</span>.
+              that leave you <span className="italic text-[var(--sky)]">speechless</span>.
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.95, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-9 max-w-xl text-[1.02rem] leading-[1.9] text-[var(--ink)]/72 sm:text-[1.08rem]"
+              className="mt-9 max-w-xl text-[1.02rem] leading-[1.9] text-[var(--ivory)]/72 sm:text-[1.08rem]"
             >
-              Blizzful Pink Eventt designs beautifully curated weddings, mehendi,
-              haldi, and sangeet celebrations — with the same discipline we
-              bring to large corporate productions. From concept to execution,
-              every detail is handled with creativity and precision.
+              From grand weddings and intimate celebrations to high-energy
+              corporate events and cultural gatherings — Blizzful Pink Eventt
+              brings creativity, precision, and passion to every occasion,
+              pan-India.
             </motion.p>
 
             <motion.div

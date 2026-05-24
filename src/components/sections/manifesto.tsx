@@ -6,7 +6,7 @@ import { Wisteria } from "@/components/ui/wisteria";
 
 export function Manifesto() {
   return (
-    <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
       <div className="relative mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
         <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">

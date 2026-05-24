@@ -33,7 +33,7 @@ export default function AboutPage() {
         meta="Est. 2014 — Mumbai"
       />
 
-      <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -right-12 -top-10 h-72 w-52" opacity={0.32} />
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
@@ -91,7 +91,7 @@ export default function AboutPage() {
               <Reveal
                 key={stat.label}
                 delay={index * 0.06}
-                className="relative bg-[var(--ivory)] p-9 sm:p-11"
+                className="relative bg-[var(--surface)] p-9 sm:p-11"
               >
                 <p className="text-[0.58rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
                   {String(index + 1).padStart(2, "0")}
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
         <Container>
           <SectionHeading
             eyebrow="Event Spectrum"

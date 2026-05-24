@@ -27,7 +27,7 @@ export function ServiceGrid({
         "relative overflow-hidden py-24 sm:py-32 lg:py-36",
         dark
           ? "bg-[var(--navy)] text-[var(--ivory)]"
-          : "bg-[var(--ivory)] text-[var(--ink)]",
+          : "bg-[var(--surface)] text-[var(--ink)]",
       )}
     >
       <div className="mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
@@ -54,7 +54,7 @@ export function ServiceGrid({
                 "group relative p-9 transition-colors duration-500 sm:p-12",
                 dark
                   ? "bg-[var(--navy)] hover:bg-[var(--navy-deep)]"
-                  : "bg-[var(--ivory)] hover:bg-[var(--ivory-soft)]",
+                  : "bg-[var(--surface)] hover:bg-[var(--paper)]",
               )}
             >
               <div className="flex items-baseline justify-between text-[0.6rem] uppercase tracking-[0.4em]">

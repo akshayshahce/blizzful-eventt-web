@@ -7,10 +7,10 @@ type LogoMarkProps = {
 
 export function LogoMark({ className, variant = "navy" }: LogoMarkProps) {
   const navy = variant === "navy";
-  const bg = navy ? "#1e3a78" : "#fbf8f2";
-  const triangle = "#1f5a3a";
-  const strokes = navy ? "#d4e5f1" : "#1e3a78";
-  const leaves = "#2c7a51";
+  const bg = navy ? "#0d1a3d" : "#e4ecff";
+  const triangle = navy ? "#1a4a28" : "#1f5a3a";
+  const strokes = navy ? "#60a5fa" : "#4f72f5";
+  const leaves = navy ? "#4ade80" : "#22c55e";
 
   return (
     <svg
@@ -50,7 +50,7 @@ export function Logo({ className, variant = "navy", withText = true }: LogoProps
           <span
             className={cn(
               "font-script text-[1.4rem] leading-[1] sm:text-[1.6rem]",
-              variant === "navy" ? "text-[var(--navy)]" : "text-[var(--ivory)]",
+              variant === "navy" ? "text-[var(--ivory)]" : "text-[var(--navy)]",
             )}
           >
             Blizzful Pink
@@ -58,7 +58,7 @@ export function Logo({ className, variant = "navy", withText = true }: LogoProps
           <span
             className={cn(
               "mt-0.5 text-[0.62rem] uppercase tracking-[0.4em]",
-              variant === "navy" ? "text-[var(--forest-soft)]" : "text-[var(--sky)]",
+              variant === "navy" ? "text-[var(--forest-soft)]" : "text-[var(--forest)]",
             )}
           >
             Eventt

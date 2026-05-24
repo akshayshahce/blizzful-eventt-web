@@ -55,7 +55,7 @@ export default function RootLayout({
       lang="en"
       className={`${inter.variable} ${cormorant.variable} ${greatVibes.variable} antialiased`}
     >
-      <body className="bg-[var(--ivory)] text-[var(--ink)]">
+      <body className="bg-[var(--background)] text-[var(--foreground)]">
         <ClientShell />
         <SiteHeader />
         <PageTransition>

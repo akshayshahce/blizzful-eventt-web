@@ -22,7 +22,7 @@ export function MarqueeStrip({
     theme === "navy"
       ? "bg-[var(--navy)] text-[var(--ivory)] border-y border-[var(--navy-deep)]"
       : theme === "ivory"
-        ? "bg-[var(--ivory)] text-[var(--navy)] border-y border-[var(--navy)]/15"
+        ? "bg-[var(--surface)] text-[var(--ivory)] border-y border-[var(--navy)]/25"
         : "bg-[var(--sky-soft)] text-[var(--navy)] border-y border-[var(--navy)]/12";
 
   const nodes = items.map((item, index) => (

@@ -1,44 +1,54 @@
 @import "tailwindcss";
 
 :root {
-  /* Blizzful Pink Eventt palette — soft sky blue, royal navy, wisteria, blush */
-  --ivory: #fbf8f2;
-  --ivory-soft: #f5f0e6;
-  --ivory-warm: #efe7d6;
-  --cream: #f6efe2;
-  --paper: #ffffff;
+  /* Blizzful Pink Eventt — Dark luxury palette: deep navy + electric blue + vivid purple */
 
-  --sky: #d4e5f1;
-  --sky-soft: #e6f0f7;
-  --sky-deep: #b6cde0;
+  /* Light values — for text on dark, button text, photo overlays */
+  --ivory: #e4ecff;
+  --ivory-soft: #c2cce8;
+  --ivory-warm: #9aaac8;
+  --cream: #d0daf5;
+  --paper: #1a2842;       /* lighter dark surface — used for card hovers */
 
-  --wisteria: #b3a2d2;
-  --wisteria-soft: #d4c7ea;
-  --wisteria-deep: #7d6bb0;
+  /* Blue accent family */
+  --sky: #60a5fa;          /* bright sky-blue accent */
+  --sky-soft: #080b14;     /* PRIMARY section background — deep dark navy */
+  --sky-deep: #3b82f6;
 
-  --blush: #f3d6dc;
-  --blush-deep: #e3a9b5;
+  /* Purple accent family */
+  --wisteria: #c084fc;          /* bright vivid purple */
+  --wisteria-soft: #1e1640;     /* deep dark purple surface */
+  --wisteria-deep: #a855f7;     /* vivid purple — script text, dividers */
 
-  --navy: #1e3a78;
-  --navy-deep: #14275a;
-  --royal: #2c4a8a;
-  --forest: #1f5a3a;
-  --forest-soft: #2c7a51;
-  --gold: #b89765;
+  /* Warm/complementary */
+  --blush: #fb7185;
+  --blush-deep: #f43f5e;
 
-  --ink: #142446;
-  --ink-soft: #1d2f55;
-  --charcoal: #2a3b62;
-  --muted: #6b7a93;
-  --stone: #98a4b6;
+  /* Brand blue — buttons, CTAs, interactive elements */
+  --navy: #4f72f5;
+  --navy-deep: #3455d8;
+  --royal: #818cf8;         /* soft indigo */
+  --forest: #22c55e;
+  --forest-soft: #4ade80;   /* bright green — eyebrow labels */
+  --gold: #fbbf24;
 
-  --background: var(--ivory);
-  --foreground: var(--ink);
-  --muted-foreground: var(--muted);
+  /* Text scale — all light for dark background */
+  --ink: #e4ecff;           /* primary text */
+  --ink-soft: #c2cce8;      /* secondary text */
+  --charcoal: #131929;      /* dark card surface */
+  --muted: #6877a0;         /* muted / helper text */
+  --stone: #3d4a68;         /* dividers */
 
-  --border: rgba(30, 58, 120, 0.12);
-  --border-strong: rgba(30, 58, 120, 0.22);
-  --ring: rgba(125, 107, 176, 0.45);
+  /* Alternate dark section background (replaces ivory for sections) */
+  --surface: #0f1628;
+
+  --background: #080b14;
+  --foreground: #e4ecff;
+  --muted-foreground: #6877a0;
+
+  --border: rgba(79, 114, 245, 0.16);
+  --border-strong: rgba(79, 114, 245, 0.28);
+  --ring: rgba(168, 85, 247, 0.4);
 }
 
 @theme inline {
@@ -54,12 +64,12 @@
 }
 
 html {
-  background: var(--ivory);
+  background: var(--background);
   -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background: var(--ivory);
+  background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
   font-feature-settings: "ss01", "ss02", "cv11";
@@ -121,8 +131,8 @@ button {
 }
 
 ::selection {
-  background: rgba(125, 107, 176, 0.28);
-  color: var(--navy);
+  background: rgba(168, 85, 247, 0.35);
+  color: var(--ivory);
 }
 
 @keyframes marquee {
@@ -141,7 +151,7 @@ button {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, rgba(180, 162, 210, 0.25) 0%, var(--wisteria) 50%, rgba(180, 162, 210, 0.25) 100%);
+  background: linear-gradient(90deg, rgba(168, 85, 247, 0.3) 0%, var(--wisteria) 50%, rgba(168, 85, 247, 0.3) 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -185,7 +195,7 @@ button {
   content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(125, 107, 176, 0.35), transparent);
+  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.45), transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {

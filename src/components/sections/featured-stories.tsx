@@ -129,7 +129,7 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
 
 export function FeaturedStories() {
   return (
-    <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
       <div className="relative mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">

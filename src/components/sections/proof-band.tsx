@@ -29,7 +29,7 @@ export function ProofBand() {
           </p>
         </div>
 
-        <div className="mt-14 grid gap-px border border-[var(--ivory)]/12 bg-[var(--ivory)]/8 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid gap-px border border-[var(--ivory)]/12 bg-[var(--ivory)]/5 sm:mt-16 sm:grid-cols-2 lg:grid-cols-4">
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}

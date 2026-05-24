@@ -76,7 +76,7 @@ export default function ServicesPage() {
               <Reveal
                 key={service.title}
                 delay={index * 0.04}
-                className="group rounded-[1.5rem] border border-[var(--navy)]/12 bg-[var(--ivory)] p-7 transition-colors duration-500 hover:bg-[var(--paper)]"
+                className="group rounded-[1.5rem] border border-[var(--navy)]/12 bg-[var(--surface)] p-7 transition-colors duration-500 hover:bg-[var(--paper)]"
               >
                 <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
                   {String(index + 1).padStart(2, "0")}

@@ -47,7 +47,7 @@ export function SiteHeader() {
         className={cn(
           "fixed inset-x-0 top-0 z-[60] transition-colors duration-500",
           scrolled
-            ? "bg-[rgba(251,248,242,0.92)] backdrop-blur-xl shadow-[0_8px_30px_rgba(20,36,70,0.06)]"
+            ? "bg-[rgba(8,11,20,0.92)] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.45)]"
             : "bg-transparent",
         )}
       >
@@ -139,7 +139,7 @@ export function SiteHeader() {
                 <span className="block h-12 w-12">
                   <LogoMark />
                 </span>
-                <span className="font-script text-3xl text-[var(--navy)]">
+                <span className="font-script text-3xl text-[var(--ivory)]">
                   Blizzful Pink Eventt
                 </span>
               </div>

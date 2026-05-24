@@ -21,7 +21,7 @@ export function SiteFooter() {
             Blizzful Pink Eventt
           </p>
           <p className="mt-2 text-[0.68rem] uppercase tracking-[0.5em] text-[var(--forest-soft)]">
-            Wedding Planner
+            Event Management
           </p>
           <p className="mx-auto mt-7 max-w-xl text-[0.98rem] leading-[1.85] text-[var(--ink)]/70">
             {company.description}

@@ -30,7 +30,7 @@ export default function ContactPage() {
         meta="WhatsApp · Email · Phone"
       />
 
-      <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -left-12 -top-10 h-80 w-60" opacity={0.32} />
         <Wisteria variant="right" className="absolute -right-12 -top-10 h-80 w-60" opacity={0.32} />
         <Container>

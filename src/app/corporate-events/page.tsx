@@ -42,7 +42,7 @@ export default function CorporateEventsPage() {
             description={corporateExperience.description}
             theme="dark"
           />
-          <div className="mt-16 grid gap-px border border-[var(--ivory)]/12 bg-[var(--ivory)]/8 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-px border border-[var(--ivory)]/12 bg-[var(--ivory)]/5 sm:grid-cols-2 lg:grid-cols-3">
             {corporateExperience.points.map((point, index) => (
               <Reveal
                 key={point}
