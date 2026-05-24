@@ -13,11 +13,15 @@ const nextConfig: NextConfig = {
     basePath: `/${repoName}`,
     assetPrefix: `/${repoName}/`,
   }),
+  env: {
+    NEXT_PUBLIC_BASE_PATH: isGithubPages ? `/${repoName}` : "",
+  },
   allowedDevOrigins: ["127.0.0.1"],
   devIndicators: false,
   reactCompiler: true,
   images: {
-    unoptimized: true,
+    loader: "custom",
+    loaderFile: "./src/lib/image-loader.ts",
     dangerouslyAllowSVG: true,
     contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
