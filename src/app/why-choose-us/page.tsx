@@ -47,7 +47,7 @@ export default function WhyChooseUsPage() {
                 <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
                   {String.fromCharCode(65 + index)}
                 </p>
-                <p className="mt-8 font-display text-3xl leading-[1.04] text-[var(--navy)] transition-transform duration-500 group-hover:translate-x-1 sm:text-4xl">
+                <p className="mt-8 font-display text-3xl leading-[1.04] text-[var(--ivory)] transition-transform duration-500 group-hover:translate-x-1 sm:text-4xl">
                   {reason.title}
                 </p>
                 <p className="mt-5 text-[0.95rem] leading-[1.85] text-[var(--ink)]/72">

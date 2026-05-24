@@ -73,7 +73,7 @@ export default function AboutPage() {
         theme="navy"
       />
 
-      <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--navy)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Container>
           <SectionHeading
             eyebrow="By the numbers"
@@ -96,7 +96,7 @@ export default function AboutPage() {
                 <p className="text-[0.58rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-7 font-display text-5xl tracking-tight text-[var(--navy)] sm:text-6xl">
+                <p className="mt-7 font-display text-5xl tracking-tight text-[var(--ivory)] sm:text-6xl">
                   {stat.value}
                 </p>
                 <p className="mt-3 text-[0.62rem] uppercase tracking-[0.36em] text-[var(--ink)]/65">
@@ -143,13 +143,13 @@ export default function AboutPage() {
                     <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
                       {String(index + 1).padStart(2, "0")}
                     </p>
-                    <h3 className="mt-5 font-display text-4xl leading-[1.04] tracking-tight text-[var(--navy)] sm:text-5xl">
+                    <h3 className="mt-5 font-display text-4xl leading-[1.04] tracking-tight text-[var(--ivory)] sm:text-5xl">
                       {experience.title}
                     </h3>
                     <p className="mt-5 max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/72">
                       {experience.description}
                     </p>
-                    <div className="mt-7 flex flex-wrap gap-2 text-[0.6rem] uppercase tracking-[0.34em] text-[var(--navy)]/65">
+                    <div className="mt-7 flex flex-wrap gap-2 text-[0.6rem] uppercase tracking-[0.34em] text-[var(--ivory)]/40">
                       {experience.points.map((point) => (
                         <span
                           key={point}

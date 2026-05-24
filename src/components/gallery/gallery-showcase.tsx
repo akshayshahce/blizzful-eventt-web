@@ -96,7 +96,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
               <span className="editorial-rule" />
               {preview ? "The Portfolio" : "The Archive"}
             </div>
-            <h2 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--navy)] sm:text-5xl lg:text-[4.4rem]">
+            <h2 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--ivory)] sm:text-5xl lg:text-[4.4rem]">
               {preview ? (
                 <>
                   Selected moments from the{" "}
@@ -130,8 +130,8 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
                 className={cn(
                   "rounded-full border px-5 py-2.5 text-[0.62rem] font-medium uppercase tracking-[0.3em] transition-all duration-300",
                   activeFilter
-                    ? "border-[var(--navy)] bg-[var(--navy)] text-[var(--ivory)]"
-                    : "border-[var(--navy)]/20 text-[var(--navy)]/70 hover:border-[var(--navy)]/45 hover:text-[var(--navy)]",
+                    ? "border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] text-[var(--ivory)]"
+                    : "border-[var(--ivory)]/25 text-[var(--ivory)]/60 hover:border-[var(--wisteria-deep)]/60 hover:text-[var(--ivory)]",
                 )}
               >
                 {category}
@@ -195,7 +195,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
           <div className="mt-14 flex justify-center sm:mt-16">
             <Link
               href="/gallery"
-              className="group inline-flex items-center gap-3 rounded-full border border-[var(--navy)]/30 bg-transparent px-8 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--navy)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--navy)] hover:bg-[var(--navy)] hover:text-[var(--ivory)]"
+              className="group inline-flex items-center gap-3 rounded-full border border-[var(--ivory)]/25 bg-transparent px-8 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)]/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--wisteria-deep)] hover:bg-[var(--wisteria-deep)] hover:text-[var(--ivory)]"
             >
               View the full gallery
               <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

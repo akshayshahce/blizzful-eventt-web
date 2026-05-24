@@ -137,13 +137,13 @@ export function FeaturedStories() {
               <span className="editorial-rule" />
               Selected Works
             </div>
-            <h2 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--navy)] sm:text-5xl lg:text-[4.4rem]">
+            <h2 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--ivory)] sm:text-5xl lg:text-[4.4rem]">
               Three disciplines.
               <br />
               One <span className="italic font-script text-[var(--wisteria-deep)]">visual language</span>.
             </h2>
           </div>
-          <p className="max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/68 lg:col-span-5">
+          <p className="max-w-md text-[1rem] leading-[1.9] text-[var(--ivory)]/60 lg:col-span-5">
             Every project is an authored composition — emotionally calibrated for
             private celebrations and operationally engineered for corporate scale.
           </p>

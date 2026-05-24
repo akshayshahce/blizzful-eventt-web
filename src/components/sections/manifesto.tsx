@@ -26,15 +26,15 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 font-display text-[clamp(2.4rem,4.6vw,4.6rem)] leading-[1.02] tracking-tight text-[var(--navy)]"
+              className="mt-8 font-display text-[clamp(2.4rem,4.6vw,4.6rem)] leading-[1.02] tracking-tight text-[var(--ivory)]"
             >
-              We design weddings that feel{" "}
+              We design events that feel{" "}
               <span className="font-script italic text-[var(--wisteria-deep)]">
-                like a love story
+                extraordinary
               </span>
               <br />
               and run with{" "}
-              <span className="italic text-[var(--royal)]">quiet precision</span>.
+              <span className="italic text-[var(--sky)]">quiet precision</span>.
             </motion.h2>
 
             <motion.div
@@ -64,12 +64,12 @@ export function Manifesto() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.9, delay: 0.35 }}
-              className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 text-[0.66rem] uppercase tracking-[0.36em] text-[var(--navy)]/70"
+              className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 text-[0.66rem] uppercase tracking-[0.36em] text-[var(--ivory)]/50"
             >
               <span>— Mumbai, India</span>
-              <span className="hidden h-px w-12 bg-[var(--navy)]/25 sm:block" />
+              <span className="hidden h-px w-12 bg-[var(--ivory)]/20 sm:block" />
               <span>Founded 2014</span>
-              <span className="hidden h-px w-12 bg-[var(--navy)]/25 sm:block" />
+              <span className="hidden h-px w-12 bg-[var(--ivory)]/20 sm:block" />
               <span>Pan-India productions</span>
             </motion.div>
           </div>
@@ -98,12 +98,12 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 rounded-[1.6rem] border border-[var(--navy)]/12 bg-[var(--sky-soft)] p-7"
+              className="mt-6 rounded-[1.6rem] border border-[var(--ivory)]/10 bg-[rgba(255,255,255,0.04)] p-7"
             >
               <p className="text-[0.62rem] uppercase tracking-[0.44em] text-[var(--wisteria-deep)]">
                 Studio promise
               </p>
-              <p className="mt-4 font-display text-2xl italic leading-snug text-[var(--navy)]">
+              <p className="mt-4 font-display text-2xl italic leading-snug text-[var(--ivory)]">
                 &ldquo;Every detail handled with creativity, perfection, and attention to detail to make your day truly magical.&rdquo;
               </p>
             </motion.div>

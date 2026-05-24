@@ -41,7 +41,7 @@ export default function ContactPage() {
                   <span className="editorial-rule" />
                   Reach the studio
                 </div>
-                <h2 className="mt-8 font-display text-4xl leading-[1.02] tracking-tight text-[var(--navy)] sm:text-5xl lg:text-[4.2rem]">
+                <h2 className="mt-8 font-display text-4xl leading-[1.02] tracking-tight text-[var(--ivory)] sm:text-5xl lg:text-[4.2rem]">
                   Quiet, considered,
                   <br />
                   <span className="font-script italic text-[var(--wisteria-deep)]">always answered</span>.
@@ -61,11 +61,11 @@ export default function ContactPage() {
                   >
                     <span className="flex items-center gap-5">
                       <FiPhone className="h-4 w-4 text-[var(--wisteria-deep)]" />
-                      <span className="font-display text-2xl tracking-tight text-[var(--navy)] sm:text-3xl">
+                      <span className="font-display text-2xl tracking-tight text-[var(--ivory)] sm:text-3xl">
                         {company.phone[0]}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--navy)]/40 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </a>
                 </Reveal>
                 <Reveal delay={0.05}>
@@ -75,11 +75,11 @@ export default function ContactPage() {
                   >
                     <span className="flex items-center gap-5">
                       <FiPhone className="h-4 w-4 text-[var(--wisteria-deep)]" />
-                      <span className="font-display text-2xl tracking-tight text-[var(--navy)] sm:text-3xl">
+                      <span className="font-display text-2xl tracking-tight text-[var(--ivory)] sm:text-3xl">
                         {company.phone[1]}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--navy)]/40 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </a>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -89,11 +89,11 @@ export default function ContactPage() {
                   >
                     <span className="flex items-center gap-5">
                       <FiMail className="h-4 w-4 text-[var(--wisteria-deep)]" />
-                      <span className="font-display text-2xl tracking-tight text-[var(--navy)] sm:text-3xl">
+                      <span className="font-display text-2xl tracking-tight text-[var(--ivory)] sm:text-3xl">
                         {company.email}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--navy)]/40 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </a>
                 </Reveal>
                 <Reveal delay={0.15}>
@@ -104,11 +104,11 @@ export default function ContactPage() {
                   >
                     <span className="flex items-center gap-5">
                       <FiInstagram className="h-4 w-4 text-[var(--wisteria-deep)]" />
-                      <span className="font-display text-2xl tracking-tight text-[var(--navy)] sm:text-3xl">
+                      <span className="font-display text-2xl tracking-tight text-[var(--ivory)] sm:text-3xl">
                         @{company.instagram}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--navy)]/40 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </Link>
                 </Reveal>
               </div>

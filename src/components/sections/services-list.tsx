@@ -29,12 +29,12 @@ export function ServicesList() {
               <span className="editorial-rule" />
               Core Services
             </div>
-            <h2 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--navy)] sm:text-5xl lg:text-[3.8rem]">
+            <h2 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--ivory)] sm:text-5xl lg:text-[3.8rem]">
               Your one-stop partner for{" "}
               <span className="font-script italic text-[var(--wisteria-deep)]">inspired</span>{" "}
               events.
             </h2>
-            <p className="mt-7 max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/72">
+            <p className="mt-7 max-w-md text-[1rem] leading-[1.9] text-[var(--ivory)]/65">
               From event planning and design concepts to vendor coordination and
               venue selection — we deliver a complete service spectrum under a
               single, meticulously composed studio.
@@ -72,8 +72,8 @@ export function ServicesList() {
                 onMouseEnter={() => setActive(index)}
                 onFocus={() => setActive(index)}
                 className={cn(
-                  "group block w-full border-b border-[var(--navy)]/15 py-9 text-left transition-colors duration-500",
-                  active === index ? "text-[var(--navy)]" : "text-[var(--ink)]/72 hover:text-[var(--navy)]",
+                  "group block w-full border-b border-[var(--ivory)]/10 py-9 text-left transition-colors duration-500",
+                  active === index ? "text-[var(--ivory)]" : "text-[var(--ivory)]/55 hover:text-[var(--ivory)]",
                 )}
               >
                 <div className="grid gap-5 sm:grid-cols-[5rem_1fr]">
@@ -84,7 +84,7 @@ export function ServicesList() {
                     <h3 className="font-display text-3xl leading-[1.02] tracking-tight transition-transform duration-500 group-hover:translate-x-1.5 sm:text-4xl lg:text-5xl">
                       {service.title}
                     </h3>
-                    <p className="mt-4 max-w-xl text-[0.96rem] leading-[1.85] text-[var(--ink)]/70">
+                    <p className="mt-4 max-w-xl text-[0.96rem] leading-[1.85] text-[var(--ivory)]/55">
                       {service.description}
                     </p>
                   </div>

@@ -24,7 +24,7 @@ export function ContactCta() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-15%" }}
             transition={{ duration: 0.95, ease: [0.22, 1, 0.36, 1] }}
-            className="mx-auto mt-7 max-w-3xl font-display text-[clamp(2.4rem,5vw,4.6rem)] leading-[1.02] tracking-tight text-[var(--navy)]"
+            className="mx-auto mt-7 max-w-3xl font-display text-[clamp(2.4rem,5vw,4.6rem)] leading-[1.02] tracking-tight text-[var(--ivory)]"
           >
             Let&apos;s plan something{" "}
             <span className="font-script italic text-[var(--wisteria-deep)]">unforgettable</span>.
@@ -44,7 +44,7 @@ export function ContactCta() {
             </Link>
             <a
               href={`tel:${company.phone[0].replace(/\s+/g, "")}`}
-              className="inline-flex items-center gap-2 rounded-full border border-[var(--navy)]/30 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--navy)] transition-all duration-300 hover:border-[var(--navy)] hover:bg-[var(--navy)] hover:text-[var(--ivory)]"
+              className="inline-flex items-center gap-2 rounded-full border border-[var(--ivory)]/25 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:border-[var(--ivory)]/50 hover:bg-[var(--ivory)]/8"
             >
               {company.phone[0]}
             </a>

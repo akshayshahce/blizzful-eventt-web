@@ -8,7 +8,7 @@ import { Wisteria } from "@/components/ui/wisteria";
 
 export function SiteFooter() {
   return (
-    <footer className="relative overflow-hidden bg-[var(--sky-soft)] text-[var(--navy)]">
+    <footer className="relative overflow-hidden bg-[var(--sky-soft)] text-[var(--ivory)]">
       <Wisteria className="absolute -left-10 -top-10 h-72 w-56" opacity={0.45} />
       <Wisteria variant="right" className="absolute -right-10 -top-10 h-72 w-56" opacity={0.45} />
 
@@ -17,13 +17,13 @@ export function SiteFooter() {
           <div className="mx-auto h-16 w-16">
             <LogoMark />
           </div>
-          <p className="mt-5 font-script text-4xl text-[var(--navy)] sm:text-5xl">
+          <p className="mt-5 font-script text-4xl text-[var(--ivory)] sm:text-5xl">
             Blizzful Pink Eventt
           </p>
           <p className="mt-2 text-[0.68rem] uppercase tracking-[0.5em] text-[var(--forest-soft)]">
             Event Management
           </p>
-          <p className="mx-auto mt-7 max-w-xl text-[0.98rem] leading-[1.85] text-[var(--ink)]/70">
+          <p className="mx-auto mt-7 max-w-xl text-[0.98rem] leading-[1.85] text-[var(--ivory)]/60">
             {company.description}
           </p>
         </div>
@@ -38,7 +38,7 @@ export function SiteFooter() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="link-underline w-fit text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+                  className="link-underline w-fit text-[var(--ivory)]/65 transition-colors hover:text-[var(--ivory)]"
                 >
                   {item.label}
                 </Link>
@@ -55,7 +55,7 @@ export function SiteFooter() {
                 <a
                   key={number}
                   href={`tel:${number.replace(/\s+/g, "")}`}
-                  className="flex items-center gap-3 text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+                  className="flex items-center gap-3 text-[var(--ivory)]/65 transition-colors hover:text-[var(--ivory)]"
                 >
                   <FiPhone className="h-4 w-4 text-[var(--wisteria-deep)]" />
                   <span className="link-underline">{number}</span>
@@ -63,7 +63,7 @@ export function SiteFooter() {
               ))}
               <a
                 href={`mailto:${company.email}`}
-                className="flex items-center gap-3 text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+                className="flex items-center gap-3 text-[var(--ivory)]/65 transition-colors hover:text-[var(--ivory)]"
               >
                 <FiMail className="h-4 w-4 text-[var(--wisteria-deep)]" />
                 <span className="link-underline">{company.email}</span>
@@ -72,12 +72,12 @@ export function SiteFooter() {
                 href={`https://instagram.com/${company.instagram}`}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-3 text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+                className="flex items-center gap-3 text-[var(--ivory)]/65 transition-colors hover:text-[var(--ivory)]"
               >
                 <FiInstagram className="h-4 w-4 text-[var(--wisteria-deep)]" />
                 <span className="link-underline">@{company.instagram}</span>
               </a>
-              <div className="flex items-center gap-3 text-[var(--navy)]/80">
+              <div className="flex items-center gap-3 text-[var(--ivory)]/65">
                 <FiMapPin className="h-4 w-4 text-[var(--wisteria-deep)]" />
                 <span>{company.location}</span>
               </div>
@@ -88,12 +88,12 @@ export function SiteFooter() {
             <p className="text-[0.6rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
               Begin a project
             </p>
-            <h3 className="mt-6 font-display text-4xl italic leading-tight text-[var(--navy)] sm:text-5xl">
+            <h3 className="mt-6 font-display text-4xl italic leading-tight text-[var(--ivory)] sm:text-5xl">
               Let&apos;s plan something <span className="font-script not-italic text-[var(--wisteria-deep)]">unforgettable</span>.
             </h3>
             <Link
               href="/contact-us"
-              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy-deep)]"
+              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy)]"
             >
               Start the conversation
               <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -101,7 +101,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col items-center justify-between gap-3 border-t border-[var(--navy)]/15 pt-7 text-[0.62rem] uppercase tracking-[0.4em] text-[var(--navy)]/55 sm:flex-row">
+        <div className="mt-20 flex flex-col items-center justify-between gap-3 border-t border-[var(--ivory)]/10 pt-7 text-[0.62rem] uppercase tracking-[0.4em] text-[var(--ivory)]/35 sm:flex-row">
           <span>© {new Date().getFullYear()} {company.name}</span>
           <span>Designed in Mumbai · Crafted with love</span>
         </div>

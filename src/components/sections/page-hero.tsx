@@ -58,7 +58,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 22 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-7 font-display text-[clamp(2.1rem,6vw,5.6rem)] leading-[1.04] tracking-tight text-[var(--navy)]"
+              className="mt-7 font-display text-[clamp(2.1rem,6vw,5.6rem)] leading-[1.04] tracking-tight text-[var(--ivory)]"
             >
               {renderTitle(title, italicWord)}
             </motion.h1>
@@ -66,7 +66,7 @@ export function PageHero({
               initial={{ opacity: 0, y: 18 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-8 max-w-xl text-[1rem] leading-[1.9] text-[var(--ink)]/72 sm:text-[1.05rem]"
+              className="mt-8 max-w-xl text-[1rem] leading-[1.9] text-[var(--ivory)]/65 sm:text-[1.05rem]"
             >
               {description}
             </motion.p>
@@ -75,7 +75,7 @@ export function PageHero({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.45, duration: 0.6 }}
-                className="mt-8 text-[0.6rem] uppercase tracking-[0.42em] text-[var(--ink)]/55"
+                className="mt-8 text-[0.6rem] uppercase tracking-[0.42em] text-[var(--ivory)]/45"
               >
                 {meta}
               </motion.p>
@@ -88,7 +88,7 @@ export function PageHero({
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
             className="relative lg:col-span-6"
           >
-            <div className="relative aspect-[5/4] overflow-hidden rounded-[1.8rem] shadow-[0_30px_70px_rgba(20,36,70,0.18)] ring-1 ring-white/80">
+            <div className="relative aspect-[5/4] overflow-hidden rounded-[1.8rem] shadow-[0_30px_70px_rgba(0,0,0,0.45)] ring-1 ring-[var(--ivory)]/10">
               <Image
                 src={src}
                 alt={title}

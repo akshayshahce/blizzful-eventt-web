@@ -71,8 +71,8 @@ export function SiteHeader() {
                   className={cn(
                     "relative px-3 py-2 text-[0.74rem] font-medium uppercase tracking-[0.28em] transition-colors duration-300",
                     active
-                      ? "text-[var(--navy)]"
-                      : "text-[var(--ink)]/65 hover:text-[var(--navy)]",
+                      ? "text-[var(--ivory)]"
+                      : "text-[var(--ivory)]/55 hover:text-[var(--ivory)]",
                   )}
                 >
                   <span className="relative z-10">{item.label}</span>
@@ -91,7 +91,7 @@ export function SiteHeader() {
           <div className="flex items-center gap-3">
             <a
               href={`tel:${company.phone[0].replace(/\s+/g, "")}`}
-              className="hidden items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-[var(--navy)] transition-colors hover:text-[var(--wisteria-deep)] xl:inline-flex"
+              className="hidden items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-[var(--ivory)]/70 transition-colors hover:text-[var(--ivory)] xl:inline-flex"
             >
               <FiPhone className="h-3.5 w-3.5" />
               {company.phone[0]}
@@ -105,7 +105,7 @@ export function SiteHeader() {
             <button
               type="button"
               onClick={() => setOpen((value) => !value)}
-              className="group relative flex h-11 w-11 items-center justify-center rounded-full border border-[var(--navy)]/25 text-[var(--navy)] transition-colors duration-300 hover:border-[var(--navy)] lg:hidden"
+              className="group relative flex h-11 w-11 items-center justify-center rounded-full border border-[var(--ivory)]/25 text-[var(--ivory)] transition-colors duration-300 hover:border-[var(--ivory)]/50 lg:hidden"
               aria-label={open ? "Close menu" : "Open menu"}
             >
               <span className="relative block h-3 w-5">
@@ -188,22 +188,22 @@ export function SiteHeader() {
               </motion.nav>
 
               <div className="mt-10 space-y-3 text-sm">
-                <a href={`mailto:${company.email}`} className="block text-base text-[var(--navy)]">
+                <a href={`mailto:${company.email}`} className="block text-base text-[var(--ivory)]/80 hover:text-[var(--ivory)]">
                   {company.email}
                 </a>
-                <a href={`tel:${company.phone[0].replace(/\s+/g, "")}`} className="block text-base text-[var(--navy)]">
+                <a href={`tel:${company.phone[0].replace(/\s+/g, "")}`} className="block text-base text-[var(--ivory)]/80 hover:text-[var(--ivory)]">
                   {company.phone[0]}
                 </a>
                 <a
                   href={`https://instagram.com/${company.instagram}`}
                   target="_blank"
                   rel="noreferrer"
-                  className="block text-base text-[var(--navy)]"
+                  className="block text-base text-[var(--ivory)]/80 hover:text-[var(--ivory)]"
                 >
                   @{company.instagram}
                 </a>
               </div>
-              <div className="mt-auto flex items-center justify-between border-t border-[var(--navy)]/15 pt-6 text-[0.58rem] uppercase tracking-[0.4em] text-[var(--navy)]/55">
+              <div className="mt-auto flex items-center justify-between border-t border-[var(--ivory)]/12 pt-6 text-[0.58rem] uppercase tracking-[0.4em] text-[var(--ivory)]/35">
                 <span>Mumbai · Pan-India</span>
                 <span>© {new Date().getFullYear()}</span>
               </div>
