@@ -28,31 +28,33 @@ export default function CorporateEventsPage() {
         meta="Trusted by BSE, NSE & 150+ brands"
       />
 
-      <section className="relative overflow-hidden bg-[var(--navy)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
-        <Wisteria className="absolute -left-10 -top-10 h-80 w-60" opacity={0.16} />
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0d0620_0%,#0a1230_40%,#14082a_100%)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
+        <div className="pointer-events-none absolute -left-40 top-0 h-[28rem] w-[28rem] rounded-full bg-[var(--navy)]/[0.15] blur-[120px]" />
+        <div className="pointer-events-none absolute -right-40 bottom-0 h-[20rem] w-[20rem] rounded-full bg-[var(--wisteria-deep)]/[0.10] blur-[100px]" />
+        <Wisteria className="absolute -left-10 -top-10 h-80 w-60" opacity={0.12} />
         <Container>
           <SectionHeading
             eyebrow="Professional Formats"
             title={
               <>
                 Built for stakeholder{" "}
-                <span className="italic text-[var(--sky)]">confidence</span> and brand presence.
+                <span className="italic text-[var(--sky)] glow-blue">confidence</span> and brand presence.
               </>
             }
             description={corporateExperience.description}
             theme="dark"
           />
-          <div className="mt-16 grid gap-px border border-[var(--ivory)]/12 bg-[var(--ivory)]/5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-px border border-[var(--ivory)]/8 bg-[var(--ivory)]/4 sm:grid-cols-2 lg:grid-cols-3">
             {corporateExperience.points.map((point, index) => (
               <Reveal
                 key={point}
                 delay={index * 0.05}
-                className="bg-[var(--navy)] p-9 sm:p-11"
+                className="bg-[rgba(255,255,255,0.03)] p-9 transition-colors duration-500 hover:bg-[rgba(168,85,247,0.07)] sm:p-11"
               >
-                <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--sky)]">
+                <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)] glow-purple">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <p className="mt-8 font-display text-3xl leading-tight text-[var(--ivory)] sm:text-4xl">
+                <p className="mt-8 font-display text-3xl leading-tight text-[var(--ivory)] glow-white sm:text-4xl">
                   {point}
                 </p>
               </Reveal>
@@ -79,21 +81,21 @@ export default function CorporateEventsPage() {
         services={corporateServices}
       />
 
-      <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--navy)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Container>
           <SectionHeading
             eyebrow="Partners in Success"
             title={
               <>
                 Trusted by{" "}
-                <span className="font-script italic text-[var(--wisteria-deep)]">India&apos;s most respected</span>{" "}
+                <span className="font-script italic text-[var(--wisteria-deep)] glow-purple">India&apos;s most respected</span>{" "}
                 institutions and brands.
               </>
             }
             description="Empanelled and partnered with leading institutions like BSE, NSE, Maharashtra Shasan, plus marquee corporate offices including Tata Motors, Kotak, and many more."
           />
           <Reveal className="mt-14">
-            <div className="overflow-hidden rounded-[2rem] border border-[var(--navy)]/10 bg-white p-4 shadow-[0_24px_80px_rgba(20,36,70,0.08)] sm:p-6 lg:p-8">
+            <div className="overflow-hidden rounded-[2rem] border border-[var(--ivory)]/10 bg-[rgba(255,255,255,0.04)] p-4 shadow-[0_24px_80px_rgba(0,0,0,0.4)] sm:p-6 lg:p-8">
               <Image
                 src="/images/partners/partner-board.png"
                 alt="Partner logos from the Blizzful Pink Eventt company profile, including BSE, NSE, Tata Motors, Kotak Mahindra Bank, Morningstar, MentorMyBoard, GIA, Senco Gold & Diamonds, and other institutional and corporate partners."
@@ -104,9 +106,6 @@ export default function CorporateEventsPage() {
                 priority
               />
             </div>
-            <p className="mt-5 text-center text-sm leading-7 text-[var(--navy)]/68">
-              Partner logos shown from the company profile, featuring institutions and brands such as BSE, NSE, Maharashtra Shasan, Tata Motors, Kotak Mahindra Bank, Morningstar, MentorMyBoard, GIA, Senco Gold & Diamonds, and more.
-            </p>
           </Reveal>
         </Container>
       </section>
