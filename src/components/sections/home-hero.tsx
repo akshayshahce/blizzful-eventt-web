@@ -115,10 +115,11 @@ export function HomeHero() {
               className="relative mx-auto aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-[2rem] shadow-[0_30px_80px_rgba(20,36,70,0.18)] ring-1 ring-white/80"
             >
               <Image
-                src="/images/events/wedding-shaadi.jpg"
-                alt="Blizzful Pink Eventt mandap"
+                src="/images/events/hero-main.jpg"
+                alt="Corporate event production by Blizzful Pink Eventt"
                 fill
                 priority
+                quality={90}
                 sizes="(max-width: 768px) 100vw, 50vw"
                 className="object-cover"
               />
@@ -128,7 +129,7 @@ export function HomeHero() {
                   <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--sky)]">
                     Featured
                   </p>
-                  <p className="mt-1 font-display text-2xl italic">Wedding · Shaadi</p>
+                  <p className="mt-1 font-display text-2xl italic">Corporate · Event</p>
                 </div>
                 <span className="rounded-full bg-white/15 px-3 py-1 text-[0.55rem] uppercase tracking-[0.34em] backdrop-blur-md">
                   Mumbai
@@ -143,10 +144,11 @@ export function HomeHero() {
               className="absolute -bottom-10 -left-6 hidden aspect-square w-44 overflow-hidden rounded-[1.5rem] shadow-[0_20px_60px_rgba(20,36,70,0.22)] ring-1 ring-white/80 lg:block lg:-bottom-12 lg:w-56"
             >
               <Image
-                src="/images/events/mehendi-ceremony.jpg"
-                alt="Mehendi ceremony detail"
+                src="/images/events/hero-accent.jpg"
+                alt="Event by Blizzful Pink Eventt"
                 fill
-                sizes="220px"
+                quality={90}
+                sizes="(max-width: 1024px) 176px, 224px"
                 className="object-cover"
               />
             </motion.div>
@@ -159,10 +161,11 @@ export function HomeHero() {
             >
               <div className="relative aspect-[3/4]">
                 <Image
-                  src="/images/events/sangeet-decor-1.jpg"
-                  alt="Sangeet stage detail"
+                  src="/images/events/hero-social.jpg"
+                  alt="Social event decoration"
                   fill
-                  sizes="200px"
+                  quality={90}
+                  sizes="(max-width: 1024px) 160px, 192px"
                   className="object-cover"
                 />
               </div>

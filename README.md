@@ -2,6 +2,8 @@
 
 Premium event management website built with Next.js App Router, TypeScript, Tailwind CSS, and Framer Motion.
 
+**Live site:** https://akshayshahce.github.io/blizzful-eventt-web/
+
 ## Stack
 
 - Next.js App Router
@@ -9,41 +11,49 @@ Premium event management website built with Next.js App Router, TypeScript, Tail
 - Tailwind CSS
 - Framer Motion
 - React Icons
-- Embla Carousel ready
+- Embla Carousel
 - Yet Another React Lightbox
-- Reusable JSON-driven gallery architecture
-
-## Content Source
-
-Business positioning, service scope, event categories, and contact details were derived from:
-
-- `/Users/akshay/Downloads/Blizzful.pdf`
-- `/Users/akshay/Downloads/BLIZZFULPINKEVENTT_COMPANYPROFILE2.pdf`
 
 ## Local Development
 
 ```bash
-source ~/.nvm/nvm.sh
-nvm use 22
 npm install
 npm run dev
 ```
 
-## Build
+Open http://localhost:3000
+
+## Production Build (local test)
 
 ```bash
-source ~/.nvm/nvm.sh
-nvm use 22
 npm run build
 ```
 
+The static output is written to `out/`.
+
+## GitHub Pages Deployment
+
+Deployment is **fully automatic** via GitHub Actions on every push to `main`.
+
+**Workflow:** `.github/workflows/deploy.yml`
+
+**How it works:**
+1. Push to `main` branch
+2. GitHub Actions installs dependencies and runs `npm run build` with `GITHUB_PAGES=true`
+3. The `out/` folder is deployed to GitHub Pages
+4. Live at: https://akshayshahce.github.io/blizzful-eventt-web/
+
+**One-time GitHub setup (do once):**
+1. Go to the repository → **Settings** → **Pages**
+2. Under **Source**, select **GitHub Actions**
+3. Save
+
+After that, every push to `main` triggers a new deployment automatically.
+
 ## Structure
 
-- `src/app`: App Router pages
-- `src/components`: reusable layout, motion, UI, and gallery components
-- `src/data/site-data.ts`: company content, navigation, services, stats, and gallery JSON
-- `public/images`: local editorial and gallery placeholders for Phase 1
-
-## Phase 2 Ready
-
-The gallery and content structure are prepared for future media integrations such as Cloudinary or Google Drive without changing the presentation layer.
+- `src/app` — App Router pages
+- `src/components` — reusable layout, motion, UI, and gallery components
+- `src/data/site-data.ts` — company content, navigation, services, stats, and gallery JSON
+- `public/images` — event photos and assets
+- `.github/workflows/deploy.yml` — GitHub Actions CI/CD pipeline
