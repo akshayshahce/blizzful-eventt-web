@@ -16,14 +16,16 @@ export function MarqueeStrip({
   theme = "sky",
   italic = true,
 }: MarqueeStripProps) {
-  const navy = theme === "navy";
+  // Single consistent dark style across all themes
+  const surface = "bg-[#07091200] bg-[linear-gradient(90deg,#0f0828_0%,#080b14_50%,#0f0828_100%)] border-y border-[var(--ivory)]/8 text-[var(--ivory)]";
 
-  const surface =
+  // Dot color varies subtly per theme
+  const dotColor =
     theme === "navy"
-      ? "bg-[var(--navy)] text-[var(--ivory)] border-y border-[var(--navy-deep)]"
+      ? "bg-[var(--navy)]"
       : theme === "ivory"
-        ? "bg-[var(--surface)] text-[var(--ivory)] border-y border-[var(--navy)]/25"
-        : "bg-[var(--sky-soft)] text-[var(--navy)] border-y border-[var(--navy)]/12";
+        ? "bg-[var(--wisteria-deep)]"
+        : "bg-[var(--sky)]";
 
   const nodes = items.map((item, index) => (
     <span
@@ -34,12 +36,7 @@ export function MarqueeStrip({
       )}
     >
       {item}
-      <span
-        className={cn(
-          "h-2 w-2 rounded-full",
-          navy ? "bg-[var(--sky)]" : "bg-[var(--wisteria-deep)]",
-        )}
-      />
+      <span className={cn("h-2 w-2 rounded-full", dotColor)} />
     </span>
   ));
 
