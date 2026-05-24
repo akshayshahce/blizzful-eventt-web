@@ -16,8 +16,8 @@ export const metadata: Metadata = {
 const heroImage = "/images/events/wedding-stage-1.jpg";
 
 const experienceImages = [
-  "/images/events/wedding-shaadi.jpg",
-  "/images/events/sangeet-decor-1.jpg",
+  "/images/events/wedding-stage-1.jpg",
+  "/images/events/corporate-stage.jpg",
   "/images/events/mehendi-decor-1.jpg",
 ];
 

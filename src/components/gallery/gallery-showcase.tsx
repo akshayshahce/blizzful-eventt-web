@@ -174,7 +174,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
                 <div className="absolute inset-0 flex items-end p-6">
                   <div className="w-full">
                     <div className="flex items-center justify-between text-[0.58rem] uppercase tracking-[0.4em] text-[var(--ivory)]/85">
-                      <span className="text-[var(--sky)]">{item.category}</span>
+                      <span className="text-[var(--wisteria-deep)]">{item.category}</span>
                       <span>{item.location}</span>
                     </div>
                     <h3 className="mt-4 font-display text-2xl leading-tight text-[var(--ivory)] sm:text-3xl">

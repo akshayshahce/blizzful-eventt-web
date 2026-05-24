@@ -257,7 +257,7 @@ export const galleryCategories: GalleryCategory[] = [
 ];
 
 export const heroSlides = [
+  "/images/events/corporate-stage.jpg",
   "/images/events/wedding-stage-1.jpg",
   "/images/events/wedding-stage-2.jpg",
-  "/images/events/sangeet-decor-1.jpg",
 ];

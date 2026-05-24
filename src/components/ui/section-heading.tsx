@@ -37,7 +37,7 @@ export function SectionHeading({
         className={cn(
           "flex items-center gap-4 text-[0.62rem] font-medium uppercase tracking-[0.46em]",
           align === "center" && "justify-center",
-          dark ? "text-[var(--sky)]" : "text-[var(--wisteria-deep)]",
+          dark ? "text-[var(--wisteria-deep)]" : "text-[var(--wisteria-deep)]",
         )}
       >
         {index ? <span className="opacity-70">{index}</span> : null}

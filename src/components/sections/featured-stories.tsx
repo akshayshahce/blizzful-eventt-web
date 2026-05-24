@@ -37,7 +37,7 @@ const stories: Story[] = [
     description:
       "Summits, conferences, AGMs, and conclaves built with technical discipline, brand hospitality, and stage-grade execution across India's marquee venues.",
     meta: "Conferences · Summits · AGMs · Conclaves",
-    image: "/images/events/sangeet-decor-1.jpg",
+    image: "/images/events/corporate-stage.jpg",
     href: "/corporate-events",
   },
   {

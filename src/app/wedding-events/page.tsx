@@ -103,7 +103,7 @@ export default function WeddingEventsPage() {
                   />
                   <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.7))]" />
                   <div className="absolute bottom-4 left-4 right-4 text-[var(--ivory)]">
-                    <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--sky)]">
+                    <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
                       {item.title}
                     </p>
                     <p className="mt-1 text-sm leading-snug text-[var(--ivory)]/86">{item.caption}</p>

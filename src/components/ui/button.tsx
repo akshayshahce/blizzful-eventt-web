@@ -12,7 +12,7 @@ const buttonVariants = cva(
         outline:
           "border-[var(--ivory)]/25 bg-transparent px-7 py-4 text-[var(--ivory)]/80 hover:border-[var(--wisteria-deep)] hover:bg-[var(--wisteria-deep)] hover:text-[var(--ivory)]",
         ghost:
-          "border-[var(--ivory)]/30 bg-transparent px-7 py-4 text-[var(--ivory)] hover:border-[var(--sky)] hover:text-[var(--sky)]",
+          "border-[var(--ivory)]/30 bg-transparent px-7 py-4 text-[var(--ivory)] hover:border-[var(--wisteria-deep)] hover:text-[var(--wisteria-deep)]",
         wisteria:
           "border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-7 py-4 text-[var(--ivory)] hover:bg-[var(--navy-deep)]",
       },

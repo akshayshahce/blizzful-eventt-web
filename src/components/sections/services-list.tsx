@@ -7,12 +7,12 @@ import { coreOfferings, galleryItems } from "@/data/site-data";
 import { cn } from "@/lib/utils";
 
 const accents = [
+  "/images/events/corporate-stage.jpg",
   "/images/events/wedding-stage-1.jpg",
   "/images/events/mehendi-decor-1.jpg",
-  "/images/events/sangeet-decor-1.jpg",
+  "/images/events/corporate-gala.jpg",
   "/images/events/haldi-decor-1.jpg",
   "/images/events/wedding-stage-2.jpg",
-  "/images/events/mehendi-decor-2.jpg",
 ];
 // imported galleryItems just to ensure type safety — silence unused warning
 void galleryItems;

@@ -34,7 +34,7 @@ export function Manifesto() {
               </span>
               <br />
               and run with{" "}
-              <span className="italic text-[var(--sky)]">quiet precision</span>.
+              <span className="italic text-[var(--wisteria-deep)]">quiet precision</span>.
             </motion.h2>
 
             <motion.div

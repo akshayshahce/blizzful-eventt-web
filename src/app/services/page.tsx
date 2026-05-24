@@ -48,7 +48,7 @@ export default function ServicesPage() {
           <>
             Corporate production —
             <br />
-            <span className="italic text-[var(--sky)]">stage, AV, brand presence</span>.
+            <span className="italic text-[var(--wisteria-deep)]">stage, AV, brand presence</span>.
           </>
         }
         description="Conferences, summits, AGMs, exhibitions, and trade shows engineered with technical discipline, premium hospitality, and stakeholder-facing presentation."

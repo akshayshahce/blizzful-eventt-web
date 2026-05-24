@@ -24,7 +24,7 @@ export default function CorporateEventsPage() {
         title="Business productions with premium staging and operational rigor."
         italicWord="premium"
         description="Conferences, summits, AGMs, conclaves, exhibitions, and brand experiences — engineered with technical precision and brand-grade hospitality."
-        image="/images/events/sangeet-decor-1.jpg"
+        image="/images/events/corporate-stage.jpg"
         meta="Trusted by BSE, NSE & 150+ brands"
       />
 
@@ -38,7 +38,7 @@ export default function CorporateEventsPage() {
             title={
               <>
                 Built for stakeholder{" "}
-                <span className="italic text-[var(--sky)] glow-blue">confidence</span> and brand presence.
+                <span className="italic text-[var(--wisteria-deep)] glow-purple">confidence</span> and brand presence.
               </>
             }
             description={corporateExperience.description}

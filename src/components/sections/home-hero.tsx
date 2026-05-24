@@ -40,7 +40,7 @@ export function HomeHero() {
               </span>{" "}
               events
               <br />
-              that leave you <span className="italic text-[var(--sky)]">speechless</span>.
+              that leave you <span className="italic text-[var(--wisteria-deep)]">speechless</span>.
             </motion.h1>
 
             <motion.p
@@ -126,7 +126,7 @@ export function HomeHero() {
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.32))]" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[var(--ivory)]">
                 <div>
-                  <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--sky)]">
+                  <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
                     Featured
                   </p>
                   <p className="mt-1 font-display text-2xl italic">Corporate · Event</p>
