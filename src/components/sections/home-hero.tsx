@@ -126,10 +126,7 @@ export function HomeHero() {
               <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.32))]" />
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[var(--ivory)]">
                 <div>
-                  <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
-                    Featured
-                  </p>
-                  <p className="mt-1 font-display text-2xl italic">Corporate · Event</p>
+                  
                 </div>
                 <span className="rounded-full bg-white/15 px-3 py-1 text-[0.55rem] uppercase tracking-[0.34em] backdrop-blur-md">
                   Mumbai

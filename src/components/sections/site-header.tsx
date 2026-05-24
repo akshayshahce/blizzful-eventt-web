@@ -135,14 +135,14 @@ export function SiteHeader() {
             className="fixed inset-0 z-[55] bg-[var(--sky-soft)] text-[var(--ivory)] lg:hidden"
           >
             <div className="relative mx-auto flex h-full w-full max-w-[100rem] flex-col px-5 pb-12 pt-28 sm:px-8">
-              <div className="flex items-center gap-3">
+              <Link href="/" onClick={() => setOpen(false)} className="flex items-center gap-3">
                 <span className="block h-12 w-12">
                   <LogoMark />
                 </span>
                 <span className="font-script text-3xl text-[var(--ivory)]">
                   Blizzful Pink Eventt
                 </span>
-              </div>
+              </Link>
 
               <motion.nav
                 initial="hidden"
