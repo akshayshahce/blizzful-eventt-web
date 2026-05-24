@@ -1,5 +1,4 @@
 @import "tailwindcss";
-@import "yet-another-react-lightbox/styles.css";
 
 :root {
   /* Blizzful Pink Eventt palette — soft sky blue, royal navy, wisteria, blush */
@@ -187,43 +186,6 @@ button {
   flex: 1;
   height: 1px;
   background: linear-gradient(90deg, transparent, rgba(125, 107, 176, 0.35), transparent);
-}
-
-.yarl__container {
-  --yarl__color_backdrop: rgba(20, 36, 70, 0.96);
-  --yarl__color_button: rgba(251, 248, 242, 0.86);
-  --yarl__color_button_active: rgba(251, 248, 242, 1);
-  --yarl__color_button_disabled: rgba(251, 248, 242, 0.24);
-  --yarl__color_icon: rgba(251, 248, 242, 0.92);
-  --yarl__slide_title_color: rgba(251, 248, 242, 0.96);
-  --yarl__slide_description_color: rgba(251, 248, 242, 0.7);
-}
-
-/* Ensure lightbox slides centre their image content */
-.yarl__slide {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  padding: 0 !important;
-}
-
-.yarl__slide_image_cover,
-.yarl__slide_image,
-.yarl__slide img {
-  margin: auto !important;
-  object-fit: contain !important;
-  max-width: min(92vw, 1400px) !important;
-  max-height: min(82vh, 900px) !important;
-}
-
-.yarl__slide_captions_container {
-  text-align: center !important;
-  padding: 1rem 2rem 2rem !important;
-}
-
-.yarl__thumbnails_container,
-.yarl__toolbar {
-  backdrop-filter: blur(20px);
 }
 
 @media (prefers-reduced-motion: reduce) {

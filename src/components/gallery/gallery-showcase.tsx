@@ -2,13 +2,9 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { motion } from "framer-motion";
-import Lightbox from "yet-another-react-lightbox";
-import Zoom from "yet-another-react-lightbox/plugins/zoom";
-import Captions from "yet-another-react-lightbox/plugins/captions";
-import Counter from "yet-another-react-lightbox/plugins/counter";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowLeft, FiArrowRight, FiArrowUpRight, FiX } from "react-icons/fi";
 import { galleryCategories, galleryItems } from "@/data/site-data";
 import { cn } from "@/lib/utils";
 
@@ -38,6 +34,58 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
     title: item.title,
     description: `${item.category} · ${item.location} · ${item.description}`,
   }));
+
+  const isLightboxOpen = openIndex >= 0;
+  const activeSlide = isLightboxOpen ? slides[openIndex] : null;
+
+  useEffect(() => {
+    if (!isLightboxOpen) {
+      return undefined;
+    }
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setOpenIndex(-1);
+        return;
+      }
+
+      if (!slides.length) {
+        return;
+      }
+
+      if (event.key === "ArrowRight") {
+        setOpenIndex((current) => (current + 1) % slides.length);
+      }
+
+      if (event.key === "ArrowLeft") {
+        setOpenIndex((current) => (current - 1 + slides.length) % slides.length);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [isLightboxOpen, slides.length]);
+
+  const showPreviousSlide = () => {
+    if (!slides.length) {
+      return;
+    }
+    setOpenIndex((current) => (current - 1 + slides.length) % slides.length);
+  };
+
+  const showNextSlide = () => {
+    if (!slides.length) {
+      return;
+    }
+    setOpenIndex((current) => (current + 1) % slides.length);
+  };
 
   return (
     <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
@@ -156,18 +204,75 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
         ) : null}
       </div>
 
-      <Lightbox
-        open={openIndex >= 0}
-        close={() => setOpenIndex(-1)}
-        index={openIndex}
-        slides={slides}
-        plugins={[Zoom, Captions, Counter]}
-        zoom={{ maxZoomPixelRatio: 2.4, scrollToZoom: true }}
-        captions={{ descriptionTextAlign: "center" }}
-        counter={{ separator: " / " }}
-        controller={{ closeOnBackdropClick: true }}
-        animation={{ fade: 400, swipe: 600 }}
-      />
+      {activeSlide ? (
+        <div
+          className="fixed inset-0 z-[120] flex bg-[rgba(20,36,70,0.96)] text-[var(--ivory)]"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Gallery slideshow"
+        >
+          <button
+            type="button"
+            aria-label="Close slideshow"
+            onClick={() => setOpenIndex(-1)}
+            className="absolute right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full text-[var(--ivory)]/86 transition hover:bg-white/10 hover:text-[var(--ivory)] sm:right-6 sm:top-6"
+          >
+            <FiX className="h-7 w-7" />
+          </button>
+
+          <button
+            type="button"
+            aria-label="Previous image"
+            onClick={showPreviousSlide}
+            className="absolute left-2 top-1/2 z-20 inline-flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full text-[var(--ivory)]/82 transition hover:bg-white/10 hover:text-[var(--ivory)] sm:left-5"
+          >
+            <FiArrowLeft className="h-7 w-7" />
+          </button>
+
+          <button
+            type="button"
+            aria-label="Next image"
+            onClick={showNextSlide}
+            className="absolute right-2 top-1/2 z-20 inline-flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full text-[var(--ivory)]/82 transition hover:bg-white/10 hover:text-[var(--ivory)] sm:right-5"
+          >
+            <FiArrowRight className="h-7 w-7" />
+          </button>
+
+          <div
+            className="flex min-w-0 flex-1 flex-col"
+            onClick={() => setOpenIndex(-1)}
+          >
+            <div className="flex min-h-0 flex-1 items-center justify-center px-14 py-8 sm:px-20 sm:py-10">
+              <div
+                className="flex h-full w-full items-center justify-center"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <img
+                  src={activeSlide.src}
+                  alt={activeSlide.alt}
+                  className="block max-h-[82vh] max-w-[92vw] object-contain"
+                  draggable={false}
+                />
+              </div>
+            </div>
+
+            <div
+              className="px-6 pb-6 text-center sm:px-10"
+              onClick={(event) => event.stopPropagation()}
+            >
+              <p className="text-[0.72rem] uppercase tracking-[0.32em] text-[var(--ivory)]/66">
+                {openIndex + 1} / {slides.length}
+              </p>
+              <h3 className="mt-3 font-display text-3xl leading-tight text-[var(--ivory)] sm:text-4xl">
+                {activeSlide.title}
+              </h3>
+              <p className="mx-auto mt-2 max-w-3xl text-sm leading-7 text-[var(--ivory)]/72 sm:text-base">
+                {activeSlide.description}
+              </p>
+            </div>
+          </div>
+        </div>
+      ) : null}
     </section>
   );
 }
