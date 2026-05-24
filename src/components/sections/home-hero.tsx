@@ -2,113 +2,180 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useScroll, useTransform } from "framer-motion";
-import { FiArrowUpRight } from "react-icons/fi";
-import { company, editorialImages, stats } from "@/data/site-data";
-import { buttonVariants } from "@/components/ui/button";
-import { Container } from "@/components/ui/container";
-import { cn } from "@/lib/utils";
+import { motion } from "framer-motion";
+import { FiArrowUpRight, FiPhone } from "react-icons/fi";
+import { company } from "@/data/site-data";
+import { Wisteria } from "@/components/ui/wisteria";
+import { LogoMark } from "@/components/ui/logo";
 
 export function HomeHero() {
-  const { scrollY } = useScroll();
-  const yOne = useTransform(scrollY, [0, 900], [0, -90]);
-  const yTwo = useTransform(scrollY, [0, 900], [0, -130]);
-  const opacity = useTransform(scrollY, [0, 500], [1, 0.55]);
-
   return (
-    <section className="relative min-h-screen overflow-hidden bg-[linear-gradient(180deg,#090807_0%,#120f0d_38%,#0c0a09_100%)] pt-28 text-white sm:pt-32">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_18%,rgba(231,212,181,0.10),transparent_24%),radial-gradient(circle_at_78%_24%,rgba(127,76,46,0.28),transparent_26%),radial-gradient(circle_at_50%_88%,rgba(79,55,38,0.22),transparent_28%)]" />
-      <motion.div style={{ y: yOne, opacity }} className="absolute -left-20 top-40 h-[26rem] w-[26rem] rounded-full bg-[radial-gradient(circle,rgba(198,160,122,0.2),transparent_68%)] blur-3xl" />
-      <motion.div style={{ y: yTwo }} className="absolute right-[-12rem] top-24 h-[34rem] w-[34rem] rounded-full bg-[radial-gradient(circle,rgba(132,82,54,0.24),transparent_72%)] blur-3xl" />
+    <section className="relative overflow-hidden bg-[var(--sky-soft)] pt-28 sm:pt-32">
+      {/* Decorative wisteria corners — hidden on small for legibility */}
+      <Wisteria className="absolute -left-12 -top-8 hidden h-[26rem] w-72 md:block" opacity={0.5} />
+      <Wisteria variant="right" className="absolute -right-12 -top-8 hidden h-[26rem] w-72 md:block" opacity={0.5} />
 
-      <Container className="relative grid min-h-[calc(100vh-8rem)] gap-14 pb-16 lg:grid-cols-[1.02fr_0.98fr] lg:items-end lg:pb-24">
-        <motion.div style={{ y: yOne }} className="space-y-8 pb-6 lg:pb-14">
-          <p className="text-[11px] uppercase tracking-[0.52em] text-[var(--accent-soft)]">
-            Luxury Weddings. Corporate Experiences. Signature Moments.
-          </p>
-          <div className="space-y-6">
-            <h1 className="max-w-5xl font-display text-[4.2rem] leading-[0.88] sm:text-[5.8rem] lg:text-[8.3rem]">
-              A cinematic event house for celebrations that need to feel unforgettable.
-            </h1>
-            <p className="max-w-xl text-base leading-8 text-white/68 sm:text-lg">
-              {company.description}
-            </p>
+      <div className="relative mx-auto w-full max-w-[100rem] px-5 pb-20 sm:px-8 sm:pb-28 lg:px-12">
+        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-16">
+          {/* Left text block */}
+          <div className="relative lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+              className="flex items-center gap-3"
+            >
+              <span className="block h-12 w-12 sm:h-14 sm:w-14">
+                <LogoMark />
+              </span>
+              <span className="text-[0.62rem] uppercase tracking-[0.46em] text-[var(--forest-soft)]">
+                Blizzful Pink Eventt · Wedding Planner
+              </span>
+            </motion.div>
+
+            <motion.h1
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-7 font-display text-[clamp(2.4rem,7.2vw,6.8rem)] font-medium leading-[0.98] tracking-tight text-[var(--navy)]"
+            >
+              Creating
+              <br />
+              <span className="font-script text-[1.15em] font-normal italic text-[var(--wisteria-deep)]">
+                timeless
+              </span>{" "}
+              memories
+              <br />
+              for your <span className="italic text-[var(--royal)]">happily ever after</span>.
+            </motion.h1>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.95, delay: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-9 max-w-xl text-[1.02rem] leading-[1.9] text-[var(--ink)]/72 sm:text-[1.08rem]"
+            >
+              Blizzful Pink Eventt designs beautifully curated weddings, mehendi,
+              haldi, and sangeet celebrations — with the same discipline we
+              bring to large corporate productions. From concept to execution,
+              every detail is handled with creativity and precision.
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.9, delay: 0.55, ease: [0.22, 1, 0.36, 1] }}
+              className="mt-10 flex flex-wrap items-center gap-4"
+            >
+              <Link
+                href="/contact-us"
+                className="group inline-flex items-center gap-3 rounded-full bg-[var(--navy)] px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--navy-deep)]"
+              >
+                Plan your event
+                <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+              <Link
+                href="/gallery"
+                className="group inline-flex items-center gap-3 rounded-full border border-[var(--navy)]/35 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--navy)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--navy)] hover:bg-[var(--navy)] hover:text-[var(--ivory)]"
+              >
+                Explore the gallery
+              </Link>
+              <a
+                href={`tel:${company.phone[0].replace(/\s+/g, "")}`}
+                className="ml-1 inline-flex items-center gap-2 text-[0.74rem] font-medium uppercase tracking-[0.28em] text-[var(--wisteria-deep)] transition-colors hover:text-[var(--navy)]"
+              >
+                <FiPhone className="h-3.5 w-3.5" />
+                {company.phone[0]}
+              </a>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.95, delay: 0.85 }}
+              className="mt-12 grid grid-cols-3 gap-6 border-t border-[var(--navy)]/15 pt-7 lg:max-w-md"
+            >
+              {[
+                { value: "10+", label: "Years" },
+                { value: "200+", label: "Events" },
+                { value: "150+", label: "Brands" },
+              ].map((stat) => (
+                <div key={stat.label}>
+                  <p className="font-display text-3xl text-[var(--navy)] sm:text-4xl">
+                    {stat.value}
+                  </p>
+                  <p className="mt-1 text-[0.58rem] uppercase tracking-[0.38em] text-[var(--ink)]/55">
+                    {stat.label}
+                  </p>
+                </div>
+              ))}
+            </motion.div>
           </div>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
-            <Link href="/gallery" className={cn(buttonVariants({ size: "lg" }))}>
-              Explore Gallery
-            </Link>
-            <Link href="/contact-us" className={cn(buttonVariants({ variant: "ghost", size: "lg" }))}>
-              Plan Your Event
-            </Link>
-          </div>
-
-          <div className="flex flex-wrap gap-8 pt-4">
-            {stats.slice(0, 3).map((stat) => (
-              <div key={stat.label} className="min-w-[9rem]">
-                <p className="font-display text-5xl text-[var(--accent-soft)]">{stat.value}</p>
-                <p className="mt-2 text-[11px] uppercase tracking-[0.28em] text-white/50">{stat.label}</p>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        <div className="grid gap-5 lg:grid-cols-[0.74fr_1fr]">
-          <motion.article
-            style={{ y: yTwo }}
-            className="relative min-h-[24rem] overflow-hidden rounded-[2.4rem] border border-white/10 bg-white/6 sm:min-h-[38rem]"
-          >
-            <Image
-              src={editorialImages[0]}
-              alt="Wedding editorial placeholder"
-              fill
-              className="scale-110 object-cover opacity-26 blur-[5px] saturate-0"
-            />
-            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,8,8,0.06),rgba(8,8,8,0.82))]" />
-            <div className="absolute bottom-0 left-0 right-0 space-y-3 p-7 sm:p-8">
-              <p className="text-[11px] uppercase tracking-[0.36em] text-[var(--accent-soft)]">Wedding Functions</p>
-              <p className="max-w-sm font-display text-4xl leading-none sm:text-5xl">
-                Mehendi, Haldi, Sangeet, and Shaadi with atmosphere and emotional range.
-              </p>
-            </div>
-          </motion.article>
-
-          <div className="grid gap-5">
-            <motion.article
-              style={{ y: yOne }}
-              className="relative min-h-[15rem] overflow-hidden rounded-[2.1rem] border border-white/10 bg-white/6"
+          {/* Right image collage */}
+          <div className="relative lg:col-span-6">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.96 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
+              className="relative mx-auto aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-[2rem] shadow-[0_30px_80px_rgba(20,36,70,0.18)] ring-1 ring-white/80"
             >
               <Image
-                src={editorialImages[1]}
-                alt="Corporate event editorial placeholder"
+                src="/images/events/wedding-shaadi.jpg"
+                alt="Blizzful Pink Eventt mandap"
                 fill
-                className="scale-110 object-cover opacity-24 blur-[5px] saturate-0"
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
+                className="object-cover"
               />
-              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,8,8,0.04),rgba(8,8,8,0.78))]" />
-              <div className="absolute bottom-0 left-0 right-0 space-y-3 p-7">
-                <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--accent-soft)]">Corporate Precision</p>
-                <p className="max-w-sm font-display text-4xl leading-none">
-                  Conferences, exhibitions, and leadership forums staged with polish.
-                </p>
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.32))]" />
+              <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[var(--ivory)]">
+                <div>
+                  <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--sky)]">
+                    Featured
+                  </p>
+                  <p className="mt-1 font-display text-2xl italic">Wedding · Shaadi</p>
+                </div>
+                <span className="rounded-full bg-white/15 px-3 py-1 text-[0.55rem] uppercase tracking-[0.34em] backdrop-blur-md">
+                  Mumbai
+                </span>
               </div>
-            </motion.article>
+            </motion.div>
 
-            <motion.article
-              style={{ y: yTwo }}
-              className="rounded-[2.1rem] border border-white/10 bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.03))] p-7 backdrop-blur-md"
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute -bottom-10 -left-6 hidden aspect-square w-44 overflow-hidden rounded-[1.5rem] shadow-[0_20px_60px_rgba(20,36,70,0.22)] ring-1 ring-white/80 lg:block lg:-bottom-12 lg:w-56"
             >
-              <p className="text-[11px] uppercase tracking-[0.34em] text-[var(--accent-soft)]">Signature Promise</p>
-              <p className="mt-4 max-w-lg text-2xl leading-relaxed text-white/88">
-                Creative direction, floral design, hospitality, staging, AV, photography, and guest experience under one meticulous studio.
-              </p>
-              <Link href="/services" className="mt-7 inline-flex items-center gap-2 text-sm uppercase tracking-[0.2em] text-white/86">
-                View services <FiArrowUpRight />
-              </Link>
-            </motion.article>
+              <Image
+                src="/images/events/mehendi-ceremony.jpg"
+                alt="Mehendi ceremony detail"
+                fill
+                sizes="220px"
+                className="object-cover"
+              />
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute -right-3 top-6 hidden w-40 overflow-hidden rounded-[1.4rem] shadow-[0_20px_60px_rgba(20,36,70,0.18)] ring-1 ring-white/80 lg:block lg:w-48"
+            >
+              <div className="relative aspect-[3/4]">
+                <Image
+                  src="/images/events/sangeet-decor-1.jpg"
+                  alt="Sangeet stage detail"
+                  fill
+                  sizes="200px"
+                  className="object-cover"
+                />
+              </div>
+            </motion.div>
           </div>
         </div>
-      </Container>
+      </div>
     </section>
   );
 }

@@ -1,50 +1,111 @@
+"use client";
+
 import Link from "next/link";
-import { FiInstagram, FiMail, FiPhoneCall } from "react-icons/fi";
+import { FiInstagram, FiMail, FiPhone, FiMapPin, FiArrowUpRight } from "react-icons/fi";
 import { company, navigation } from "@/data/site-data";
-import { Container } from "@/components/ui/container";
+import { LogoMark } from "@/components/ui/logo";
+import { Wisteria } from "@/components/ui/wisteria";
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-white/8 bg-[linear-gradient(180deg,#0f0c0b,#080706)] text-white">
-      <Container className="grid gap-10 py-14 lg:grid-cols-[1.2fr_0.8fr_1fr]">
-        <div className="space-y-4">
-          <p className="text-[11px] uppercase tracking-[0.42em] text-[var(--accent-soft)]">Blizzful Pink Eventt</p>
-          <h3 className="font-display text-4xl">Crafted to feel cinematic, delivered with discipline.</h3>
-          <p className="max-w-xl text-sm leading-7 text-white/68">{company.description}</p>
+    <footer className="relative overflow-hidden bg-[var(--sky-soft)] text-[var(--navy)]">
+      <Wisteria className="absolute -left-10 -top-10 h-72 w-56" opacity={0.45} />
+      <Wisteria variant="right" className="absolute -right-10 -top-10 h-72 w-56" opacity={0.45} />
+
+      <div className="relative mx-auto w-full max-w-[100rem] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12">
+        <div className="text-center">
+          <div className="mx-auto h-16 w-16">
+            <LogoMark />
+          </div>
+          <p className="mt-5 font-script text-4xl text-[var(--navy)] sm:text-5xl">
+            Blizzful Pink Eventt
+          </p>
+          <p className="mt-2 text-[0.68rem] uppercase tracking-[0.5em] text-[var(--forest-soft)]">
+            Wedding Planner
+          </p>
+          <p className="mx-auto mt-7 max-w-xl text-[0.98rem] leading-[1.85] text-[var(--ink)]/70">
+            {company.description}
+          </p>
         </div>
 
-        <div>
-          <p className="mb-4 text-xs uppercase tracking-[0.32em] text-white/44">Navigate</p>
-          <div className="grid gap-3">
-            {navigation.map((item) => (
-              <Link key={item.href} href={item.href} className="text-sm text-white/72 transition hover:text-white">
-                {item.label}
-              </Link>
-            ))}
+        <div className="mt-20 grid gap-14 lg:grid-cols-3 lg:gap-16">
+          <div>
+            <p className="text-[0.6rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
+              Navigate
+            </p>
+            <div className="mt-6 grid gap-3 text-[0.95rem]">
+              {navigation.map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="link-underline w-fit text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+
+          <div className="space-y-5">
+            <p className="text-[0.6rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
+              Reach the studio
+            </p>
+            <div className="space-y-4 text-[0.95rem]">
+              {company.phone.map((number) => (
+                <a
+                  key={number}
+                  href={`tel:${number.replace(/\s+/g, "")}`}
+                  className="flex items-center gap-3 text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+                >
+                  <FiPhone className="h-4 w-4 text-[var(--wisteria-deep)]" />
+                  <span className="link-underline">{number}</span>
+                </a>
+              ))}
+              <a
+                href={`mailto:${company.email}`}
+                className="flex items-center gap-3 text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+              >
+                <FiMail className="h-4 w-4 text-[var(--wisteria-deep)]" />
+                <span className="link-underline">{company.email}</span>
+              </a>
+              <a
+                href={`https://instagram.com/${company.instagram}`}
+                target="_blank"
+                rel="noreferrer"
+                className="flex items-center gap-3 text-[var(--navy)]/80 transition-colors hover:text-[var(--navy)]"
+              >
+                <FiInstagram className="h-4 w-4 text-[var(--wisteria-deep)]" />
+                <span className="link-underline">@{company.instagram}</span>
+              </a>
+              <div className="flex items-center gap-3 text-[var(--navy)]/80">
+                <FiMapPin className="h-4 w-4 text-[var(--wisteria-deep)]" />
+                <span>{company.location}</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <p className="text-[0.6rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
+              Begin a project
+            </p>
+            <h3 className="mt-6 font-display text-4xl italic leading-tight text-[var(--navy)] sm:text-5xl">
+              Let&apos;s plan something <span className="font-script not-italic text-[var(--wisteria-deep)]">unforgettable</span>.
+            </h3>
+            <Link
+              href="/contact-us"
+              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy-deep)]"
+            >
+              Start the conversation
+              <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+            </Link>
           </div>
         </div>
 
-        <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.32em] text-white/44">Contact</p>
-          <a href={`tel:${company.phone[0].replace(/\s+/g, "")}`} className="flex items-center gap-3 text-sm text-white/72">
-            <FiPhoneCall className="h-4 w-4 text-[var(--accent-soft)]" />
-            {company.phone.join("  |  ")}
-          </a>
-          <a href={`mailto:${company.email}`} className="flex items-center gap-3 text-sm text-white/72">
-            <FiMail className="h-4 w-4 text-[var(--accent-soft)]" />
-            {company.email}
-          </a>
-          <a
-            href={`https://instagram.com/${company.instagram}`}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-3 text-sm text-white/72"
-          >
-            <FiInstagram className="h-4 w-4 text-[var(--accent-soft)]" />
-            @{company.instagram}
-          </a>
+        <div className="mt-20 flex flex-col items-center justify-between gap-3 border-t border-[var(--navy)]/15 pt-7 text-[0.62rem] uppercase tracking-[0.4em] text-[var(--navy)]/55 sm:flex-row">
+          <span>© {new Date().getFullYear()} {company.name}</span>
+          <span>Designed in Mumbai · Crafted with love</span>
         </div>
-      </Container>
+      </div>
     </footer>
   );
 }

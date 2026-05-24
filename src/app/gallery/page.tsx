@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { GalleryShowcase } from "@/components/gallery/gallery-showcase";
 import { PageHero } from "@/components/sections/page-hero";
+import { ContactCta } from "@/components/sections/contact-cta";
 
 export const metadata: Metadata = {
   title: "Gallery",
@@ -11,10 +12,14 @@ export default function GalleryPage() {
     <>
       <PageHero
         eyebrow="Gallery"
-        title="The visual center of the site, staged more like a cinematic portfolio."
-        description="Phase 1 still uses reusable local placeholders and structured JSON data, but the experience is now positioned like a premium image-led showcase with darker mood, stronger hierarchy, and quieter browsing controls."
+        title="A visual archive — staged like a film."
+        italicWord="archive"
+        description="Filter by ritual or format, then expand any frame into a fullscreen viewing mode tuned for the imagery."
+        image="/images/events/wedding-stage-2.jpg"
+        meta="Open any frame · Fullscreen viewing"
       />
       <GalleryShowcase />
+      <ContactCta />
     </>
   );
 }

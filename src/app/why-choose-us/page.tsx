@@ -3,6 +3,8 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { ContactCta } from "@/components/sections/contact-cta";
+import { Wisteria } from "@/components/ui/wisteria";
 import { reasonsToChooseUs } from "@/data/site-data";
 
 export const metadata: Metadata = {
@@ -14,30 +16,50 @@ export default function WhyChooseUsPage() {
     <>
       <PageHero
         eyebrow="Why Choose Us"
-        title="Premium aesthetics backed by dependable execution."
-        description="The source documents repeatedly point to quality, timing, customization, client satisfaction, support teams, and partner strength. This page reframes those messages with more authority and visual polish."
+        title="Premium aesthetics, dependable execution."
+        italicWord="dependable"
+        description="Creating timeless memories for your happily ever after — the studio is built around six commitments that define every project, regardless of scale."
+        image="/images/events/wedding-shaadi.jpg"
+        meta="Six commitments"
       />
-      <section className="bg-[linear-gradient(180deg,#090807,#14100d)] py-24 text-white sm:py-28">
-        <Container className="space-y-12">
+
+      <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+        <Wisteria className="absolute -right-12 -top-10 h-80 w-60" opacity={0.3} />
+        <Container>
           <SectionHeading
             eyebrow="Decision Drivers"
-            title="Reasons designed for real client decision-making."
-            description="Instead of generic sales copy, the website uses the strongest proof points available in the PDFs: service range, event volume, brand exposure, operational reliability, and partner depth."
-            theme="dark"
+            title={
+              <>
+                Designed for real{" "}
+                <span className="font-script italic text-[var(--wisteria-deep)]">client decisions</span>.
+              </>
+            }
+            description="Each principle is rooted in evidence from our portfolio — recurring strengths that clients consistently point to as reasons to return."
           />
-          <div className="grid gap-5 lg:grid-cols-2">
+
+          <div className="mt-16 grid gap-px border border-[var(--navy)]/12 bg-[var(--navy)]/12 sm:grid-cols-2 lg:grid-cols-3">
             {reasonsToChooseUs.map((reason, index) => (
-              <Reveal key={reason} delay={index * 0.06} className="rounded-[2rem] border border-white/10 bg-white/[0.05] p-8">
-                <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-soft)]">
-                  {String(index + 1).padStart(2, "0")}
+              <Reveal
+                key={reason.title}
+                delay={index * 0.05}
+                className="group bg-[var(--ivory)] p-9 transition-colors duration-500 hover:bg-[var(--sky-soft)] sm:p-11"
+              >
+                <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
+                  {String.fromCharCode(65 + index)}
                 </p>
-                <p className="mt-4 font-display text-4xl text-white">Why it matters</p>
-                <p className="mt-4 text-base leading-8 text-white/62">{reason}</p>
+                <p className="mt-8 font-display text-3xl leading-[1.04] text-[var(--navy)] transition-transform duration-500 group-hover:translate-x-1 sm:text-4xl">
+                  {reason.title}
+                </p>
+                <p className="mt-5 text-[0.95rem] leading-[1.85] text-[var(--ink)]/72">
+                  {reason.description}
+                </p>
               </Reveal>
             ))}
           </div>
         </Container>
       </section>
+
+      <ContactCta />
     </>
   );
 }

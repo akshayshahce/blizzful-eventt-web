@@ -1,14 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#17110d" />
-      <stop offset="100%" stop-color="#c7ac8c" />
-    </linearGradient>
-  </defs>
-  <rect width="256" height="256" rx="52" fill="url(#bg)" />
-  <circle cx="128" cy="128" r="86" fill="rgba(255,255,255,0.08)" />
-  <path
-    d="M81 57h50c39 0 58 16 58 44 0 18-9 30-27 38 26 8 39 24 39 50 0 39-28 60-80 60H81V57Zm29 28v43h23c17 0 27-7 27-22 0-14-10-21-27-21h-23Zm0 69v67h28c22 0 34-11 34-33 0-23-12-34-37-34h-25Z"
-    fill="#fffaf4"
-  />
+  <rect width="256" height="256" rx="48" fill="#1e3a78" />
+  <path d="M28 28 L132 28 L132 132 Z" fill="#1f5a3a" />
+  <g stroke="#d4e5f1" stroke-width="10" stroke-linecap="round" fill="none">
+    <path d="M88 70 Q146 70 146 112 Q146 138 102 138 Q146 138 146 174 Q146 220 80 220" />
+    <path d="M88 70 L88 220" />
+  </g>
+  <g fill="#1f5a3a">
+    <ellipse cx="128" cy="128" rx="11" ry="26" transform="rotate(-30 128 128)" />
+    <ellipse cx="128" cy="128" rx="11" ry="26" transform="rotate(30 128 128)" />
+    <ellipse cx="128" cy="128" rx="8" ry="18" />
+  </g>
 </svg>

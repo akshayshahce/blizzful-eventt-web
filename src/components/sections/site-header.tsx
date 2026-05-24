@@ -1,85 +1,129 @@
 "use client";
 
-import { AnimatePresence, motion, useScroll, useMotionValueEvent } from "framer-motion";
+import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { HiBars3BottomRight, HiXMark } from "react-icons/hi2";
+import { useEffect, useState } from "react";
+import { FiPhone } from "react-icons/fi";
 import { company, navigation } from "@/data/site-data";
-import { Container } from "@/components/ui/container";
+import { Logo, LogoMark } from "@/components/ui/logo";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, "change", (latest) => {
-    setScrolled(latest > 36);
+    const previous = scrollY.getPrevious() ?? 0;
+    setScrolled(latest > 30);
+    if (latest > previous && latest > 220) {
+      setHidden(true);
+    } else {
+      setHidden(false);
+    }
   });
 
+
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
-    <header className="pointer-events-none fixed inset-x-0 top-0 z-50">
-      <Container className="pt-4 sm:pt-5">
-        <motion.div
-          animate={{
-            paddingTop: scrolled ? 10 : 16,
-            paddingBottom: scrolled ? 10 : 16,
-            backgroundColor: scrolled ? "rgba(10,9,8,0.78)" : "rgba(22,18,15,0.34)",
-            borderColor: scrolled ? "rgba(255,255,255,0.10)" : "rgba(255,255,255,0.08)",
-            y: 0,
-          }}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
-          className="pointer-events-auto rounded-[1.8rem] border shadow-[0_26px_90px_rgba(0,0,0,0.16)] backdrop-blur-2xl"
+    <>
+      <motion.header
+        initial={false}
+        animate={{ y: hidden && !open ? -120 : 0 }}
+        transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+        className={cn(
+          "fixed inset-x-0 top-0 z-[60] transition-colors duration-500",
+          scrolled
+            ? "bg-[rgba(251,248,242,0.92)] backdrop-blur-xl shadow-[0_8px_30px_rgba(20,36,70,0.06)]"
+            : "bg-transparent",
+        )}
+      >
+        <div
+          className={cn(
+            "mx-auto flex w-full max-w-[100rem] items-center justify-between px-5 transition-all duration-500 sm:px-8 lg:px-12",
+            scrolled ? "py-3" : "py-5",
+          )}
         >
-          <div className="flex items-center justify-between px-4 sm:px-5">
-            <Link href="/" className="flex items-center gap-3 text-white">
-              <div className="flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.18),rgba(255,255,255,0.04))] font-display text-xl">
-                B
-              </div>
-              <div>
-                <p className="font-display text-[1.65rem] leading-none">{company.shortName}</p>
-                <p className="text-[9px] uppercase tracking-[0.42em] text-white/56">Eventt</p>
-              </div>
+          <Link href="/" aria-label="Blizzful Pink Eventt — Home">
+            <Logo />
+          </Link>
+
+          <nav className="hidden items-center gap-1 lg:flex">
+            {navigation.slice(1, 7).map((item) => {
+              const active = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={cn(
+                    "relative px-3 py-2 text-[0.74rem] font-medium uppercase tracking-[0.28em] transition-colors duration-300",
+                    active
+                      ? "text-[var(--navy)]"
+                      : "text-[var(--ink)]/65 hover:text-[var(--navy)]",
+                  )}
+                >
+                  <span className="relative z-10">{item.label}</span>
+                  {active ? (
+                    <motion.span
+                      layoutId="nav-marker"
+                      className="absolute left-1/2 top-full -translate-x-1/2 h-[2px] w-5 bg-[var(--wisteria-deep)]"
+                      transition={{ type: "spring", stiffness: 220, damping: 26 }}
+                    />
+                  ) : null}
+                </Link>
+              );
+            })}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <a
+              href={`tel:${company.phone[0].replace(/\s+/g, "")}`}
+              className="hidden items-center gap-2 text-[0.72rem] font-medium uppercase tracking-[0.28em] text-[var(--navy)] transition-colors hover:text-[var(--wisteria-deep)] xl:inline-flex"
+            >
+              <FiPhone className="h-3.5 w-3.5" />
+              {company.phone[0]}
+            </a>
+            <Link
+              href="/contact-us"
+              className="hidden items-center gap-2 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-5 py-2.5 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy-deep)] hover:border-[var(--navy-deep)] sm:inline-flex"
+            >
+              Plan with us
             </Link>
-
-            <nav className="hidden items-center gap-1 lg:flex">
-              {navigation.map((item) => {
-                const active = pathname === item.href;
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    className={cn(
-                      "relative rounded-full px-4 py-3 text-[11px] uppercase tracking-[0.24em] text-white/70 transition duration-500 hover:text-white",
-                      active && "text-white",
-                    )}
-                  >
-                    {active ? (
-                      <motion.span
-                        layoutId="nav-pill"
-                        className="absolute inset-0 rounded-full border border-white/10 bg-white/10"
-                        transition={{ type: "spring", stiffness: 220, damping: 28 }}
-                      />
-                    ) : null}
-                    <span className="relative z-10">{item.label}</span>
-                  </Link>
-                );
-              })}
-            </nav>
-
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white lg:hidden"
               onClick={() => setOpen((value) => !value)}
-              aria-label="Toggle navigation"
+              className="group relative flex h-11 w-11 items-center justify-center rounded-full border border-[var(--navy)]/25 text-[var(--navy)] transition-colors duration-300 hover:border-[var(--navy)] lg:hidden"
+              aria-label={open ? "Close menu" : "Open menu"}
             >
-              {open ? <HiXMark className="h-6 w-6" /> : <HiBars3BottomRight className="h-6 w-6" />}
+              <span className="relative block h-3 w-5">
+                <motion.span
+                  className="absolute left-0 right-0 h-px bg-current"
+                  animate={open ? { top: 6, rotate: 45 } : { top: 0, rotate: 0 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                />
+                <motion.span
+                  className="absolute left-0 right-0 h-px bg-current"
+                  animate={open ? { top: 6, rotate: -45 } : { top: 12, rotate: 0 }}
+                  transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                />
+              </span>
             </button>
           </div>
-        </motion.div>
-      </Container>
+        </div>
+      </motion.header>
 
       <AnimatePresence>
         {open ? (
@@ -87,60 +131,86 @@ export function SiteHeader() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="pointer-events-auto fixed inset-0 bg-[rgba(8,7,7,0.72)] backdrop-blur-2xl lg:hidden"
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+            className="fixed inset-0 z-[55] bg-[var(--sky-soft)] text-[var(--navy)] lg:hidden"
           >
-            <Container className="flex min-h-screen flex-col justify-between py-6">
-              <div className="flex items-center justify-between">
-                <p className="font-display text-3xl text-white">{company.shortName}</p>
-                <button
-                  type="button"
-                  className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/15 text-white"
-                  onClick={() => setOpen(false)}
-                  aria-label="Close navigation"
-                >
-                  <HiXMark className="h-6 w-6" />
-                </button>
+            <div className="relative mx-auto flex h-full w-full max-w-[100rem] flex-col px-5 pb-12 pt-28 sm:px-8">
+              <div className="flex items-center gap-3">
+                <span className="block h-12 w-12">
+                  <LogoMark />
+                </span>
+                <span className="font-script text-3xl text-[var(--navy)]">
+                  Blizzful Pink Eventt
+                </span>
               </div>
-              <motion.div
+
+              <motion.nav
                 initial="hidden"
                 animate="show"
                 exit="hidden"
                 variants={{
                   hidden: {},
-                  show: {
-                    transition: {
-                      staggerChildren: 0.07,
-                    },
-                  },
+                  show: { transition: { staggerChildren: 0.05, delayChildren: 0.1 } },
                 }}
-                className="flex flex-col"
+                className="mt-12 flex flex-col"
               >
-                {navigation.map((item) => (
+                {navigation.map((item, index) => (
                   <motion.div
                     key={item.href}
                     variants={{
-                      hidden: { opacity: 0, y: 16 },
+                      hidden: { opacity: 0, y: 24 },
                       show: { opacity: 1, y: 0 },
                     }}
-                    transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                    transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+                    className="border-t border-[var(--navy)]/15 last:border-b"
                   >
                     <Link
                       href={item.href}
-                      className={cn(
-                        "block border-b border-white/8 py-5 font-display text-4xl text-white/80",
-                        pathname === item.href && "text-[var(--accent-soft)]",
-                      )}
+                      onClick={() => setOpen(false)}
+                      className="group flex items-baseline justify-between py-5"
                     >
-                      {item.label}
+                      <span className="flex items-baseline gap-5">
+                        <span className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
+                          {String(index + 1).padStart(2, "0")}
+                        </span>
+                        <span
+                          className={cn(
+                            "font-display text-3xl tracking-tight transition-transform duration-500 group-hover:translate-x-2 sm:text-4xl",
+                            pathname === item.href && "italic text-[var(--wisteria-deep)]",
+                          )}
+                        >
+                          {item.label}
+                        </span>
+                      </span>
                     </Link>
                   </motion.div>
                 ))}
-              </motion.div>
-              <p className="max-w-sm text-sm leading-7 text-white/55">{company.tagline}</p>
-            </Container>
+              </motion.nav>
+
+              <div className="mt-10 space-y-3 text-sm">
+                <a href={`mailto:${company.email}`} className="block text-base text-[var(--navy)]">
+                  {company.email}
+                </a>
+                <a href={`tel:${company.phone[0].replace(/\s+/g, "")}`} className="block text-base text-[var(--navy)]">
+                  {company.phone[0]}
+                </a>
+                <a
+                  href={`https://instagram.com/${company.instagram}`}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block text-base text-[var(--navy)]"
+                >
+                  @{company.instagram}
+                </a>
+              </div>
+              <div className="mt-auto flex items-center justify-between border-t border-[var(--navy)]/15 pt-6 text-[0.58rem] uppercase tracking-[0.4em] text-[var(--navy)]/55">
+                <span>Mumbai · Pan-India</span>
+                <span>© {new Date().getFullYear()}</span>
+              </div>
+            </div>
           </motion.div>
         ) : null}
       </AnimatePresence>
-    </header>
+    </>
   );
 }

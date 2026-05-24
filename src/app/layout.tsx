@@ -1,35 +1,47 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Manrope } from "next/font/google";
+import { Cormorant_Garamond, Inter, Great_Vibes } from "next/font/google";
 import "./globals.css";
 import { SiteHeader } from "@/components/sections/site-header";
 import { SiteFooter } from "@/components/sections/site-footer";
 import { ClientShell } from "@/components/ui/client-shell";
+import { PageTransition } from "@/components/ui/page-transition";
 
-const manrope = Manrope({
+const inter = Inter({
   variable: "--font-manrope",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700"],
+  style: ["normal", "italic"],
+  display: "swap",
+});
+
+const greatVibes = Great_Vibes({
+  variable: "--font-script",
+  subsets: ["latin"],
+  weight: ["400"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "Blizzful Pink Eventt | Luxury Weddings and Premium Event Experiences",
-    template: "%s | Blizzful Pink Eventt",
+    default: "Blizzful Pink Eventt | Wedding & Corporate Event Planner",
+    template: "%s — Blizzful Pink Eventt",
   },
   description:
-    "Luxury wedding planning, corporate event execution, exhibitions, decor styling, hospitality experiences, and cinematic gallery storytelling by Blizzful Pink Eventt.",
+    "Blizzful Pink Eventt is a Mumbai-based wedding and event management studio crafting elegant weddings, mehendi, haldi, sangeet, and large-scale corporate productions.",
   keywords: [
     "Blizzful Pink Eventt",
-    "wedding planner",
-    "event management company",
+    "wedding planner Mumbai",
+    "event management",
+    "destination weddings",
     "corporate events",
-    "wedding decor",
-    "Mumbai event planner",
+    "mehendi haldi sangeet",
+    "Mumbai wedding planner",
   ],
 };
 
@@ -39,14 +51,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${cormorant.variable} antialiased`}>
-      <body>
-        <div className="min-h-screen bg-[var(--background)] text-[var(--foreground)]">
-          <ClientShell />
-          <SiteHeader />
+    <html
+      lang="en"
+      className={`${inter.variable} ${cormorant.variable} ${greatVibes.variable} antialiased`}
+    >
+      <body className="bg-[var(--ivory)] text-[var(--ink)]">
+        <ClientShell />
+        <SiteHeader />
+        <PageTransition>
           <main>{children}</main>
           <SiteFooter />
-        </div>
+        </PageTransition>
       </body>
     </html>
   );

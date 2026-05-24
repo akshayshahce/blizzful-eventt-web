@@ -2,19 +2,44 @@
 @import "yet-another-react-lightbox/styles.css";
 
 :root {
-  --background: #f6efe6;
-  --foreground: #1a1410;
-  --muted-foreground: #645646;
-  --surface: #efe4d6;
-  --surface-strong: #0d0a09;
-  --accent: #e7d5bf;
-  --accent-strong: #c48e66;
-  --accent-soft: #f1e3ce;
-  --accent-soft-strong: #b38461;
-  --accent-contrast: #15110d;
-  --border: rgba(64, 44, 28, 0.1);
-  --border-strong: rgba(64, 44, 28, 0.18);
-  --ring: rgba(196, 142, 102, 0.45);
+  /* Blizzful Pink Eventt palette — soft sky blue, royal navy, wisteria, blush */
+  --ivory: #fbf8f2;
+  --ivory-soft: #f5f0e6;
+  --ivory-warm: #efe7d6;
+  --cream: #f6efe2;
+  --paper: #ffffff;
+
+  --sky: #d4e5f1;
+  --sky-soft: #e6f0f7;
+  --sky-deep: #b6cde0;
+
+  --wisteria: #b3a2d2;
+  --wisteria-soft: #d4c7ea;
+  --wisteria-deep: #7d6bb0;
+
+  --blush: #f3d6dc;
+  --blush-deep: #e3a9b5;
+
+  --navy: #1e3a78;
+  --navy-deep: #14275a;
+  --royal: #2c4a8a;
+  --forest: #1f5a3a;
+  --forest-soft: #2c7a51;
+  --gold: #b89765;
+
+  --ink: #142446;
+  --ink-soft: #1d2f55;
+  --charcoal: #2a3b62;
+  --muted: #6b7a93;
+  --stone: #98a4b6;
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --muted-foreground: var(--muted);
+
+  --border: rgba(30, 58, 120, 0.12);
+  --border-strong: rgba(30, 58, 120, 0.22);
+  --ring: rgba(125, 107, 176, 0.45);
 }
 
 @theme inline {
@@ -22,6 +47,7 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-manrope);
   --font-display: var(--font-cormorant);
+  --font-script: var(--font-script);
 }
 
 * {
@@ -29,19 +55,37 @@
 }
 
 html {
-  scroll-behavior: smooth;
-  background: #080706;
+  background: var(--ivory);
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
-  background:
-    radial-gradient(circle at top, rgba(255, 255, 255, 0.72), transparent 32%),
-    linear-gradient(180deg, #f9f4ed 0%, #f3e9dd 100%);
+  background: var(--ivory);
   color: var(--foreground);
   font-family: var(--font-manrope), sans-serif;
+  font-feature-settings: "ss01", "ss02", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
 }
 
 a,
@@ -51,33 +95,139 @@ button {
 
 .font-display {
   font-family: var(--font-cormorant), serif;
+  font-feature-settings: "liga", "dlig", "salt";
 }
 
-.glass-panel {
-  background: rgba(255, 255, 255, 0.48);
-  backdrop-filter: blur(22px);
+.font-script {
+  font-family: var(--font-script), cursive;
+}
+
+.tracking-luxury {
+  letter-spacing: 0.42em;
+}
+
+.text-eyebrow {
+  font-size: 0.66rem;
+  letter-spacing: 0.42em;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.editorial-rule {
+  display: inline-block;
+  width: 2.5rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.55;
 }
 
 ::selection {
-  background: rgba(196, 142, 102, 0.28);
+  background: rgba(125, 107, 176, 0.28);
+  color: var(--navy);
 }
 
-[data-cursor="luxury"] a,
-[data-cursor="luxury"] button {
-  cursor: none;
+@keyframes marquee {
+  from { transform: translate3d(0, 0, 0); }
+  to { transform: translate3d(-50%, 0, 0); }
+}
+
+.marquee-track {
+  animation: marquee 42s linear infinite;
+  will-change: transform;
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, rgba(180, 162, 210, 0.25) 0%, var(--wisteria) 50%, rgba(180, 162, 210, 0.25) 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6.5s ease-in-out infinite;
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.link-underline:hover::after {
+  transform: scaleX(1);
+}
+
+.wisteria-divider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  color: var(--wisteria-deep);
+}
+
+.wisteria-divider::before,
+.wisteria-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(125, 107, 176, 0.35), transparent);
 }
 
 .yarl__container {
-  --yarl__color_backdrop: rgba(5, 5, 5, 0.94);
-  --yarl__color_button: rgba(255, 244, 230, 0.85);
-  --yarl__color_button_active: rgba(255, 244, 230, 1);
-  --yarl__color_button_disabled: rgba(255, 244, 230, 0.28);
-  --yarl__color_icon: rgba(255, 244, 230, 0.92);
-  --yarl__slide_title_color: rgba(255, 244, 230, 0.96);
-  --yarl__slide_description_color: rgba(255, 244, 230, 0.68);
+  --yarl__color_backdrop: rgba(20, 36, 70, 0.96);
+  --yarl__color_button: rgba(251, 248, 242, 0.86);
+  --yarl__color_button_active: rgba(251, 248, 242, 1);
+  --yarl__color_button_disabled: rgba(251, 248, 242, 0.24);
+  --yarl__color_icon: rgba(251, 248, 242, 0.92);
+  --yarl__slide_title_color: rgba(251, 248, 242, 0.96);
+  --yarl__slide_description_color: rgba(251, 248, 242, 0.7);
+}
+
+/* Ensure lightbox slides centre their image content */
+.yarl__slide {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+}
+
+.yarl__slide_image_cover,
+.yarl__slide_image,
+.yarl__slide img {
+  margin: auto !important;
+  object-fit: contain !important;
+  max-width: min(92vw, 1400px) !important;
+  max-height: min(82vh, 900px) !important;
+}
+
+.yarl__slide_captions_container {
+  text-align: center !important;
+  padding: 1rem 2rem 2rem !important;
 }
 
 .yarl__thumbnails_container,
 .yarl__toolbar {
-  backdrop-filter: blur(18px);
+  backdrop-filter: blur(20px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track {
+    animation: none;
+  }
 }

@@ -1,11 +1,15 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
 
 type SectionHeadingProps = {
   eyebrow: string;
-  title: string;
-  description: string;
+  title: React.ReactNode;
+  description?: React.ReactNode;
   align?: "left" | "center";
   theme?: "light" | "dark";
+  index?: string;
 };
 
 export function SectionHeading({
@@ -14,33 +18,61 @@ export function SectionHeading({
   description,
   align = "left",
   theme = "light",
+  index,
 }: SectionHeadingProps) {
+  const dark = theme === "dark";
+
   return (
-    <div className={cn("max-w-3xl space-y-4", align === "center" && "mx-auto text-center")}>
-      <p
+    <div
+      className={cn(
+        "max-w-3xl space-y-6",
+        align === "center" && "mx-auto text-center",
+      )}
+    >
+      <motion.div
+        initial={{ opacity: 0, y: 14 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-15%" }}
+        transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
         className={cn(
-          "text-[11px] font-semibold uppercase tracking-[0.42em]",
-          theme === "light" ? "text-[var(--accent-soft-strong)]" : "text-[var(--accent-soft)]",
+          "flex items-center gap-4 text-[0.62rem] font-medium uppercase tracking-[0.46em]",
+          align === "center" && "justify-center",
+          dark ? "text-[var(--sky)]" : "text-[var(--wisteria-deep)]",
         )}
       >
-        {eyebrow}
-      </p>
-      <h2
+        {index ? <span className="opacity-70">{index}</span> : null}
+        <span className="editorial-rule" />
+        <span>{eyebrow}</span>
+      </motion.div>
+
+      <motion.h2
+        initial={{ opacity: 0, y: 22 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-15%" }}
+        transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.08 }}
         className={cn(
-          "font-display text-5xl leading-[0.92] sm:text-6xl lg:text-[4.6rem]",
-          theme === "light" ? "text-[var(--foreground)]" : "text-white",
+          "font-display text-4xl leading-[1.02] sm:text-5xl lg:text-[4.2rem]",
+          dark ? "text-[var(--ivory)]" : "text-[var(--navy)]",
         )}
       >
         {title}
-      </h2>
-      <p
-        className={cn(
-          "max-w-2xl text-base leading-8 sm:text-lg",
-          theme === "light" ? "text-[var(--muted-foreground)]" : "text-white/64",
-        )}
-      >
-        {description}
-      </p>
+      </motion.h2>
+
+      {description ? (
+        <motion.p
+          initial={{ opacity: 0, y: 14 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-15%" }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.18 }}
+          className={cn(
+            "max-w-2xl text-base leading-[1.85] sm:text-[1.02rem]",
+            align === "center" && "mx-auto",
+            dark ? "text-[var(--ivory)]/68" : "text-[var(--ink)]/72",
+          )}
+        >
+          {description}
+        </motion.p>
+      ) : null}
     </div>
   );
 }

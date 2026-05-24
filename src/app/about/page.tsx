@@ -4,87 +4,182 @@ import { PageHero } from "@/components/sections/page-hero";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { company, featuredExperiences, galleryItems, stats } from "@/data/site-data";
+import { ContactCta } from "@/components/sections/contact-cta";
+import { MarqueeStrip } from "@/components/sections/marquee-strip";
+import { Wisteria } from "@/components/ui/wisteria";
+import { company, featuredExperiences, stats } from "@/data/site-data";
 
 export const metadata: Metadata = {
   title: "About",
 };
+
+const heroImage = "/images/events/wedding-stage-1.jpg";
+
+const experienceImages = [
+  "/images/events/wedding-shaadi.jpg",
+  "/images/events/sangeet-decor-1.jpg",
+  "/images/events/mehendi-decor-1.jpg",
+];
 
 export default function AboutPage() {
   return (
     <>
       <PageHero
         eyebrow="About Us"
-        title="A refined event studio shaped by weddings, hospitality, and large-format experiences."
-        description="The attached company profiles position Blizzful Pink Eventt as both a wedding planner and a broader event management partner. This version frames that dual identity more like a creative event house than a standard service company."
+        title="Crafting timeless weddings and trusted corporate productions."
+        italicWord="timeless"
+        description={company.description}
+        image={heroImage}
+        meta="Est. 2014 — Mumbai"
       />
-      <section className="bg-[linear-gradient(180deg,#090807,#15110e)] py-24 text-white sm:py-28">
-        <Container className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-          <SectionHeading
-            eyebrow="Identity"
-            title="Emotion-led for private celebrations. Process-led for professional events."
-            description={company.description}
-            theme="dark"
-          />
-          <Reveal className="rounded-[2.4rem] border border-white/10 bg-white/[0.06] p-8 shadow-[0_28px_100px_rgba(0,0,0,0.16)] backdrop-blur-xl">
-            <p className="text-lg leading-9 text-white/86">
-              The wedding deck highlights romance, celebration rituals, decor, entries, and family-facing services. The corporate deck adds conferences, summits, exhibitions, institutional events, LED and AV infrastructure, hospitality, premium vendor empanelment, and structured delivery.
-            </p>
-            <p className="mt-6 text-base leading-8 text-white/62">
-              The resulting brand position is stronger than either PDF on its own: a luxury event partner able to design emotionally resonant moments while still operating with commercial-grade execution standards.
-            </p>
-          </Reveal>
-        </Container>
-      </section>
 
-      <section className="bg-[linear-gradient(180deg,#f8f1e9,#f1e6d8)] py-24 sm:py-28">
-        <Container className="grid gap-5 lg:grid-cols-4">
-          {stats.map((stat, index) => (
-            <Reveal key={stat.label} delay={index * 0.05} className="rounded-[2rem] border border-white/70 bg-[rgba(255,252,247,0.76)] p-7 backdrop-blur-xl">
-              <p className="font-display text-6xl">{stat.value}</p>
-              <p className="mt-3 text-[11px] uppercase tracking-[0.28em] text-[var(--accent-soft-strong)]">{stat.label}</p>
-              <p className="mt-4 text-sm leading-7 text-[var(--muted-foreground)]">{stat.detail}</p>
+      <section className="relative overflow-hidden bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+        <Wisteria className="absolute -right-12 -top-10 h-72 w-52" opacity={0.32} />
+        <Container>
+          <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
+            <div className="lg:col-span-7">
+              <SectionHeading
+                eyebrow="Identity"
+                title={
+                  <>
+                    Emotion-led for celebrations.
+                    <br />
+                    <span className="italic">Process-led</span> for productions.
+                  </>
+                }
+                description="The studio carries dual fluency — equally at home shaping family rituals and orchestrating boardroom-scale events. The result is a partner who can switch registers without losing taste."
+              />
+            </div>
+            <Reveal className="lg:col-span-5" delay={0.15}>
+              <div className="space-y-6 rounded-[1.8rem] border border-[var(--navy)]/12 bg-[var(--sky-soft)] p-9">
+                <p className="text-[1rem] leading-[1.9] text-[var(--ink)]/85">
+                  Wedding work draws from rituals, fashion, floral language,
+                  and emotional staging. Corporate work draws from technical
+                  programming, vendor empanelment, and brand hospitality. The
+                  shared layer is taste — every detail composed.
+                </p>
+                <p className="text-[0.95rem] leading-[1.85] text-[var(--ink)]/70">
+                  We collaborate with discerning families, leading institutions,
+                  and brands who treat their events as part of their identity.
+                </p>
+              </div>
             </Reveal>
-          ))}
+          </div>
         </Container>
       </section>
 
-      <section className="bg-[linear-gradient(180deg,#100d0b,#080706)] py-24 text-white sm:py-28">
-        <Container className="space-y-16">
+      <MarqueeStrip
+        items={["Weddings", "Conferences", "Hospitality", "Exhibitions", "Concerts", "Decor"]}
+        theme="navy"
+      />
+
+      <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--navy)] sm:py-32 lg:py-36">
+        <Container>
           <SectionHeading
-            eyebrow="Event Spectrum"
-            title="A broader event range than a typical wedding-only planner."
-            description="The company materials explicitly mention social functions, corporate and professional gatherings, government and institutional events, exhibitions, trade shows, concerts, and festivals."
-            theme="dark"
+            eyebrow="By the numbers"
+            title={
+              <>
+                Trusted across{" "}
+                <span className="font-script italic text-[var(--wisteria-deep)]">150+ brands</span>{" "}
+                and counting.
+              </>
+            }
+            description="A decade of celebrations and corporate productions — quietly shaping one of Mumbai's most trusted event execution rosters."
           />
-          <div className="space-y-8">
-            {featuredExperiences.map((experience, index) => (
-              <Reveal key={experience.title} delay={index * 0.08}>
-                <article className="grid gap-6 border-t border-white/10 pt-8 lg:grid-cols-[0.88fr_1.12fr] lg:items-center">
-                  <div className={index % 2 === 1 ? "lg:order-2" : ""}>
-                    <p className="text-[11px] uppercase tracking-[0.3em] text-[var(--accent-soft)]">
-                      {String(index + 1).padStart(2, "0")}
-                    </p>
-                    <h3 className="mt-4 font-display text-5xl leading-[0.92] sm:text-6xl">{experience.title}</h3>
-                    <p className="mt-4 max-w-xl text-base leading-8 text-white/62">{experience.description}</p>
-                  </div>
-                  <div className={index % 2 === 1 ? "lg:order-1" : ""}>
-                    <div className="relative min-h-[20rem] overflow-hidden rounded-[2.2rem] border border-white/10 bg-white/6">
-                      <Image
-                        src={galleryItems[index === 0 ? 0 : index === 1 ? 4 : 5].src}
-                        alt={experience.title}
-                        fill
-                        className="scale-110 object-cover opacity-32 blur-[6px] saturate-0"
-                      />
-                      <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(8,8,8,0.08),rgba(8,8,8,0.76))]" />
-                    </div>
-                  </div>
-                </article>
+          <div className="mt-16 grid gap-px border border-[var(--navy)]/12 bg-[var(--navy)]/12 sm:grid-cols-2 lg:grid-cols-4">
+            {stats.map((stat, index) => (
+              <Reveal
+                key={stat.label}
+                delay={index * 0.06}
+                className="relative bg-[var(--ivory)] p-9 sm:p-11"
+              >
+                <p className="text-[0.58rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
+                  {String(index + 1).padStart(2, "0")}
+                </p>
+                <p className="mt-7 font-display text-5xl tracking-tight text-[var(--navy)] sm:text-6xl">
+                  {stat.value}
+                </p>
+                <p className="mt-3 text-[0.62rem] uppercase tracking-[0.36em] text-[var(--ink)]/65">
+                  {stat.label}
+                </p>
+                <p className="mt-4 text-sm leading-[1.8] text-[var(--ink)]/70">
+                  {stat.detail}
+                </p>
               </Reveal>
             ))}
           </div>
         </Container>
       </section>
+
+      <section className="bg-[var(--ivory)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+        <Container>
+          <SectionHeading
+            eyebrow="Event Spectrum"
+            title={
+              <>
+                Three event{" "}
+                <span className="italic text-[var(--wisteria-deep)]">disciplines</span>,
+                <br /> composed under one studio.
+              </>
+            }
+            description="From wedding weekends to public productions, the studio's range allows it to work across emotional, professional, and large-format formats with the same level of polish."
+          />
+          <div className="mt-20 space-y-20 lg:space-y-24">
+            {featuredExperiences.map((experience, index) => {
+              const reverse = index % 2 === 1;
+              return (
+                <Reveal
+                  key={experience.title}
+                  className="grid gap-10 lg:grid-cols-12 lg:items-center lg:gap-14"
+                  delay={index * 0.04}
+                >
+                  <div
+                    className={
+                      reverse
+                        ? "lg:order-2 lg:col-span-5 lg:col-start-8"
+                        : "lg:col-span-5"
+                    }
+                  >
+                    <p className="text-[0.6rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
+                      {String(index + 1).padStart(2, "0")}
+                    </p>
+                    <h3 className="mt-5 font-display text-4xl leading-[1.04] tracking-tight text-[var(--navy)] sm:text-5xl">
+                      {experience.title}
+                    </h3>
+                    <p className="mt-5 max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/72">
+                      {experience.description}
+                    </p>
+                    <div className="mt-7 flex flex-wrap gap-2 text-[0.6rem] uppercase tracking-[0.34em] text-[var(--navy)]/65">
+                      {experience.points.map((point) => (
+                        <span
+                          key={point}
+                          className="rounded-full border border-[var(--navy)]/20 px-4 py-2"
+                        >
+                          {point}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  <div className={reverse ? "lg:order-1 lg:col-span-7" : "lg:col-span-7"}>
+                    <div className="relative aspect-[5/4] overflow-hidden rounded-[2rem] ring-1 ring-[var(--navy)]/10">
+                      <Image
+                        src={experienceImages[index] ?? experienceImages[0]}
+                        alt={experience.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 60vw"
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.4))]" />
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
+      <ContactCta />
     </>
   );
 }

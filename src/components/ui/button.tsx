@@ -3,20 +3,23 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-full border text-sm font-medium tracking-[0.22em] uppercase transition duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] disabled:pointer-events-none disabled:opacity-50",
+  "group relative inline-flex items-center justify-center gap-3 overflow-hidden whitespace-nowrap rounded-full border text-[0.7rem] font-medium uppercase tracking-[0.32em] transition-all duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ring)] disabled:pointer-events-none disabled:opacity-50",
   {
     variants: {
       variant: {
         primary:
-          "border-[rgba(255,244,230,0.18)] bg-[linear-gradient(135deg,rgba(243,229,205,0.92),rgba(196,142,102,0.95))] px-6 py-3 text-[#17110d] shadow-[0_18px_70px_rgba(121,84,55,0.28)] hover:-translate-y-1 hover:scale-[1.01] hover:shadow-[0_24px_100px_rgba(121,84,55,0.4)]",
-        secondary:
-          "border-[color:rgba(79,58,41,0.18)] bg-[rgba(255,249,242,0.6)] px-6 py-3 text-[var(--foreground)] backdrop-blur-sm hover:-translate-y-0.5 hover:border-[var(--accent-strong)] hover:bg-[rgba(255,255,255,0.88)]",
+          "border-[var(--navy)] bg-[var(--navy)] px-7 py-4 text-[var(--ivory)] hover:bg-[var(--navy-deep)]",
+        outline:
+          "border-[var(--navy)]/30 bg-transparent px-7 py-4 text-[var(--navy)] hover:border-[var(--navy)] hover:bg-[var(--navy)] hover:text-[var(--ivory)]",
         ghost:
-          "border-[color:rgba(255,255,255,0.18)] bg-white/8 px-5 py-3 text-white hover:-translate-y-0.5 hover:bg-white/14",
+          "border-[var(--ivory)]/30 bg-transparent px-7 py-4 text-[var(--ivory)] hover:border-[var(--sky)] hover:text-[var(--sky)]",
+        wisteria:
+          "border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-7 py-4 text-[var(--ivory)] hover:bg-[var(--navy)]",
       },
       size: {
         default: "",
-        lg: "px-8 py-4 text-[0.78rem]",
+        sm: "px-5 py-3 text-[0.64rem]",
+        lg: "px-9 py-5 text-[0.74rem]",
       },
     },
     defaultVariants: {
@@ -31,12 +34,14 @@ export interface ButtonProps
     VariantProps<typeof buttonVariants> {}
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, ...props }, ref) => (
+  ({ className, variant, size, children, ...props }, ref) => (
     <button
       className={cn(buttonVariants({ variant, size, className }))}
       ref={ref}
       {...props}
-    />
+    >
+      <span className="relative z-10 flex items-center gap-3">{children}</span>
+    </button>
   ),
 );
 
