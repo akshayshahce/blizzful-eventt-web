@@ -56,16 +56,16 @@ export default function ServicesPage() {
         theme="dark"
       />
 
-      <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
-        <Wisteria className="absolute -left-10 -top-6 h-72 w-52" opacity={0.32} />
-        <Wisteria variant="right" className="absolute -right-10 -top-6 h-72 w-52" opacity={0.32} />
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
+        <Wisteria className="absolute -left-10 -top-6 h-72 w-52" opacity={0.2} />
+        <Wisteria variant="right" className="absolute -right-10 -top-6 h-72 w-52" opacity={0.2} />
         <Container>
           <SectionHeading
             eyebrow="Other Services"
             title={
               <>
                 The small details that{" "}
-                <span className="font-script italic text-[var(--wisteria-deep)]">complete</span>{" "}
+                <span className="font-script italic text-[var(--wisteria-deep)] glow-purple">complete</span>{" "}
                 the picture.
               </>
             }
@@ -76,21 +76,21 @@ export default function ServicesPage() {
               <Reveal
                 key={service.title}
                 delay={index * 0.04}
-                className="group rounded-[1.5rem] border border-[var(--navy)]/12 bg-[var(--surface)] p-7 transition-colors duration-500 hover:bg-[var(--paper)]"
+                className="group rounded-[1.5rem] border border-[var(--ivory)]/8 bg-[rgba(255,255,255,0.03)] p-7 transition-all duration-500 hover:border-[var(--wisteria-deep)]/40 hover:bg-[rgba(168,85,247,0.06)] hover:-translate-y-1"
               >
-                <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
+                <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)] glow-purple">
                   {String(index + 1).padStart(2, "0")}
                 </p>
-                <h3 className="mt-7 font-display text-2xl leading-tight text-[var(--navy)] sm:text-3xl">
+                <h3 className="mt-7 font-display text-2xl leading-tight text-[var(--ivory)] glow-white sm:text-3xl">
                   {service.title}
                 </h3>
-                <p className="mt-3 text-[0.92rem] leading-[1.8] text-[var(--ink)]/70">
+                <p className="mt-3 text-[0.92rem] leading-[1.8] text-[var(--ivory)]/55">
                   {service.description}
                 </p>
               </Reveal>
             ))}
           </div>
-          <p className="mt-12 rounded-full bg-[var(--wisteria-soft)]/60 px-6 py-3 text-center text-[0.7rem] uppercase tracking-[0.34em] text-[var(--navy)]">
+          <p className="mt-12 rounded-full border border-[var(--wisteria-deep)]/25 bg-[rgba(168,85,247,0.08)] px-6 py-3 text-center text-[0.7rem] uppercase tracking-[0.34em] text-[var(--ivory)]/70">
             We provide services for all events — weddings, corporate, exhibitions, and beyond.
           </p>
         </Container>

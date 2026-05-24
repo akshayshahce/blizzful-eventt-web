@@ -26,11 +26,17 @@ export function ServiceGrid({
       className={cn(
         "relative overflow-hidden py-24 sm:py-32 lg:py-36",
         dark
-          ? "bg-[var(--navy)] text-[var(--ivory)]"
+          ? "bg-[linear-gradient(135deg,#0d0620_0%,#0a1230_40%,#14082a_100%)] text-[var(--ivory)]"
           : "bg-[var(--surface)] text-[var(--ink)]",
       )}
     >
-      <div className="mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
+      {dark ? (
+        <>
+          <div className="pointer-events-none absolute -left-40 top-0 h-[28rem] w-[28rem] rounded-full bg-[var(--navy)]/[0.15] blur-[120px]" />
+          <div className="pointer-events-none absolute -right-40 bottom-0 h-[24rem] w-[24rem] rounded-full bg-[var(--wisteria-deep)]/[0.12] blur-[100px]" />
+        </>
+      ) : null}
+      <div className="relative mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
         <SectionHeading
           eyebrow={eyebrow}
           title={title}
@@ -40,7 +46,7 @@ export function ServiceGrid({
         <div
           className={cn(
             "mt-16 grid gap-px sm:grid-cols-2 lg:mt-20",
-            dark ? "border border-[var(--ivory)]/12 bg-[var(--ivory)]/10" : "border border-[var(--navy)]/12 bg-[var(--navy)]/10",
+            dark ? "border border-[var(--ivory)]/8 bg-[var(--ivory)]/5" : "border border-[var(--ivory)]/8 bg-[var(--ivory)]/5",
           )}
         >
           {services.map((service, index) => (
@@ -53,22 +59,22 @@ export function ServiceGrid({
               className={cn(
                 "group relative p-9 transition-colors duration-500 sm:p-12",
                 dark
-                  ? "bg-[var(--navy)] hover:bg-[var(--navy-deep)]"
+                  ? "bg-[rgba(255,255,255,0.03)] hover:bg-[rgba(168,85,247,0.07)]"
                   : "bg-[var(--surface)] hover:bg-[var(--paper)]",
               )}
             >
               <div className="flex items-baseline justify-between text-[0.6rem] uppercase tracking-[0.4em]">
-                <span className={dark ? "text-[var(--sky)]" : "text-[var(--wisteria-deep)]"}>
+                <span className={dark ? "text-[var(--wisteria-deep)] glow-purple" : "text-[var(--wisteria-deep)]"}>
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <span className={dark ? "text-[var(--ivory)]/40" : "text-[var(--navy)]/40"}>
+                <span className={dark ? "text-[var(--ivory)]/25" : "text-[var(--ivory)]/25"}>
                   Service
                 </span>
               </div>
               <h3
                 className={cn(
                   "mt-10 font-display text-3xl leading-[1.04] tracking-tight transition-transform duration-500 group-hover:translate-x-1 sm:text-4xl",
-                  dark ? "text-[var(--ivory)]" : "text-[var(--navy)]",
+                  dark ? "text-[var(--ivory)] glow-white" : "text-[var(--ivory)]",
                 )}
               >
                 {service.title}
@@ -76,7 +82,7 @@ export function ServiceGrid({
               <p
                 className={cn(
                   "mt-5 max-w-md text-[0.95rem] leading-[1.85]",
-                  dark ? "text-[var(--ivory)]/68" : "text-[var(--ink)]/72",
+                  dark ? "text-[var(--ivory)]/60" : "text-[var(--ivory)]/60",
                 )}
               >
                 {service.description}
