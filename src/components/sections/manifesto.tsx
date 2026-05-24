@@ -8,7 +8,7 @@ export function Manifesto() {
   return (
     <section className="relative overflow-x-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
       <div className="relative mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
-        <div className="grid items-center gap-14 lg:grid-cols-12 lg:gap-20">
+        <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">
             <motion.div
               initial={{ opacity: 0, y: 14 }}
@@ -82,7 +82,7 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/5] overflow-hidden rounded-[2rem] ring-1 ring-[var(--navy)]/10"
+              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-1 ring-[var(--navy)]/10"
             >
               <Image
                 src="/images/events/wedding-stage-1.jpg"
