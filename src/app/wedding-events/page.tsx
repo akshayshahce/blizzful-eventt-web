@@ -37,7 +37,7 @@ export default function WeddingEventsPage() {
         meta="A complete wedding weekend"
       />
 
-      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -right-10 -top-6 h-80 w-60" opacity={0.32} />
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
@@ -58,12 +58,12 @@ export default function WeddingEventsPage() {
                 <Reveal
                   key={point}
                   delay={index * 0.05}
-                  className="group flex flex-col gap-5 rounded-[1.5rem] border border-[var(--navy)]/12 bg-[var(--sky-soft)] p-6 transition-colors duration-500 hover:bg-[var(--wisteria-soft)]/40"
+                  className="group flex flex-col gap-5 rounded-[1.5rem] border border-[var(--ivory)]/10 bg-[rgba(255,255,255,0.03)] p-6 transition-all duration-500 hover:bg-[rgba(168,85,247,0.08)] hover:-translate-y-1"
                 >
                   <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
                     {String(index + 1).padStart(2, "0")}
                   </p>
-                  <p className="font-display text-2xl leading-tight text-[var(--navy)] sm:text-3xl">
+                  <p className="font-display text-2xl leading-tight text-[var(--ivory)] glow-white sm:text-3xl">
                     {point}
                   </p>
                 </Reveal>
@@ -73,7 +73,7 @@ export default function WeddingEventsPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--sky-soft)] py-20 sm:py-28">
+      <section className="bg-[var(--surface)] py-20 sm:py-28">
         <Container size="wide">
           <SectionHeading
             eyebrow="Wedding Gallery"
@@ -91,7 +91,7 @@ export default function WeddingEventsPage() {
               <Reveal
                 key={item.src}
                 delay={index * 0.05}
-                className="group overflow-hidden rounded-[1.4rem] ring-1 ring-[var(--navy)]/10"
+                className="group overflow-hidden rounded-[1.4rem] ring-1 ring-[var(--ivory)]/8"
               >
                 <div className="relative aspect-[4/5]">
                   <Image

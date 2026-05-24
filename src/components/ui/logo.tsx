@@ -50,7 +50,7 @@ export function Logo({ className, variant = "navy", withText = true }: LogoProps
           <span
             className={cn(
               "font-script text-[1.4rem] leading-[1] sm:text-[1.6rem]",
-              variant === "navy" ? "text-[var(--ivory)]" : "text-[var(--navy)]",
+              variant === "navy" ? "text-[var(--ivory)]" : "text-[var(--ivory)]",
             )}
           >
             Blizzful Pink

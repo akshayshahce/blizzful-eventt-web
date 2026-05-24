@@ -27,7 +27,7 @@ export function ServiceGrid({
         "relative overflow-hidden py-24 sm:py-32 lg:py-36",
         dark
           ? "bg-[linear-gradient(135deg,#0d0620_0%,#0a1230_40%,#14082a_100%)] text-[var(--ivory)]"
-          : "bg-[var(--surface)] text-[var(--ink)]",
+          : "bg-[var(--surface)] text-[var(--ivory)]",
       )}
     >
       {dark ? (

@@ -75,7 +75,7 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
           <span className="editorial-rule" />
           <span>{story.category}</span>
         </div>
-        <h3 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--navy)] sm:text-5xl lg:text-6xl">
+        <h3 className="mt-7 font-display text-4xl leading-[1.02] tracking-tight text-[var(--ivory)] glow-white sm:text-5xl lg:text-6xl">
           {story.title.split(story.italicWord).map((part, idx, arr) => (
             <span key={idx}>
               {part}
@@ -85,15 +85,15 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
             </span>
           ))}
         </h3>
-        <p className="mt-6 max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/70">
+        <p className="mt-6 max-w-md text-[1rem] leading-[1.9] text-[var(--ivory)]/60">
           {story.description}
         </p>
-        <p className="mt-6 text-[0.6rem] uppercase tracking-[0.38em] text-[var(--ink)]/50">
+        <p className="mt-6 text-[0.6rem] uppercase tracking-[0.38em] text-[var(--ivory)]/40">
           {story.meta}
         </p>
         <Link
           href={story.href}
-          className="group mt-8 inline-flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.34em] text-[var(--navy)] transition-colors hover:text-[var(--wisteria-deep)]"
+          className="group mt-8 inline-flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.34em] text-[var(--ivory)]/70 transition-colors hover:text-[var(--wisteria-deep)]"
         >
           Explore {story.title}
           <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -102,7 +102,7 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
 
       <div
         className={cn(
-          "relative aspect-[5/4] overflow-hidden rounded-[2rem] ring-1 ring-[var(--navy)]/10 lg:col-span-7 lg:aspect-[5/3.4]",
+          "relative aspect-[5/4] overflow-hidden rounded-[2rem] ring-1 ring-[var(--ivory)]/8 lg:col-span-7 lg:aspect-[5/3.4]",
           reverse && "lg:order-1 lg:col-start-1",
         )}
       >
@@ -129,7 +129,7 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
 
 export function FeaturedStories() {
   return (
-    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
       <div className="relative mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end">
           <div className="lg:col-span-7">

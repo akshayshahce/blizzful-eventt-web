@@ -33,7 +33,7 @@ export default function AboutPage() {
         meta="Est. 2014 — Mumbai"
       />
 
-      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -right-12 -top-10 h-72 w-52" opacity={0.32} />
         <Container>
           <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
@@ -111,7 +111,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Container>
           <SectionHeading
             eyebrow="Event Spectrum"

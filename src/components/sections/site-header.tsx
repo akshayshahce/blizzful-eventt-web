@@ -132,7 +132,7 @@ export function SiteHeader() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-            className="fixed inset-0 z-[55] bg-[var(--sky-soft)] text-[var(--navy)] lg:hidden"
+            className="fixed inset-0 z-[55] bg-[var(--sky-soft)] text-[var(--ivory)] lg:hidden"
           >
             <div className="relative mx-auto flex h-full w-full max-w-[100rem] flex-col px-5 pb-12 pt-28 sm:px-8">
               <div className="flex items-center gap-3">

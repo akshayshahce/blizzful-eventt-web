@@ -79,7 +79,7 @@ function ScrollToTopButton() {
           exit={{ opacity: 0, y: 22, scale: 0.92 }}
           transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 z-[80] inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--navy)]/20 bg-[var(--paper)] text-[var(--navy)] shadow-[0_18px_50px_rgba(20,36,70,0.18)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-[var(--navy)]/40 sm:bottom-10 sm:right-10"
+          className="fixed bottom-6 right-6 z-[80] inline-flex h-12 w-12 items-center justify-center rounded-full border border-[var(--ivory)]/15 bg-[rgba(15,22,40,0.85)] text-[var(--ivory)] shadow-[0_18px_50px_rgba(0,0,0,0.45)] backdrop-blur-xl transition hover:-translate-y-0.5 hover:border-[var(--wisteria-deep)]/50 sm:bottom-10 sm:right-10"
           aria-label="Scroll to top"
         >
           <FiArrowUp className="h-4 w-4" />

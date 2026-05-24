@@ -93,7 +93,7 @@ export function SiteFooter() {
             </h3>
             <Link
               href="/contact-us"
-              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy)]"
+              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy-deep)]"
             >
               Start the conversation
               <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

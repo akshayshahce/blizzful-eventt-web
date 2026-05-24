@@ -88,7 +88,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
   };
 
   return (
-    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
       <div className="relative mx-auto w-full max-w-[110rem] px-5 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-12 lg:items-end lg:gap-16">
           <div className="lg:col-span-7">
@@ -111,7 +111,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
               )}
             </h2>
           </div>
-          <p className="max-w-md text-[1rem] leading-[1.9] text-[var(--ink)]/68 lg:col-span-5">
+          <p className="max-w-md text-[1rem] leading-[1.9] text-[var(--ivory)]/60 lg:col-span-5">
             Filter by ritual — Roka, Engagement, Mehendi, Haldi, Sangeet, Wedding, or
             Corporate — or open any frame to view it full screen.
           </p>

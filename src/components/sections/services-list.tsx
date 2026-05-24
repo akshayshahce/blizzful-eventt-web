@@ -21,7 +21,7 @@ export function ServicesList() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
       <div className="mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
           <div className="lg:sticky lg:top-32 lg:self-start">

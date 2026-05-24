@@ -30,7 +30,7 @@ export default function ContactPage() {
         meta="WhatsApp · Email · Phone"
       />
 
-      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -left-12 -top-10 h-80 w-60" opacity={0.32} />
         <Wisteria variant="right" className="absolute -right-12 -top-10 h-80 w-60" opacity={0.32} />
         <Container>
@@ -57,7 +57,7 @@ export default function ContactPage() {
                 <Reveal>
                   <a
                     href={`tel:${company.phone[0].replace(/\s+/g, "")}`}
-                    className="group flex items-center justify-between gap-4 border-t border-[var(--navy)]/12 py-6 transition-all duration-500 hover:translate-x-2"
+                    className="group flex items-center justify-between gap-4 border-t border-[var(--ivory)]/10 py-6 transition-all duration-500 hover:translate-x-2"
                   >
                     <span className="flex items-center gap-5">
                       <FiPhone className="h-4 w-4 text-[var(--wisteria-deep)]" />
@@ -71,7 +71,7 @@ export default function ContactPage() {
                 <Reveal delay={0.05}>
                   <a
                     href={`tel:${company.phone[1].replace(/\s+/g, "")}`}
-                    className="group flex items-center justify-between gap-4 border-t border-[var(--navy)]/12 py-6 transition-all duration-500 hover:translate-x-2"
+                    className="group flex items-center justify-between gap-4 border-t border-[var(--ivory)]/10 py-6 transition-all duration-500 hover:translate-x-2"
                   >
                     <span className="flex items-center gap-5">
                       <FiPhone className="h-4 w-4 text-[var(--wisteria-deep)]" />
@@ -85,7 +85,7 @@ export default function ContactPage() {
                 <Reveal delay={0.1}>
                   <a
                     href={`mailto:${company.email}`}
-                    className="group flex items-center justify-between gap-4 border-t border-[var(--navy)]/12 py-6 transition-all duration-500 hover:translate-x-2"
+                    className="group flex items-center justify-between gap-4 border-t border-[var(--ivory)]/10 py-6 transition-all duration-500 hover:translate-x-2"
                   >
                     <span className="flex items-center gap-5">
                       <FiMail className="h-4 w-4 text-[var(--wisteria-deep)]" />
@@ -100,7 +100,7 @@ export default function ContactPage() {
                   <Link
                     href={`https://instagram.com/${company.instagram}`}
                     target="_blank"
-                    className="group flex items-center justify-between gap-4 border-y border-[var(--navy)]/12 py-6 transition-all duration-500 hover:translate-x-2"
+                    className="group flex items-center justify-between gap-4 border-y border-[var(--ivory)]/10 py-6 transition-all duration-500 hover:translate-x-2"
                   >
                     <span className="flex items-center gap-5">
                       <FiInstagram className="h-4 w-4 text-[var(--wisteria-deep)]" />
@@ -115,7 +115,7 @@ export default function ContactPage() {
             </div>
 
             <Reveal className="lg:col-span-5" delay={0.2}>
-              <div className="rounded-[1.8rem] border border-[var(--navy)]/12 bg-[var(--sky-soft)] p-9 sm:p-11">
+              <div className="rounded-[1.8rem] border border-[var(--ivory)]/8 bg-[rgba(255,255,255,0.04)] p-9 sm:p-11">
                 <p className="text-[0.6rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
                   Studio Details
                 </p>
@@ -125,7 +125,7 @@ export default function ContactPage() {
                       <p className="text-[0.58rem] uppercase tracking-[0.36em] text-[var(--ink)]/50">
                         {row.label}
                       </p>
-                      <p className="mt-2 text-[0.96rem] leading-[1.85] text-[var(--ink)]">
+                      <p className="mt-2 text-[0.96rem] leading-[1.85] text-[var(--ivory)]/85">
                         {row.value}
                       </p>
                     </div>
@@ -134,13 +134,13 @@ export default function ContactPage() {
                     <p className="text-[0.58rem] uppercase tracking-[0.36em] text-[var(--ink)]/50">
                       Based in
                     </p>
-                    <p className="mt-2 flex items-center gap-2 text-[0.96rem] leading-[1.85] text-[var(--ink)]">
+                    <p className="mt-2 flex items-center gap-2 text-[0.96rem] leading-[1.85] text-[var(--ivory)]/85">
                       <FiMapPin className="h-4 w-4 text-[var(--wisteria-deep)]" />
                       {company.location}
                     </p>
                   </div>
                 </div>
-                <p className="mt-10 text-sm leading-[1.85] text-[var(--ink)]/70">
+                <p className="mt-10 text-sm leading-[1.85] text-[var(--ivory)]/55">
                   We hold capacity for a limited number of weddings and corporate
                   productions each year. Inquiries are reviewed in the order they
                   are received.

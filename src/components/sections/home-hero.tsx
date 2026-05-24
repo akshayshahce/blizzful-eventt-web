@@ -70,13 +70,13 @@ export function HomeHero() {
               </Link>
               <Link
                 href="/gallery"
-                className="group inline-flex items-center gap-3 rounded-full border border-[var(--navy)]/35 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--navy)] transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--navy)] hover:bg-[var(--navy)] hover:text-[var(--ivory)]"
+                className="group inline-flex items-center gap-3 rounded-full border border-[var(--ivory)]/25 px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)]/80 transition-all duration-300 hover:-translate-y-0.5 hover:border-[var(--wisteria-deep)] hover:bg-[var(--wisteria-deep)] hover:text-[var(--ivory)]"
               >
                 Explore the gallery
               </Link>
               <a
                 href={`tel:${company.phone[0].replace(/\s+/g, "")}`}
-                className="ml-1 inline-flex items-center gap-2 text-[0.74rem] font-medium uppercase tracking-[0.28em] text-[var(--wisteria-deep)] transition-colors hover:text-[var(--navy)]"
+                className="ml-1 inline-flex items-center gap-2 text-[0.74rem] font-medium uppercase tracking-[0.28em] text-[var(--wisteria-deep)] transition-colors hover:text-[var(--ivory)]"
               >
                 <FiPhone className="h-3.5 w-3.5" />
                 {company.phone[0]}
@@ -87,7 +87,7 @@ export function HomeHero() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.95, delay: 0.85 }}
-              className="mt-12 grid grid-cols-3 gap-6 border-t border-[var(--navy)]/15 pt-7 lg:max-w-md"
+              className="mt-12 grid grid-cols-3 gap-6 border-t border-[var(--ivory)]/10 pt-7 lg:max-w-md"
             >
               {[
                 { value: "10+", label: "Years" },
@@ -95,10 +95,10 @@ export function HomeHero() {
                 { value: "150+", label: "Brands" },
               ].map((stat) => (
                 <div key={stat.label}>
-                  <p className="font-display text-3xl text-[var(--navy)] sm:text-4xl">
+                  <p className="font-display text-3xl text-[var(--ivory)] glow-white sm:text-4xl">
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-[0.58rem] uppercase tracking-[0.38em] text-[var(--ink)]/55">
+                  <p className="mt-1 text-[0.58rem] uppercase tracking-[0.38em] text-[var(--ivory)]/40">
                     {stat.label}
                   </p>
                 </div>
@@ -112,7 +112,7 @@ export function HomeHero() {
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative mx-auto aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-[2rem] shadow-[0_30px_80px_rgba(20,36,70,0.18)] ring-1 ring-white/80"
+              className="relative mx-auto aspect-[4/5] w-full max-w-[34rem] overflow-hidden rounded-[2rem] shadow-[0_30px_80px_rgba(20,36,70,0.18)] ring-1 ring-[var(--ivory)]/10"
             >
               <Image
                 src="/images/events/hero-main.jpg"
@@ -141,7 +141,7 @@ export function HomeHero() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -bottom-10 -left-6 hidden aspect-square w-44 overflow-hidden rounded-[1.5rem] shadow-[0_20px_60px_rgba(20,36,70,0.22)] ring-1 ring-white/80 lg:block lg:-bottom-12 lg:w-56"
+              className="absolute -bottom-10 -left-6 hidden aspect-square w-44 overflow-hidden rounded-[1.5rem] shadow-[0_20px_60px_rgba(20,36,70,0.22)] ring-1 ring-[var(--ivory)]/10 lg:block lg:-bottom-12 lg:w-56"
             >
               <Image
                 src="/images/events/hero-accent.jpg"
@@ -157,7 +157,7 @@ export function HomeHero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-              className="absolute -right-3 top-6 hidden w-40 overflow-hidden rounded-[1.4rem] shadow-[0_20px_60px_rgba(20,36,70,0.18)] ring-1 ring-white/80 lg:block lg:w-48"
+              className="absolute -right-3 top-6 hidden w-40 overflow-hidden rounded-[1.4rem] shadow-[0_20px_60px_rgba(20,36,70,0.18)] ring-1 ring-[var(--ivory)]/10 lg:block lg:w-48"
             >
               <div className="relative aspect-[3/4]">
                 <Image

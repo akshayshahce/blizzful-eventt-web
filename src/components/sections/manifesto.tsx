@@ -42,7 +42,7 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 0.95, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-10 grid gap-7 text-[1.02rem] leading-[1.9] text-[var(--ink)]/75 sm:grid-cols-2 sm:gap-12"
+              className="mt-10 grid gap-7 text-[1.02rem] leading-[1.9] text-[var(--ivory)]/60 sm:grid-cols-2 sm:gap-12"
             >
               <p>
                 A wedding planner is a professional who assists with the design,

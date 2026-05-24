@@ -23,7 +23,7 @@ export default function WhyChooseUsPage() {
         meta="Six commitments"
       />
 
-      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Wisteria className="absolute -right-12 -top-10 h-80 w-60" opacity={0.3} />
         <Container>
           <SectionHeading
@@ -37,7 +37,7 @@ export default function WhyChooseUsPage() {
             description="Each principle is rooted in evidence from our portfolio — recurring strengths that clients consistently point to as reasons to return."
           />
 
-          <div className="mt-16 grid gap-px border border-[var(--navy)]/12 bg-[var(--navy)]/12 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-16 grid gap-px border border-[var(--ivory)]/8 bg-[var(--ivory)]/4 sm:grid-cols-2 lg:grid-cols-3">
             {reasonsToChooseUs.map((reason, index) => (
               <Reveal
                 key={reason.title}
@@ -50,7 +50,7 @@ export default function WhyChooseUsPage() {
                 <p className="mt-8 font-display text-3xl leading-[1.04] text-[var(--ivory)] transition-transform duration-500 group-hover:translate-x-1 sm:text-4xl">
                   {reason.title}
                 </p>
-                <p className="mt-5 text-[0.95rem] leading-[1.85] text-[var(--ink)]/72">
+                <p className="mt-5 text-[0.95rem] leading-[1.85] text-[var(--ivory)]/60">
                   {reason.description}
                 </p>
               </Reveal>
