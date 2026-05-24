@@ -93,20 +93,6 @@ export function Manifesto() {
               />
             </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-15%" }}
-              transition={{ duration: 1, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mt-6 rounded-[1.6rem] border border-[var(--ivory)]/10 bg-[rgba(255,255,255,0.04)] p-7"
-            >
-              <p className="text-[0.62rem] uppercase tracking-[0.44em] text-[var(--wisteria-deep)]">
-                Studio promise
-              </p>
-              <p className="mt-4 font-display text-2xl italic leading-snug text-[var(--ivory)]">
-                &ldquo;Every detail handled with creativity, perfection, and attention to detail to make your day truly magical.&rdquo;
-              </p>
-            </motion.div>
           </div>
         </div>
       </div>
