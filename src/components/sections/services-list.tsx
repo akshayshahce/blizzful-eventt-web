@@ -3,22 +3,39 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
 import Image from "next/image";
-import { coreOfferings, galleryItems } from "@/data/site-data";
+import { coreOfferings } from "@/data/site-data";
 import { cn } from "@/lib/utils";
 
 const accents = [
-  "/images/events/corporate-stage.jpg",
-  "/images/events/wedding-stage-1.jpg",
-  "/images/events/mehendi-decor-1.jpg",
-  "/images/events/corporate-gala.jpg",
-  "/images/events/haldi-decor-1.jpg",
-  "/images/events/wedding-stage-2.jpg",
+  {
+    src: "/images/events/wedding-decor-2.jpg",
+    alt: "Planned event table setting",
+  },
+  {
+    src: "/images/hero/hero-portrait.jpg",
+    alt: "Designed wedding concept with floral styling",
+  },
+  {
+    src: "/images/events/corporate-stage.jpg",
+    alt: "Coordinated stage production",
+  },
+  {
+    src: "/images/events/exhibitions-public-events.png",
+    alt: "Branded exhibition and public event environment",
+  },
+  {
+    src: "/images/events/services-hero-conference.png",
+    alt: "Conference vendor and technical coordination",
+  },
+  {
+    src: "/images/events/corporate-gala.jpg",
+    alt: "Premium venue and hospitality setting",
+  },
 ];
-// imported galleryItems just to ensure type safety — silence unused warning
-void galleryItems;
 
 export function ServicesList() {
   const [active, setActive] = useState(0);
+  const activeAccent = accents[active % accents.length];
 
   return (
     <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
@@ -42,15 +59,15 @@ export function ServicesList() {
 
             <div className="mt-12 hidden h-[26rem] w-full overflow-hidden rounded-[1.8rem] ring-1 ring-[var(--navy)]/10 lg:block">
               <motion.div
-                key={accents[active % accents.length]}
+                key={activeAccent.src}
                 initial={{ opacity: 0, scale: 1.06 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
                 className="relative h-full w-full"
               >
                 <Image
-                  src={accents[active % accents.length]}
-                  alt="Service preview"
+                  src={activeAccent.src}
+                  alt={activeAccent.alt}
                   fill
                   sizes="(max-width: 1024px) 0px, 40vw"
                   className="object-cover"

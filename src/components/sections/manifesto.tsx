@@ -6,7 +6,7 @@ import { Wisteria } from "@/components/ui/wisteria";
 
 export function Manifesto() {
   return (
-    <section className="relative overflow-x-hidden bg-[var(--surface)] py-24 text-[var(--ink)] sm:py-32 lg:py-36">
+    <section className="relative overflow-x-hidden bg-[var(--surface)] pb-12 pt-24 text-[var(--ink)] sm:pb-16 sm:pt-32 lg:pb-20 lg:pt-36">
       <div className="relative mx-auto w-full max-w-[100rem] px-5 sm:px-8 lg:px-12">
         <div className="grid items-start gap-14 lg:grid-cols-12 lg:gap-20">
           <div className="lg:col-span-7">
@@ -82,15 +82,37 @@ export function Manifesto() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-15%" }}
               transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] ring-1 ring-[var(--navy)]/10"
+              className="relative aspect-[4/3] overflow-hidden rounded-[2rem] bg-[var(--surface-muted)] p-2 ring-1 ring-[var(--navy)]/10"
             >
-              <Image
-                src="/images/events/wedding-stage-1.jpg"
-                alt="Wedding stage details"
-                fill
-                sizes="(max-width: 768px) 100vw, 40vw"
-                className="object-cover"
-              />
+              <div className="grid h-full grid-cols-12 grid-rows-12 gap-2">
+                <div className="relative col-span-7 row-span-12 overflow-hidden rounded-[1.55rem]">
+                  <Image
+                    src="/images/events/about-hero-wedding.png"
+                    alt="Wedding celebration planning moment"
+                    fill
+                    sizes="(max-width: 768px) 60vw, 28vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative col-span-5 row-span-7 overflow-hidden rounded-[1.55rem]">
+                  <Image
+                    src="/images/events/exhibitions-public-events.png"
+                    alt="Public event exhibition environment"
+                    fill
+                    sizes="(max-width: 768px) 40vw, 18vw"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative col-span-5 row-span-5 overflow-hidden rounded-[1.55rem]">
+                  <Image
+                    src="/images/events/services-hero-conference.png"
+                    alt="Corporate conference production setup"
+                    fill
+                    sizes="(max-width: 768px) 40vw, 18vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </motion.div>
 
           </div>

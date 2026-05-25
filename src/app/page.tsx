@@ -4,7 +4,6 @@ import { MarqueeStrip } from "@/components/sections/marquee-strip";
 import { FeaturedStories } from "@/components/sections/featured-stories";
 import { ServicesList } from "@/components/sections/services-list";
 import { ProofBand } from "@/components/sections/proof-band";
-import { GalleryShowcase } from "@/components/gallery/gallery-showcase";
 import { TestimonialsSection } from "@/components/sections/testimonials";
 import { ContactCta } from "@/components/sections/contact-cta";
 
@@ -30,7 +29,6 @@ export default function Home() {
       <FeaturedStories />
       <ServicesList />
       <ProofBand />
-      <GalleryShowcase preview />
       <TestimonialsSection />
       <ContactCta />
     </>

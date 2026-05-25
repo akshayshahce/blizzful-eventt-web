@@ -22,7 +22,7 @@ export default function ServicesPage() {
         title="A full event studio, planned end to end."
         italicWord="planned"
         description="Planning, design, hospitality, floral language, technical production, and guest experience — delivered as a single editorial system rather than a list of line items."
-        image="/images/events/mehendi-decor-1.jpg"
+        image="/images/events/services-hero-conference.png"
         meta="Six core disciplines + curated extras"
       />
       <ServicesList />

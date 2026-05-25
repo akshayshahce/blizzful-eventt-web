@@ -13,12 +13,12 @@ export const metadata: Metadata = {
   title: "About",
 };
 
-const heroImage = "/images/events/wedding-stage-1.jpg";
+const heroImage = "/images/events/about-hero-wedding.png";
 
 const experienceImages = [
-  "/images/events/wedding-stage-1.jpg",
-  "/images/events/corporate-stage.jpg",
-  "/images/events/mehendi-decor-1.jpg",
+  "/images/events/about-wedding-weekends-attached.png",
+  "/images/events/about-corporate-productions.jpg",
+  "/images/events/exhibitions-public-events.png",
 ];
 
 export default function AboutPage() {
