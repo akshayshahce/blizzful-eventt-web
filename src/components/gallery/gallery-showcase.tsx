@@ -244,15 +244,19 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
           >
             <div className="flex min-h-0 flex-1 items-center justify-center px-14 py-8 sm:px-20 sm:py-10">
               <div
-                className="flex h-full w-full items-center justify-center"
+                className="relative flex h-full w-full items-center justify-center"
                 onClick={(event) => event.stopPropagation()}
               >
-                <img
-                  src={activeSlide.src}
-                  alt={activeSlide.alt}
-                  className="block max-h-[82vh] max-w-[92vw] object-contain"
-                  draggable={false}
-                />
+                <div className="relative h-[82vh] w-full max-w-[92vw]">
+                  <Image
+                    src={activeSlide.src}
+                    alt={activeSlide.alt}
+                    fill
+                    sizes="92vw"
+                    className="object-contain"
+                    draggable={false}
+                  />
+                </div>
               </div>
             </div>
 
