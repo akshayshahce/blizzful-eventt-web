@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { FiInstagram, FiMail, FiPhone, FiMapPin, FiArrowUpRight } from "react-icons/fi";
 import { company, navigation } from "@/data/site-data";
-import { LogoMark } from "@/components/ui/logo";
+import { Logo } from "@/components/ui/logo";
 import { Wisteria } from "@/components/ui/wisteria";
 
 export function SiteFooter() {
@@ -14,15 +14,9 @@ export function SiteFooter() {
 
       <div className="relative mx-auto w-full max-w-[100rem] px-5 pb-12 pt-24 sm:px-8 sm:pt-28 lg:px-12">
         <div className="text-center">
-          <div className="mx-auto h-16 w-16">
-            <LogoMark />
+          <div className="mx-auto flex justify-center">
+            <Logo />
           </div>
-          <p className="mt-5 font-script text-4xl text-[var(--ivory)] sm:text-5xl">
-            Blizzful Pink Eventt
-          </p>
-          <p className="mt-2 text-[0.68rem] uppercase tracking-[0.5em] text-[var(--forest-soft)]">
-            Event Management
-          </p>
           <p className="mx-auto mt-7 max-w-xl text-[0.98rem] leading-[1.85] text-[var(--ivory)]/60">
             {company.description}
           </p>
