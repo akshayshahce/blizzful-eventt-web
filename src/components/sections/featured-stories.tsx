@@ -18,6 +18,11 @@ type Story = {
     src: string;
     alt: string;
   }[];
+  /**
+   * Render the hero image as a half-colour / half-grayscale composite split
+   * along the anti-diagonal (top-right → bottom-left).
+   */
+  diagonalGrayscale?: boolean;
   href: string;
 };
 
@@ -25,12 +30,13 @@ const stories: Story[] = [
   {
     index: "01",
     category: "Weddings · Rituals",
-    title: "Wedding Weekends",
+    title: "Wedding Celebrations",
     italicWord: "Wedding",
     description:
       "A multi-day arc — Roka, Engagement, Mehendi, Haldi, Sangeet, and Shaadi — composed for emotion, photography, and effortless family flow.",
     meta: "Roka · Mehendi · Haldi · Sangeet · Shaadi",
     image: "/images/events/wedding-stage-1.jpg",
+    diagonalGrayscale: true,
     href: "/wedding-events",
   },
   {
@@ -154,13 +160,50 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
             reverse && "lg:order-1 lg:col-start-1",
           )}
         >
-          <Image
-            src={story.image}
-            alt={story.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 60vw"
-            className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04]"
-          />
+          {story.diagonalGrayscale ? (
+            <>
+              {/* Base layer — full grayscale */}
+              <Image
+                src={story.image}
+                alt={story.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 60vw"
+                className="object-cover grayscale transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04]"
+              />
+              {/* Colour layer — clipped to the upper-left triangle so the
+                  split runs from the top-right corner down to the bottom-left. */}
+              <div
+                className="absolute inset-0"
+                style={{ clipPath: "polygon(0 0, 100% 0, 0 100%)" }}
+              >
+                <Image
+                  src={story.image}
+                  alt=""
+                  aria-hidden="true"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 60vw"
+                  className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04]"
+                />
+              </div>
+              {/* Hairline along the diagonal split for a clean edge */}
+              <div
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0"
+                style={{
+                  background:
+                    "linear-gradient(to top right, transparent calc(50% - 0.75px), rgba(228,236,255,0.55) 50%, transparent calc(50% + 0.75px))",
+                }}
+              />
+            </>
+          ) : (
+            <Image
+              src={story.image}
+              alt={story.title}
+              fill
+              sizes="(max-width: 768px) 100vw, 60vw"
+              className="object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.22,1,0.36,1)] hover:scale-[1.04]"
+            />
+          )}
           <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_60%,rgba(20,36,70,0.45))]" />
           <div className="absolute bottom-5 left-6 right-6 flex items-end justify-between text-[var(--ivory)]">
             <span className="font-display text-[5rem] leading-none opacity-25 sm:text-[7rem]">

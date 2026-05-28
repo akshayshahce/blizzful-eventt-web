@@ -1,124 +1,164 @@
 import type { Metadata } from "next";
-import Image from "next/image";
-import { PageHero } from "@/components/sections/page-hero";
+import { WeddingHero } from "@/components/sections/wedding-hero";
+import { WeddingChapter, type WeddingChapterData } from "@/components/sections/wedding-chapter";
 import { ServiceGrid } from "@/components/sections/service-grid";
-import { Container } from "@/components/ui/container";
-import { Reveal } from "@/components/ui/reveal";
-import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactCta } from "@/components/sections/contact-cta";
 import { MarqueeStrip } from "@/components/sections/marquee-strip";
-import { Wisteria } from "@/components/ui/wisteria";
-import { featuredExperiences, weddingServices } from "@/data/site-data";
+import { Container } from "@/components/ui/container";
+import { weddingServices } from "@/data/site-data";
 
 export const metadata: Metadata = {
   title: "Wedding Events",
 };
 
-const functionGallery = [
-  { src: "/images/events/roka.jpg", title: "Roka / God Dhana", caption: "An auspicious beginning, floral garlands, and Ganesh blessings." },
-  { src: "/images/events/engagement.jpg", title: "Engagement", caption: "Personalised ring plate styling and floral hoops." },
-  { src: "/images/events/mehendi-decor-1.jpg", title: "Mehendi", caption: "Marigold tents, jewel-tone drapes, and lounge seating." },
-  { src: "/images/events/haldi-decor-1.jpg", title: "Haldi", caption: "Sun-lit haldi staging with floral hoops and golden accents." },
-  { src: "/images/events/sangeet-decor-1.jpg", title: "Sangeet", caption: "High-energy stage with LED, chandeliers, and lighting design." },
-  { src: "/images/events/wedding-stage-1.jpg", title: "Wedding / Shaadi", caption: "Ivory and blush mandap with cascading florals and candles." },
+const chapters: WeddingChapterData[] = [
+  {
+    index: 1,
+    name: "Proposal",
+    subtitle: "Where it all begins",
+    description:
+      "A private, hand-crafted setting where the question is asked — heart arches, candle paths, sparklers, and a backdrop calibrated to the couple. The first photograph of forever.",
+    quote: "And in that one yes, a lifetime began.",
+    image: "/images/weddings/proposal.jpg",
+    alt: "Sunset beach proposal with a white heart-shaped floral arch, Will You Marry Me neon sign, and candles in the sand",
+  },
+  {
+    index: 2,
+    name: "God Dhana",
+    subtitle: "An auspicious blessing",
+    description:
+      "The first ritual of the family — Ganesh blessings, floral garlands, sweets, and the gentle prayer that sets the tone for every function that follows.",
+    quote: "Begin with grace, and every chapter follows.",
+    image: "/images/weddings/god-dhana.jpg",
+    alt: "Ganesh idol with white and pink rose floral garland for God Dhana ritual",
+  },
+  {
+    index: 3,
+    name: "Engagement",
+    subtitle: "Rings, vows, and a quiet promise",
+    description:
+      "Designer ring plate styling, floral hoops, signature monograms, and an intimate ceremony staged to honour the families and the moment between two hearts.",
+    quote: "Two rings, one promise — the rest is just love finding its rhythm.",
+    image: "/images/weddings/engagement.jpg",
+    alt: "Diamond engagement rings on white textile with baby's breath florals",
+  },
+  {
+    index: 4,
+    name: "Mehendi",
+    subtitle: "Colour, laughter, and family",
+    description:
+      "Vibrant tents, marigold canopies, jewel-tone drapes, parasols and floor seating — the loudest, most joyful day of the celebration.",
+    quote: "Every line of mehendi tells a story of the days ahead.",
+    image: "/images/weddings/mehendi.jpg",
+    alt: "Mehendi photobooth setup with yellow parasols, marigold strings, pink cushions and green drapes",
+  },
+  {
+    index: 5,
+    name: "Haldi",
+    subtitle: "Sunlight and turmeric",
+    description:
+      "Open-air yellow tents, marigold canopies, brass urlis, and golden-hour lighting — a ritual designed to glow on every camera in the room.",
+    quote: "A little turmeric, a lot of love — and a glow that lasts a lifetime.",
+    image: "/images/weddings/haldi.jpg",
+    alt: "Outdoor Haldi setup with yellow drapes, marigold pillars, and ceremonial thrones",
+  },
+  {
+    index: 6,
+    name: "Sangeet",
+    subtitle: "The night to dance",
+    description:
+      "A glamorous stage built for performance — cascading florals, chandeliers, LED, and lighting design that holds every family act, every solo, every couple dance.",
+    quote: "Music, family, and the dance floor between two families becoming one.",
+    image: "/images/weddings/sangeet.jpg",
+    alt: "Sangeet stage with pink and peach floral chandelier, gold sofa, and pastel drapery",
+  },
+  {
+    index: 7,
+    name: "Wedding",
+    subtitle: "The moment of forever",
+    description:
+      "Palace-grade mandap architecture, candle paths, floral storytelling, and a ceremony composed for emotion, photography, and pheras that the family will replay forever.",
+    quote: "And so, two became one — beneath fire, flowers and forever.",
+    image: "/images/weddings/wedding.jpg",
+    alt: "Royal palace wedding ceremony at night with bride and groom on circular rangoli surrounded by candles",
+  },
+  {
+    index: 8,
+    name: "Reception",
+    subtitle: "An evening for everyone",
+    description:
+      "A grand stage built for the first dance, the speeches, the toast — cascading florals, chandeliers, monograms, and hospitality choreography for hundreds.",
+    quote: "Tonight, the world we love meets the one we just promised.",
+    image: "/images/weddings/reception.jpg",
+    alt: "Reception stage with cream draping and cascading floral chandeliers",
+  },
+  {
+    index: 9,
+    name: "Ghar Parvesh",
+    subtitle: "Welcome home",
+    description:
+      "The final, most tender chapter — the bride entering her new home, marigold and rose torans framing the door, a lamp lit, and a family welcoming her in.",
+    quote: "And in that one step, a forever home became home.",
+    image: "/images/weddings/ghar-parvesh.jpg",
+    alt: "Wooden front door decorated with pink, white, and purple floral torans for Ghar Parvesh",
+  },
 ];
 
 export default function WeddingEventsPage() {
-  const weddingExperience = featuredExperiences[0];
-
   return (
     <>
-      <PageHero
-        eyebrow="Wedding Events"
-        title="Ritual-led celebrations with a timeless finish."
-        italicWord="timeless"
-        description="From Roka and Engagement to Mehendi, Haldi, Sangeet, and Shaadi — each function is composed for emotion, photography, and family flow."
-        image="/images/events/wedding-stage-1.jpg"
-        meta="A complete wedding weekend"
-      />
+      <WeddingHero />
 
-      <section className="relative overflow-hidden bg-[var(--surface)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
-        <Wisteria className="absolute -right-10 -top-6 h-80 w-60" opacity={0.32} />
+      {/* Index / chapter overview */}
+      <section className="relative overflow-hidden border-y border-[var(--ivory)]/[0.06] bg-[var(--surface)] py-20 text-[var(--ivory)] sm:py-24">
         <Container>
-          <div className="grid gap-14 lg:grid-cols-12 lg:gap-20">
-            <div className="lg:col-span-6">
-              <SectionHeading
-                eyebrow="Wedding Functions"
-                title={
-                  <>
-                    Functions composed as an{" "}
-                    <span className="font-script italic text-[var(--wisteria-deep)]">unbroken story</span>.
-                  </>
-                }
-                description={weddingExperience.description}
-              />
+          <div className="grid gap-10 lg:grid-cols-12 lg:gap-16">
+            <div className="lg:col-span-5">
+              <div className="flex items-center gap-4 text-[0.62rem] uppercase tracking-[0.46em] text-[var(--wisteria-deep)]">
+                <span className="editorial-rule" />
+                Nine Chapters
+              </div>
+              <h2 className="mt-7 font-display text-[clamp(2.2rem,4.5vw,4.4rem)] leading-[1.02] tracking-tight text-[var(--ivory)] glow-white">
+                A wedding designed as an{" "}
+                <span className="font-script italic text-[var(--wisteria)]">
+                  unbroken story
+                </span>.
+              </h2>
             </div>
-            <div className="grid gap-3 lg:col-span-6 lg:grid-cols-2">
-              {weddingExperience.points.map((point, index) => (
-                <Reveal
-                  key={point}
-                  delay={index * 0.05}
-                  className="group flex flex-col gap-5 rounded-[1.5rem] border border-[var(--ivory)]/10 bg-[rgba(255,255,255,0.03)] p-6 transition-all duration-500 hover:bg-[rgba(168,85,247,0.08)] hover:-translate-y-1"
-                >
-                  <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </p>
-                  <p className="font-display text-2xl leading-tight text-[var(--ivory)] glow-white sm:text-3xl">
-                    {point}
-                  </p>
-                </Reveal>
-              ))}
+            <div className="lg:col-span-7">
+              <p className="text-[1rem] leading-[1.9] text-[var(--ivory)]/68 sm:text-[1.05rem]">
+                Every Blizzful Pink wedding moves through nine carefully shaped
+                chapters. Each function has its own visual language, but
+                they share one feeling — emotion-led, calmly executed, beautifully framed.
+              </p>
+              <ol className="mt-9 grid grid-cols-2 gap-x-6 gap-y-2 text-[0.95rem] sm:grid-cols-3">
+                {chapters.map((c) => (
+                  <li key={c.index}>
+                    <a
+                      href={`#chapter-${c.index}`}
+                      className="group flex items-baseline gap-3 border-b border-[var(--ivory)]/10 py-3 transition-colors hover:border-[var(--wisteria)]/40"
+                    >
+                      <span className="text-[0.58rem] uppercase tracking-[0.36em] text-[var(--wisteria-deep)]">
+                        {String(c.index).padStart(2, "0")}
+                      </span>
+                      <span className="font-display text-xl italic text-[var(--ivory)] transition-colors group-hover:text-[var(--wisteria)] sm:text-[1.4rem]">
+                        {c.name}
+                      </span>
+                    </a>
+                  </li>
+                ))}
+              </ol>
             </div>
           </div>
         </Container>
       </section>
 
-      <section className="bg-[var(--surface)] py-20 sm:py-28">
-        <Container size="wide">
-          <SectionHeading
-            eyebrow="Wedding Gallery"
-            title={
-              <>
-                A glimpse from{" "}
-                <span className="font-script italic text-[var(--wisteria-deep)]">recent weddings</span>.
-              </>
-            }
-            align="center"
-            description="Curated stages and ceremonies built with our families and floral teams."
-          />
-          <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-3 lg:gap-6">
-            {functionGallery.map((item, index) => (
-              <Reveal
-                key={item.src}
-                delay={index * 0.05}
-                className="group overflow-hidden rounded-[1.4rem] ring-1 ring-[var(--ivory)]/8"
-              >
-                <div className="relative aspect-[4/5]">
-                  <Image
-                    src={item.src}
-                    alt={item.title}
-                    fill
-                    sizes="(max-width: 768px) 50vw, 33vw"
-                    className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
-                  />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_55%,rgba(20,36,70,0.7))]" />
-                  <div className="absolute bottom-4 left-4 right-4 text-[var(--ivory)]">
-                    <p className="text-[0.55rem] uppercase tracking-[0.42em] text-[var(--wisteria-deep)]">
-                      {item.title}
-                    </p>
-                    <p className="mt-1 text-sm leading-snug text-[var(--ivory)]/86">{item.caption}</p>
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
-        </Container>
-      </section>
-
-      <MarqueeStrip
-        items={["Roka", "Engagement", "Mehendi", "Haldi", "Sangeet", "Shaadi", "Reception"]}
-        theme="ivory"
-      />
+      {/* Nine chapter stories — alternating layout */}
+      <div className="relative bg-[var(--background)]">
+        {chapters.map((chapter) => (
+          <WeddingChapter key={chapter.index} chapter={chapter} />
+        ))}
+      </div>
 
       <ServiceGrid
         eyebrow="Wedding Services"
@@ -129,7 +169,7 @@ export default function WeddingEventsPage() {
             and <span className="italic">memory-making</span> details.
           </>
         }
-        description="Attire and make-up, decor and florals, photography, tent/venue, catering, and entertainment — delivered as one calm system."
+        description="Attire and make-up, decor and florals, photography, tent/venue, catering, and entertainment — delivered as one calm system across every one of the nine chapters."
         services={weddingServices}
       />
 

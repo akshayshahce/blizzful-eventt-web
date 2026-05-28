@@ -1,22 +1,49 @@
 import { cn } from "@/lib/utils";
 
-const CLUSTERS = [
-  { x: 35, y: 70 },
-  { x: 75, y: 130 },
-  { x: 115, y: 60 },
-  { x: 150, y: 150 },
-  { x: 190, y: 80 },
-  { x: 210, y: 180 },
-  { x: 60, y: 220 },
-  { x: 130, y: 260 },
-  { x: 175, y: 240 },
-] as const;
+// Pre-computed scatter of sparkles within the 240x320 viewBox. Hand-tuned so
+// the cluster reads as a soft constellation without obvious grid spacing,
+// and stable across renders so SSR + hydration match.
+type Sparkle = {
+  x: number;
+  y: number;
+  /** Outer radius of the 4-point star, in viewBox units. */
+  size: number;
+  /** Soft halo radius behind the star. */
+  glow: number;
+  /** Halo gradient id — drives the tint (purple / gold / ivory). */
+  gradient: "sparkleGlowPurple" | "sparkleGlowGold" | "sparkleGlowIvory";
+  /** Star opacity (the halo handles its own falloff). */
+  opacity: number;
+};
 
-const PETALS = Array.from({ length: 14 }).map((_, j) => ({
-  cx: Math.round(Math.sin(j * 0.9) * 300) / 100,
-  cy: j * 7,
-  r: Math.max(Math.round((6 - j * 0.25) * 100) / 100, 2),
-}));
+const SPARKLES: Sparkle[] = [
+  { x: 30,  y: 40,  size: 13, glow: 22, gradient: "sparkleGlowPurple", opacity: 1 },
+  { x: 80,  y: 22,  size: 7,  glow: 11, gradient: "sparkleGlowIvory",  opacity: 0.9 },
+  { x: 140, y: 58,  size: 17, glow: 28, gradient: "sparkleGlowPurple", opacity: 1 },
+  { x: 200, y: 34,  size: 9,  glow: 14, gradient: "sparkleGlowGold",   opacity: 0.9 },
+  { x: 48,  y: 108, size: 6,  glow: 9,  gradient: "sparkleGlowIvory",  opacity: 0.75 },
+  { x: 102, y: 128, size: 15, glow: 24, gradient: "sparkleGlowPurple", opacity: 1 },
+  { x: 178, y: 98,  size: 11, glow: 17, gradient: "sparkleGlowGold",   opacity: 0.95 },
+  { x: 62,  y: 178, size: 9,  glow: 14, gradient: "sparkleGlowIvory",  opacity: 0.85 },
+  { x: 132, y: 198, size: 19, glow: 30, gradient: "sparkleGlowPurple", opacity: 1 },
+  { x: 196, y: 178, size: 7,  glow: 11, gradient: "sparkleGlowGold",   opacity: 0.75 },
+  { x: 26,  y: 238, size: 11, glow: 18, gradient: "sparkleGlowPurple", opacity: 0.95 },
+  { x: 96,  y: 268, size: 8,  glow: 12, gradient: "sparkleGlowIvory",  opacity: 0.85 },
+  { x: 156, y: 278, size: 13, glow: 20, gradient: "sparkleGlowGold",   opacity: 0.9 },
+  { x: 212, y: 248, size: 10, glow: 16, gradient: "sparkleGlowPurple", opacity: 0.95 },
+  { x: 78,  y: 80,  size: 5,  glow: 7,  gradient: "sparkleGlowIvory",  opacity: 0.65 },
+  { x: 116, y: 32,  size: 5,  glow: 7,  gradient: "sparkleGlowGold",   opacity: 0.65 },
+  { x: 166, y: 158, size: 6,  glow: 9,  gradient: "sparkleGlowIvory",  opacity: 0.7 },
+  { x: 222, y: 130, size: 6,  glow: 9,  gradient: "sparkleGlowIvory",  opacity: 0.6 },
+  { x: 14,  y: 160, size: 5,  glow: 7,  gradient: "sparkleGlowGold",   opacity: 0.6 },
+];
+
+// 4-pointed star ("sparkle") path centred at the origin. Inner indent at
+// 18% of outer radius keeps the spikes sharp without going needle-thin.
+function sparklePath(s: number): string {
+  const i = +(s * 0.18).toFixed(2);
+  return `M0 ${-s} L${i} ${-i} L${s} 0 L${i} ${i} L0 ${s} L${-i} ${i} L${-s} 0 L${-i} ${-i} Z`;
+}
 
 type WisteriaProps = {
   className?: string;
@@ -24,6 +51,11 @@ type WisteriaProps = {
   opacity?: number;
 };
 
+/**
+ * Decorative corner ornament — a soft constellation of sparkles. Drops into
+ * the same slot the older wisteria-vine artwork lived in (kept the
+ * component/prop names so call sites don't have to change).
+ */
 export function Wisteria({ className, variant = "left", opacity = 0.32 }: WisteriaProps) {
   const flipClass = variant === "right" ? "-scale-x-100" : "";
 
@@ -39,48 +71,26 @@ export function Wisteria({ className, variant = "left", opacity = 0.32 }: Wister
       style={{ opacity }}
     >
       <defs>
-        <radialGradient id="leafGrad" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0%" stopColor="#5a8463" />
-          <stop offset="100%" stopColor="#2e5d3c" />
+        <radialGradient id="sparkleGlowPurple" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+          <stop offset="40%" stopColor="#e0d4f7" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#c084fc" stopOpacity="0" />
         </radialGradient>
-        <radialGradient id="petalLight" cx="0.5" cy="0.5" r="0.55">
-          <stop offset="0%" stopColor="#d6c6ec" />
-          <stop offset="100%" stopColor="#a48bcb" />
+        <radialGradient id="sparkleGlowGold" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+          <stop offset="40%" stopColor="#fde68a" stopOpacity="0.55" />
+          <stop offset="100%" stopColor="#fbbf24" stopOpacity="0" />
         </radialGradient>
-        <radialGradient id="petalDeep" cx="0.5" cy="0.5" r="0.55">
-          <stop offset="0%" stopColor="#b3a2d2" />
-          <stop offset="100%" stopColor="#6c58a0" />
+        <radialGradient id="sparkleGlowIvory" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0%" stopColor="#ffffff" stopOpacity="1" />
+          <stop offset="100%" stopColor="#e4ecff" stopOpacity="0" />
         </radialGradient>
       </defs>
 
-      {/* Vine */}
-      <path d="M30 0 Q60 40 50 90 Q40 140 70 190 Q90 230 80 280" stroke="#6a8a52" strokeWidth="2" fill="none" />
-      <path d="M110 0 Q90 60 120 110 Q150 160 130 220 Q120 260 140 310" stroke="#6a8a52" strokeWidth="2" fill="none" />
-      <path d="M180 0 Q160 50 200 100 Q220 150 190 210" stroke="#6a8a52" strokeWidth="2" fill="none" />
-
-      {/* Leaves */}
-      <g fill="url(#leafGrad)">
-        <ellipse cx="48" cy="50" rx="14" ry="7" transform="rotate(-30 48 50)" />
-        <ellipse cx="65" cy="88" rx="16" ry="8" transform="rotate(20 65 88)" />
-        <ellipse cx="90" cy="40" rx="14" ry="7" transform="rotate(10 90 40)" />
-        <ellipse cx="138" cy="80" rx="16" ry="8" transform="rotate(-15 138 80)" />
-        <ellipse cx="172" cy="58" rx="14" ry="7" transform="rotate(-40 172 58)" />
-        <ellipse cx="210" cy="110" rx="16" ry="8" transform="rotate(25 210 110)" />
-        <ellipse cx="100" cy="180" rx="14" ry="7" transform="rotate(-10 100 180)" />
-      </g>
-
-      {/* Wisteria clusters - chains of tiny petals (pre-computed for SSR stability) */}
-      {CLUSTERS.map((cluster, i) => (
-        <g key={i} transform={`translate(${cluster.x} ${cluster.y})`}>
-          {PETALS.map((p, j) => (
-            <circle
-              key={j}
-              cx={p.cx}
-              cy={p.cy}
-              r={p.r}
-              fill={j % 2 === 0 ? "url(#petalLight)" : "url(#petalDeep)"}
-            />
-          ))}
+      {SPARKLES.map((s, i) => (
+        <g key={i} transform={`translate(${s.x} ${s.y})`}>
+          <circle r={s.glow} fill={`url(#${s.gradient})`} />
+          <path d={sparklePath(s.size)} fill="#ffffff" opacity={s.opacity} />
         </g>
       ))}
     </svg>

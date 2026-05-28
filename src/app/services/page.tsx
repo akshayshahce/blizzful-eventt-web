@@ -3,12 +3,35 @@ import { PageHero } from "@/components/sections/page-hero";
 import { ServicesList } from "@/components/sections/services-list";
 import { ServiceGrid } from "@/components/sections/service-grid";
 import { ContactCta } from "@/components/sections/contact-cta";
-import { MarqueeStrip } from "@/components/sections/marquee-strip";
+import { EventCardMarquee } from "@/components/sections/event-card-marquee";
 import { Container } from "@/components/ui/container";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Wisteria } from "@/components/ui/wisteria";
 import { corporateServices, otherServices, weddingServices } from "@/data/site-data";
+import {
+  FiBookOpen,
+  FiCircle,
+  FiGift,
+  FiHeart,
+  FiMail,
+  FiPackage,
+  FiSliders,
+  FiTruck,
+} from "react-icons/fi";
+import type { IconType } from "react-icons";
+
+function iconForOtherService(title: string): IconType {
+  const t = title.toLowerCase();
+  if (t.includes("invitation")) return FiMail;
+  if (t.includes("baraat") || t.includes("entry") || t.includes("car")) return FiTruck;
+  if (t.includes("ring")) return FiCircle;
+  if (t.includes("gift")) return FiGift;
+  if (t.includes("door") || t.includes("house")) return FiHeart;
+  if (t.includes("album") || t.includes("book")) return FiBookOpen;
+  if (t.includes("design") || t.includes("selection")) return FiSliders;
+  return FiPackage;
+}
 
 export const metadata: Metadata = {
   title: "Services",
@@ -22,14 +45,11 @@ export default function ServicesPage() {
         title="A full event studio, planned end to end."
         italicWord="planned"
         description="Planning, design, hospitality, floral language, technical production, and guest experience — delivered as a single editorial system rather than a list of line items."
-        image="/images/events/services-hero-conference.png"
+        image="/images/events/engagement.jpg"
         meta="Six core disciplines + curated extras"
       />
       <ServicesList />
-      <MarqueeStrip
-        items={["Decor", "Floral", "Lighting", "Production", "Hospitality", "Catering", "AV"]}
-        theme="navy"
-      />
+      <EventCardMarquee />
       <ServiceGrid
         eyebrow="Wedding Services"
         title={
@@ -71,24 +91,39 @@ export default function ServicesPage() {
             }
             description="From invitation card designing and ring plate decor to baraat car styling, gifting, and house door decor — we provide services for every event."
           />
-          <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {otherServices.map((service, index) => (
-              <Reveal
-                key={service.title}
-                delay={index * 0.04}
-                className="group rounded-[1.5rem] border border-[var(--ivory)]/8 bg-[rgba(255,255,255,0.03)] p-7 transition-all duration-500 hover:border-[var(--wisteria-deep)]/40 hover:bg-[rgba(168,85,247,0.06)] hover:-translate-y-1"
-              >
-                <p className="text-[0.58rem] uppercase tracking-[0.4em] text-[var(--wisteria-deep)] glow-purple">
-                  {String(index + 1).padStart(2, "0")}
-                </p>
-                <h3 className="mt-7 font-display text-2xl leading-tight text-[var(--ivory)] glow-white sm:text-3xl">
-                  {service.title}
-                </h3>
-                <p className="mt-3 text-[0.92rem] leading-[1.8] text-[var(--ivory)]/55">
-                  {service.description}
-                </p>
-              </Reveal>
-            ))}
+          <div className="mt-14 grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-7">
+            {otherServices.map((service, index) => {
+              const Icon = iconForOtherService(service.title);
+              return (
+                <Reveal
+                  key={service.title}
+                  delay={index * 0.04}
+                  className={[
+                    "group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-[#1a2842]/15 bg-white p-7",
+                    "shadow-[0_10px_30px_-12px_rgba(26,40,66,0.18)]",
+                    "transition-[transform,box-shadow,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
+                    "hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_22px_55px_-14px_rgba(255,77,109,0.55)]",
+                  ].join(" ")}
+                >
+                  <span
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(135deg,#ff8c42_0%,#ff4d6d_100%)] opacity-0 transition-opacity duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
+                  />
+                  <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#1a2842]/10 bg-[#fff5ef] text-[#ff6b35] transition-[background-color,border-color,color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-white/40 group-hover:bg-white/15 group-hover:text-white">
+                    <Icon className="h-[18px] w-[18px]" aria-hidden="true" />
+                  </div>
+                  <p className="mt-5 text-[0.58rem] font-semibold uppercase tracking-[0.4em] text-[#ff6b35] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white/85">
+                    Extra {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="mt-2.5 font-display text-2xl leading-tight text-[#1a2842] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white sm:text-[1.65rem]">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-[0.92rem] leading-[1.8] text-[#1a2842]/70 transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white/90">
+                    {service.description}
+                  </p>
+                </Reveal>
+              );
+            })}
           </div>
           <p className="mt-12 rounded-full border border-[var(--wisteria-deep)]/25 bg-[rgba(168,85,247,0.08)] px-6 py-3 text-center text-[0.7rem] uppercase tracking-[0.34em] text-[var(--ivory)]/70">
             We provide services for all events — weddings, corporate, exhibitions, and beyond.

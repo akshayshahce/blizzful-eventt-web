@@ -30,7 +30,7 @@ export function ContactCta() {
             <span className="font-script italic text-[var(--wisteria-deep)]">unforgettable</span>.
           </motion.h2>
           <p className="mx-auto mt-7 max-w-xl text-[1rem] leading-[1.9] text-[var(--ivory)]/60">
-            Share your vision — a wedding weekend, a corporate summit, or an
+            Share your vision — a wedding, a corporate summit, or an
             exhibition. We&apos;ll help shape the story, scope, and a calm path to execution.
           </p>
 

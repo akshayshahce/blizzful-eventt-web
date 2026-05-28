@@ -145,6 +145,16 @@ button {
   will-change: transform;
 }
 
+/* Partner marquee — pauses on hover so users can read a card */
+.partner-marquee {
+  animation: marquee 60s linear infinite;
+}
+
+.group\/marquee:hover .partner-marquee,
+.group\/marquee:hover .event-card-marquee {
+  animation-play-state: paused;
+}
+
 @keyframes shimmer {
   0% { background-position: -200% 0; }
   100% { background-position: 200% 0; }

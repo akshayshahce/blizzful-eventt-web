@@ -114,6 +114,14 @@ export const corporateServices: Service[] = [
     title: "Vendor & Manpower Coordination",
     description: "Venue sourcing, premium hotel coordination, manpower planning, catering, hospitality, and execution control.",
   },
+  {
+    title: "Product Launches & Brand Reveals",
+    description: "High-impact product unveilings, brand activations, immersive walk-throughs, and signature reveal moments engineered for press and social capture.",
+  },
+  {
+    title: "Hospitality & Guest Management",
+    description: "VIP coordination, registration desks, guest journeys, on-site check-in flows, and protocol-grade hospitality from arrival to departure.",
+  },
 ];
 
 export const otherServices: Service[] = [
@@ -124,18 +132,19 @@ export const otherServices: Service[] = [
   { title: "Gifting Services", description: "Curated welcome boxes, hospitality gifting, and family-side hampers." },
   { title: "House Door Decor", description: "Floral arches, traditional torans, and home entrance styling for pre-wedding rituals." },
   { title: "Design Selection", description: "Theme curation, moodboards, palette direction, and family alignment across the wedding journey." },
+  { title: "Photo Albums & Wedding Books", description: "Premium printed albums, curated storybooks, and bespoke memory boxes designed as heirlooms long after the day ends." },
 ];
 
 export const featuredExperiences: Experience[] = [
   {
-    title: "Wedding Weekends",
+    title: "Wedding Celebrations",
     description: "Multi-function celebrations built around family rituals, fashion, music, floral styling, and emotional staging.",
     points: ["Roka / God Dhana", "Engagement", "Mehendi", "Haldi", "Sangeet", "Wedding / Shaadi"],
   },
   {
     title: "Corporate Productions",
     description: "Professional environments where production discipline, stakeholder coordination, and brand presentation matter.",
-    points: ["Conferences", "Summits", "AGMs", "Conclaves", "Employee Engagement", "Boardroom Meetings"],
+    points: ["Exhibitions", "Expos", "Summits", "Conclaves", "Product Launches", "Conferences"],
   },
   {
     title: "Exhibitions & Public Events",
@@ -180,10 +189,100 @@ export const reasonsToChooseUs = [
   { title: "Full Spectrum", description: "Equally fluent in private weddings, corporate summits, and large-format public events." },
 ];
 
+export type Partner = {
+  name: string;
+  logo?: string;       // Path to logo image — preferred when available
+  domain?: string;     // (Legacy) favicon-based source (no longer used)
+  monogram?: string;   // Fallback monogram letters when no logo is available
+  color?: string;      // Brand-colour for monogram chip background
+};
+
+export type PartnerGroup = {
+  id: string;
+  label: string;
+  subtitle: string;
+  partners: Partner[];
+};
+
+export const partnerGroups: PartnerGroup[] = [
+  {
+    id: "institutional",
+    label: "Government & Institutional",
+    subtitle: "Public, regulatory, and institutional partners",
+    partners: [
+      { name: "Maharashtra Shasan",          logo: "/images/partners/logos/maharashtra-shasan.png",      monogram: "MS",  color: "#b8923a" },
+      { name: "Mahalaxmi Saras",              logo: "/images/partners/logos/mahalaxmi-saras.png",         monogram: "MS",  color: "#7a1f2b" },
+      { name: "MAVIM",                        logo: "/images/partners/logos/mavim.png",                   monogram: "MV",  color: "#c0392b" },
+      { name: "Khadi India",                                                                              monogram: "KI",  color: "#1e5a8c" },
+      { name: "MSME & Startups Forum",        logo: "/images/partners/logos/msme-startups-forum.png",     monogram: "MSF", color: "#2e7d32" },
+      { name: "WISE / SNDTWU Incubation",     logo: "/images/partners/logos/wise-sndtwu-incubation.png",  monogram: "W",   color: "#0277bd" },
+      { name: "Women & Child Development",    logo: "/images/partners/logos/women-child-development.png", monogram: "WC",  color: "#c2185b" },
+      { name: "KVIC",                         logo: "/images/partners/logos/kvic.png",                    monogram: "KV",  color: "#37474f" },
+      { name: "Entrepreneurship Dev. Institute", logo: "/images/partners/logos/edi-ahmedabad.png",        monogram: "EDI", color: "#388e3c" },
+      { name: "Ratan Tata Skills University", logo: "/images/partners/logos/ratan-tata-skills-uni.png",   monogram: "RT",  color: "#9c2731" },
+      { name: "MSSU i-Spark Foundation",      logo: "/images/partners/logos/mssu-ispark-foundation.png",  monogram: "iS",  color: "#ef6c00" },
+      { name: "BSE",                          logo: "/images/partners/logos/bse.png",                     monogram: "BS",  color: "#1d3a78" },
+      { name: "NSE",                          logo: "/images/partners/logos/nse.png",                     monogram: "NS",  color: "#f47922" },
+      { name: "CII",                          logo: "/images/partners/logos/cii.png",                     monogram: "CII", color: "#2c3e50" },
+    ],
+  },
+  {
+    id: "corporate",
+    label: "Corporate & Enterprise",
+    subtitle: "Marquee corporate offices & brands",
+    partners: [
+      { name: "Tata Motors",             logo: "/images/partners/logos/tata-motors.png",        monogram: "T",   color: "#1c4596" },
+      { name: "Adani",                   logo: "/images/partners/logos/adani.png",              monogram: "AD",  color: "#1a3a8a" },
+      { name: "Oracle",                  logo: "/images/partners/logos/oracle.png",             monogram: "O",   color: "#c74634" },
+      { name: "Amazon",                  logo: "/images/partners/logos/amazon.png",             monogram: "A",   color: "#232f3e" },
+      { name: "Adobe",                   logo: "/images/partners/logos/adobe.png",              monogram: "Ad",  color: "#fa0f00" },
+      { name: "IBM",                     logo: "/images/partners/logos/ibm.png",                monogram: "IB",  color: "#1f70c1" },
+      { name: "Kotak Mahindra Bank",     logo: "/images/partners/logos/kotak-mahindra.png",     monogram: "K",   color: "#ed2a37" },
+      { name: "DBS Bank",                logo: "/images/partners/logos/dbs-bank.png",           monogram: "DBS", color: "#b21e23" },
+      { name: "Razorpay",                logo: "/images/partners/logos/razorpay.png",           monogram: "R",   color: "#0c2451" },
+      { name: "Morningstar",             logo: "/images/partners/logos/morningstar.png",        monogram: "M",   color: "#e63946" },
+      { name: "Franklin Templeton",      logo: "/images/partners/logos/franklin-templeton.png", monogram: "FT",  color: "#003c69" },
+      { name: "Towers Watson",           logo: "/images/partners/logos/towers-watson.png",      monogram: "TW",  color: "#702082" },
+      { name: "NTPC",                    logo: "/images/partners/logos/ntpc.png",               monogram: "NT",  color: "#0d4f8b" },
+      { name: "IFAD",                    logo: "/images/partners/logos/ifad.png",               monogram: "IF",  color: "#2e7d32" },
+      { name: "MentorMyBoard",           logo: "/images/partners/logos/mentormyboard.png",      monogram: "MMB", color: "#ed7d31" },
+      { name: "Tisser",                  logo: "/images/partners/logos/tisser.png",             monogram: "Ti",  color: "#9b2c2c" },
+      { name: "Global Inclusion Summit", logo: "/images/partners/logos/global-inclusion-summit.png", monogram: "GI", color: "#16a085" },
+      { name: "VyapaarJagat",            logo: "/images/partners/logos/vyapaarjagat.png",       monogram: "VJ",  color: "#dc143c" },
+      { name: "News India",              logo: "/images/partners/logos/news-india.png",         monogram: "N1",  color: "#c53030" },
+      { name: "Times Now",               logo: "/images/partners/logos/times-now.png",          monogram: "TN",  color: "#cf0c1a" },
+      { name: "ALT Balaji",              logo: "/images/partners/logos/alt-balaji.png",         monogram: "AB",  color: "#1a1a1a" },
+      { name: "OLA",                     logo: "/images/partners/logos/ola.png",                monogram: "O",   color: "#92c83e" },
+      { name: "airCTO",                  logo: "/images/partners/logos/aircto.png",             monogram: "aC",  color: "#ff5252" },
+      { name: "Flipkart",                logo: "/images/partners/logos/flipkart.png",           monogram: "F",   color: "#2874f0" },
+      { name: "Zolve",                   logo: "/images/partners/logos/zolve.png",              monogram: "Z",   color: "#e63b2e" },
+      { name: "Unacademy",               logo: "/images/partners/logos/unacademy.png",          monogram: "U",   color: "#08bd80" },
+      { name: "XLRI",                    logo: "/images/partners/logos/xlri.png",               monogram: "XL",  color: "#1d3a78" },
+      { name: "Rajagiri Business Studies", logo: "/images/partners/logos/rcbs.png",             monogram: "RC",  color: "#1a472a" },
+    ],
+  },
+  {
+    id: "luxury",
+    label: "Lifestyle & Luxury",
+    subtitle: "Premium lifestyle, jewellery, and design partners",
+    partners: [
+      { name: "GIA",                  logo: "/images/partners/logos/gia.png",         monogram: "GIA", color: "#0a3d62" },
+      { name: "Senco Gold & Diamonds", logo: "/images/partners/logos/senco-gold.png", monogram: "SG",  color: "#a02834" },
+      { name: "Neha Lulla Jewellery", logo: "/images/partners/logos/neha-lulla.png",  monogram: "N",   color: "#1a1a1a" },
+      { name: "Beau Jewels",          logo: "/images/partners/logos/beau-jewels.png", monogram: "BJ",  color: "#1c2138" },
+      { name: "Laja",                 logo: "/images/partners/logos/laja.png",        monogram: "L",   color: "#c98a8a" },
+      { name: "SAP / JLP",            logo: "/images/partners/logos/sap-jlp.png",     monogram: "SAP", color: "#0aa3da" },
+    ],
+  },
+];
+
+// Legacy flat list — kept for backwards compatibility / minor uses
+export const partners = partnerGroups.flatMap((g) => g.partners.map((p) => p.name));
+
 export const testimonials = [
   {
     quote:
-      "They understood both the emotion and the logistics of our wedding weekend. Every function felt effortless — and the decor looked straight out of a magazine.",
+      "They understood both the emotion and the logistics of our wedding. Every function felt effortless — and the decor looked straight out of a magazine.",
     author: "Wedding Family · Mumbai",
   },
   {

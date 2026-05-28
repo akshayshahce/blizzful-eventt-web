@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/sections/page-hero";
 import { Container } from "@/components/ui/container";
+import { CountUp } from "@/components/ui/count-up";
 import { Reveal } from "@/components/ui/reveal";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { ContactCta } from "@/components/sections/contact-cta";
+import { EventCardMarquee } from "@/components/sections/event-card-marquee";
 import { MarqueeStrip } from "@/components/sections/marquee-strip";
 import { Wisteria } from "@/components/ui/wisteria";
 import { company, featuredExperiences, stats } from "@/data/site-data";
@@ -68,10 +70,8 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <MarqueeStrip
-        items={["Weddings", "Conferences", "Hospitality", "Exhibitions", "Concerts", "Decor"]}
-        theme="navy"
-      />
+      <EventCardMarquee />
+
 
       <section className="relative overflow-hidden bg-[var(--sky-soft)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <Container>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                   {String(index + 1).padStart(2, "0")}
                 </p>
                 <p className="mt-7 font-display text-5xl tracking-tight text-[var(--ivory)] glow-white sm:text-6xl">
-                  {stat.value}
+                  <CountUp value={stat.value} />
                 </p>
                 <p className="mt-3 text-[0.62rem] uppercase tracking-[0.36em] text-[var(--forest-soft)]">
                   {stat.label}
@@ -122,7 +122,7 @@ export default function AboutPage() {
                 <br /> composed under one studio.
               </>
             }
-            description="From wedding weekends to public productions, the studio's range allows it to work across emotional, professional, and large-format formats with the same level of polish."
+            description="From intimate ceremonies to public productions, the studio's range allows it to work across emotional, professional, and large-format formats with the same level of polish."
           />
           <div className="mt-20 space-y-20 lg:space-y-24">
             {featuredExperiences.map((experience, index) => {

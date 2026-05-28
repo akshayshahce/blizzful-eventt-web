@@ -15,7 +15,7 @@ export default function GalleryPage() {
         title="A visual archive — staged like a film."
         italicWord="archive"
         description="Filter by ritual or format, then expand any frame into a fullscreen viewing mode tuned for the imagery."
-        image="/images/events/wedding-stage-2.jpg"
+        image="/images/events/gallery-hero-weddings-by.jpg"
         meta="Open any frame · Fullscreen viewing"
       />
       <GalleryShowcase />

@@ -6,30 +6,46 @@ import Image from "next/image";
 import { coreOfferings } from "@/data/site-data";
 import { cn } from "@/lib/utils";
 
+// Six accent photos — one per `coreOfferings` entry. Every photo is
+// detail-focused (no clearly visible faces) and HD, picked to literally
+// illustrate the corresponding service description.
 const accents = [
   {
+    // 01 — Event Planning — end-to-end management, schedules, run sheets
+    src: "/images/events/wedding-stage-2.jpg",
+    alt: "Decorated mandap stage with floral pillars and drapes — the orchestrated end-result of full event planning",
+  },
+  {
+    // 02 — Designing & Concept — theme, floral palette, guest touchpoints, visual consistency
+    // (Replaces sangeet-decor-2 / bridal feet — table dressing speaks to
+    // floral palette + linen + place-setting consistency across touchpoints.)
     src: "/images/events/wedding-decor-2.jpg",
-    alt: "Planned event table setting",
+    alt: "Designed banquet table with floral centrepiece, linen, glassware and tablescape — theme creation, floral palette and visual consistency across guest touchpoints",
   },
   {
-    src: "/images/hero/hero-portrait.jpg",
-    alt: "Designed wedding concept with floral styling",
+    // 03 — Co-ordination & Management — on-day choreography, command centre, running every cue
+    // (Replaces wedding-stage-1 / intimate hands — an event in full motion
+    // better represents the "command-centre running every cue" idea.)
+    src: "/images/events/about-corporate-productions.jpg",
+    alt: "Live event in motion — twin LED screens, lit stage, full seated audience — the command-centre running every cue",
   },
   {
-    src: "/images/events/corporate-stage.jpg",
-    alt: "Coordinated stage production",
-  },
-  {
-    src: "/images/events/exhibitions-public-events.png",
-    alt: "Branded exhibition and public event environment",
-  },
-  {
-    src: "/images/events/services-hero-conference.png",
-    alt: "Conference vendor and technical coordination",
-  },
-  {
+    // 04 — Marketing & Exposure — branding zones, sponsor visibility, exhibition presentation
     src: "/images/events/corporate-gala.jpg",
-    alt: "Premium venue and hospitality setting",
+    alt: "Aerial view of an exhibition hall with branded booths and aisles — sponsor visibility and exhibition presentation",
+  },
+  {
+    // 05 — Vendor Co-ordination — LED audio visuals, photographers, florals, manpower, catering, linen, furniture
+    // (Replaces mehendi-decor-2 / single vendor type — confetti + stage
+    // lighting better represents the LED + AV vendor coordination the
+    // description leads with.)
+    src: "/images/events/sangeet-night.jpg",
+    alt: "Confetti shower over a lit live-event crowd with stage lighting and rigging — LED, AV and audio vendor coordination in action",
+  },
+  {
+    // 06 — Venue Selection — premium hotel partnerships, capacity-matched venues
+    src: "/images/events/exhibitions-public-events.png",
+    alt: "Capacity audience seated in a premium auditorium under patterned ceiling lighting — a capacity-matched, premium venue",
   },
 ];
 

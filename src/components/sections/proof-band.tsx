@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { stats } from "@/data/site-data";
+import { CountUp } from "@/components/ui/count-up";
 import { Wisteria } from "@/components/ui/wisteria";
 
 export function ProofBand() {
@@ -46,7 +47,7 @@ export function ProofBand() {
                 {String(index + 1).padStart(2, "0")}
               </p>
               <p className="mt-7 font-display text-5xl tracking-tight text-[var(--ivory)] sm:text-6xl lg:text-[4.4rem]">
-                {stat.value}
+                <CountUp value={stat.value} />
               </p>
               <p className="mt-3 text-[0.66rem] uppercase tracking-[0.36em] text-[var(--forest-soft)]">
                 {stat.label}
