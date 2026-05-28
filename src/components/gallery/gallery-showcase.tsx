@@ -122,7 +122,6 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
             const activeFilter = selectedCategory === category;
             return (
               <motion.button
-                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.97 }}
                 key={category}
                 type="button"
@@ -130,8 +129,8 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
                 className={cn(
                   "rounded-full border px-5 py-2.5 text-[0.62rem] font-medium uppercase tracking-[0.3em] transition-all duration-300",
                   activeFilter
-                    ? "border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] text-[var(--ivory)]"
-                    : "border-[var(--ivory)]/25 text-[var(--ivory)]/60 hover:border-[var(--wisteria-deep)]/60 hover:text-[var(--ivory)]",
+                    ? "border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] text-white shadow-[0_8px_22px_rgba(10,147,150,0.28)]"
+                    : "glow-chip border-[var(--ivory)]/25 text-[var(--ivory)]/65",
                 )}
               >
                 {category}
@@ -171,16 +170,16 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
                   className="object-cover transition-transform duration-[1.2s] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.05]"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_45%,rgba(20,36,70,0.78))] transition-opacity duration-500 group-hover:opacity-95" />
-                <div className="absolute inset-0 flex items-end p-6">
+                <div className="absolute inset-0 flex items-end p-6 text-white">
                   <div className="w-full">
-                    <div className="flex items-center justify-between text-[0.58rem] uppercase tracking-[0.4em] text-[var(--ivory)]/85">
-                      <span className="text-[var(--wisteria-deep)]">{item.category}</span>
+                    <div className="flex items-center justify-between text-[0.58rem] font-semibold uppercase tracking-[0.4em] text-white/90">
+                      <span className="text-[#e9d5ff]">{item.category}</span>
                       <span>{item.location}</span>
                     </div>
-                    <h3 className="mt-4 font-display text-2xl leading-tight text-[var(--ivory)] sm:text-3xl">
+                    <h3 className="mt-4 font-display text-2xl leading-tight text-white sm:text-3xl">
                       {item.title}
                     </h3>
-                    <div className="mt-4 flex items-center gap-2 text-[0.58rem] uppercase tracking-[0.36em] text-[var(--ivory)]/72 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                    <div className="mt-4 flex items-center gap-2 text-[0.58rem] font-semibold uppercase tracking-[0.36em] text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                       View frame
                       <FiArrowUpRight className="h-3.5 w-3.5" />
                     </div>
@@ -206,7 +205,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
 
       {activeSlide ? (
         <div
-          className="fixed inset-0 z-[120] flex bg-[rgba(20,36,70,0.96)] text-[var(--ivory)]"
+          className="fixed inset-0 z-[120] flex bg-[rgba(20,36,70,0.96)] text-white"
           role="dialog"
           aria-modal="true"
           aria-label="Gallery slideshow"
@@ -215,7 +214,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
             type="button"
             aria-label="Close slideshow"
             onClick={() => setOpenIndex(-1)}
-            className="absolute right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full text-[var(--ivory)]/86 transition hover:bg-white/10 hover:text-[var(--ivory)] sm:right-6 sm:top-6"
+            className="absolute right-4 top-4 z-20 inline-flex h-11 w-11 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white sm:right-6 sm:top-6"
           >
             <FiX className="h-7 w-7" />
           </button>
@@ -224,7 +223,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
             type="button"
             aria-label="Previous image"
             onClick={showPreviousSlide}
-            className="absolute left-2 top-1/2 z-20 inline-flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full text-[var(--ivory)]/82 transition hover:bg-white/10 hover:text-[var(--ivory)] sm:left-5"
+            className="absolute left-2 top-1/2 z-20 inline-flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white sm:left-5"
           >
             <FiArrowLeft className="h-7 w-7" />
           </button>
@@ -233,7 +232,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
             type="button"
             aria-label="Next image"
             onClick={showNextSlide}
-            className="absolute right-2 top-1/2 z-20 inline-flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full text-[var(--ivory)]/82 transition hover:bg-white/10 hover:text-[var(--ivory)] sm:right-5"
+            className="absolute right-2 top-1/2 z-20 inline-flex h-14 w-14 -translate-y-1/2 items-center justify-center rounded-full text-white/85 transition hover:bg-white/10 hover:text-white sm:right-5"
           >
             <FiArrowRight className="h-7 w-7" />
           </button>
@@ -264,13 +263,13 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
               className="px-6 pb-6 text-center sm:px-10"
               onClick={(event) => event.stopPropagation()}
             >
-              <p className="text-[0.72rem] uppercase tracking-[0.32em] text-[var(--ivory)]/66">
+              <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-white/80">
                 {openIndex + 1} / {slides.length}
               </p>
-              <h3 className="mt-3 font-display text-3xl leading-tight text-[var(--ivory)] sm:text-4xl">
+              <h3 className="mt-3 font-display text-3xl leading-tight text-white sm:text-4xl">
                 {activeSlide.title}
               </h3>
-              <p className="mx-auto mt-2 max-w-3xl text-sm leading-7 text-[var(--ivory)]/72 sm:text-base">
+              <p className="mx-auto mt-2 max-w-3xl text-sm leading-7 text-white/85 sm:text-base">
                 {activeSlide.description}
               </p>
             </div>

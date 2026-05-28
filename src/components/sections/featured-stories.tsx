@@ -104,9 +104,16 @@ function StoryRow({ story, index }: { story: Story; index: number }) {
         <p className="mt-6 max-w-md text-[1rem] leading-[1.9] text-[var(--ivory)]/60">
           {story.description}
         </p>
-        <p className="mt-6 text-[0.6rem] uppercase tracking-[0.38em] text-[var(--ivory)]/40">
-          {story.meta}
-        </p>
+        <div className="mt-6 flex flex-wrap gap-2.5">
+          {story.meta.split(/\s*·\s*/).map((point) => (
+            <span
+              key={point}
+              className="glow-chip cursor-default rounded-full border border-[var(--ivory)]/18 px-4 py-2 text-[0.6rem] uppercase tracking-[0.34em] text-[var(--ivory)]/65"
+            >
+              {point}
+            </span>
+          ))}
+        </div>
         <Link
           href={story.href}
           className="group mt-8 inline-flex items-center gap-3 text-[0.68rem] font-medium uppercase tracking-[0.34em] text-[var(--ivory)]/70 transition-colors hover:text-[var(--wisteria-deep)]"

@@ -75,7 +75,7 @@ export function PageHero({
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.45, duration: 0.6 }}
-                className="mt-8 text-[0.6rem] uppercase tracking-[0.42em] text-[var(--ivory)]/45"
+                className="mt-8 text-[0.6rem] uppercase tracking-[0.42em] text-[var(--ivory)]/70"
               >
                 {meta}
               </motion.p>

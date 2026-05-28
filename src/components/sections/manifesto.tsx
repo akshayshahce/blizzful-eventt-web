@@ -64,7 +64,7 @@ export function Manifesto() {
               whileInView={{ opacity: 1 }}
               viewport={{ once: true, margin: "-10%" }}
               transition={{ duration: 0.9, delay: 0.35 }}
-              className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 text-[0.66rem] uppercase tracking-[0.36em] text-[var(--ivory)]/50"
+              className="mt-12 flex flex-wrap items-center gap-x-10 gap-y-4 text-[0.66rem] uppercase tracking-[0.36em] text-[var(--ivory)]/70"
             >
               <span>— Mumbai, India</span>
               <span className="hidden h-px w-12 bg-[var(--ivory)]/20 sm:block" />

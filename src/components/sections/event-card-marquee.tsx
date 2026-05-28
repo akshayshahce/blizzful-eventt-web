@@ -43,34 +43,34 @@ function Card({ card }: { card: EventCard }) {
   const { Icon } = card;
   return (
     <div
-      className="pointer-events-none relative flex h-full w-full flex-col items-center justify-center gap-4 rounded-[1.4rem] border border-white/12 bg-[#0c1426] shadow-[0_30px_60px_-20px_rgba(0,0,0,0.7)]"
+      className="pointer-events-none relative flex h-full w-full flex-col items-center justify-center gap-4 rounded-[1.4rem] border border-[rgba(10,77,92,0.12)] bg-white shadow-[0_22px_50px_-18px_rgba(10,77,92,0.25)]"
     >
-      {/* Top accent line — thin glowing edge */}
+      {/* Top accent line — thin colored edge */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-5 top-0 h-[2px] rounded-full"
         style={{
           background: `linear-gradient(90deg,transparent,${card.tint},transparent)`,
-          boxShadow: `0 0 16px ${card.tint}`,
+          boxShadow: `0 0 12px ${card.tint}88`,
         }}
       />
-      {/* Soft halo from the top */}
+      {/* Soft tinted halo from the top */}
       <span
         aria-hidden="true"
         className="pointer-events-none absolute -top-10 left-1/2 h-16 w-28 -translate-x-1/2 rounded-full blur-2xl"
-        style={{ background: card.tint, opacity: 0.2 }}
+        style={{ background: card.tint, opacity: 0.18 }}
       />
 
       {/* Icon chip */}
       <div
-        className="flex h-16 w-16 items-center justify-center rounded-2xl border border-white/10 bg-white/[0.04]"
+        className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[rgba(10,77,92,0.1)] bg-[#f4f8f9]"
         style={{ boxShadow: `inset 0 0 0 1px ${card.tint}33` }}
       >
         <Icon className="h-7 w-7" style={{ color: card.tint }} />
       </div>
 
       {/* Label */}
-      <span className="px-4 text-center font-display text-[1.15rem] italic leading-tight tracking-tight text-white">
+      <span className="px-4 text-center font-display text-[1.15rem] italic leading-tight tracking-tight text-[#0a4d5c]">
         {card.label}
       </span>
 
@@ -78,7 +78,7 @@ function Card({ card }: { card: EventCard }) {
       <span
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-8 bottom-5 h-px"
-        style={{ background: `linear-gradient(90deg,transparent,${card.tint}55,transparent)` }}
+        style={{ background: `linear-gradient(90deg,transparent,${card.tint}77,transparent)` }}
       />
     </div>
   );

@@ -70,7 +70,7 @@ export function WeddingChapter({ chapter }: WeddingChapterProps) {
               <div className="flex items-center gap-4 text-[0.62rem] uppercase tracking-[0.46em] text-[var(--wisteria-deep)]">
                 <span>Chapter {padded}</span>
                 <span className="editorial-rule" />
-                <span className="text-[var(--ivory)]/45">{chapter.subtitle}</span>
+                <span className="text-[var(--ivory)]/70">{chapter.subtitle}</span>
               </div>
 
               <h2 className="mt-8 font-display text-[clamp(2.6rem,6vw,5.4rem)] leading-[0.98] tracking-tight text-[var(--ivory)] glow-white">
@@ -112,7 +112,7 @@ export function WeddingChapter({ chapter }: WeddingChapterProps) {
 
               {/* Floating label */}
               <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between text-[var(--ivory)]">
-                <span className="font-display text-[3.4rem] leading-none text-[var(--ivory)]/22 sm:text-[5rem]">
+                <span className="font-display text-[3.4rem] leading-none text-[var(--ivory)]/75 sm:text-[5rem]">
                   {padded}
                 </span>
                 <span className="rounded-full bg-white/10 px-3 py-1 text-[0.56rem] uppercase tracking-[0.36em] backdrop-blur-md">

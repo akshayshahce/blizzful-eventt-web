@@ -1,54 +1,58 @@
 @import "tailwindcss";
 
 :root {
-  /* Blizzful Pink Eventt — Dark luxury palette: deep navy + electric blue + vivid purple */
+  /* Blizzful Pink Eventt — Light luxury palette: white surface + classic
+     peacock blue text + teal-mint accents. Variable names are kept from the
+     previous dark-themed palette so the wide surface of components that
+     reference them keeps working; the values are flipped. */
 
-  /* Light values — for text on dark, button text, photo overlays */
-  --ivory: #e4ecff;
-  --ivory-soft: #c2cce8;
-  --ivory-warm: #9aaac8;
-  --cream: #d0daf5;
-  --paper: #1a2842;       /* lighter dark surface — used for card hovers */
+  /* Text-on-surface colours (formerly "ivory" light text on dark). */
+  --ivory: #0a4d5c;        /* primary text — deep peacock */
+  --ivory-soft: #345b69;   /* secondary text */
+  --ivory-warm: #5a7682;   /* tertiary / muted */
+  --cream: #003d4e;        /* deepest heading */
+  --paper: #e6f0f2;        /* soft card hover surface */
 
-  /* Blue accent family */
-  --sky: #60a5fa;          /* bright sky-blue accent */
-  --sky-soft: #080b14;     /* PRIMARY section background — deep dark navy */
-  --sky-deep: #3b82f6;
+  /* Peacock-teal accent family (formerly "blue accent family") */
+  --sky: #0a9396;          /* peacock accent */
+  --sky-soft: #ffffff;     /* PRIMARY section background — white */
+  --sky-deep: #005f73;     /* deeper peacock for hovers / buttons */
 
-  /* Purple accent family */
-  --wisteria: #c084fc;          /* bright vivid purple */
-  --wisteria-soft: #1e1640;     /* deep dark purple surface */
-  --wisteria-deep: #a855f7;     /* vivid purple — script text, dividers */
+  /* Was "purple accent family" — repurposed as teal-mint for script italics
+     and decorative dividers. */
+  --wisteria: #14a098;          /* bright teal-mint accent */
+  --wisteria-soft: #f0f9fa;     /* off-white teal-tinted surface */
+  --wisteria-deep: #0a9396;     /* peacock — script text, eyebrows */
 
-  /* Warm/complementary */
+  /* Warm/complementary — kept coral for card hover contrast accents. */
   --blush: #fb7185;
   --blush-deep: #f43f5e;
 
-  /* Brand blue — buttons, CTAs, interactive elements */
-  --navy: #4f72f5;
-  --navy-deep: #3455d8;
-  --royal: #818cf8;         /* soft indigo */
-  --forest: #22c55e;
-  --forest-soft: #4ade80;   /* bright green — eyebrow labels */
-  --gold: #fbbf24;
+  /* Brand accent — peacock-toned buttons / CTAs */
+  --navy: #0a9396;
+  --navy-deep: #005f73;
+  --royal: #14a098;
+  --forest: #16a085;
+  --forest-soft: #1abc9c;   /* jade-teal — eyebrow labels */
+  --gold: #d4a574;          /* warm gold — softened for white bg */
 
-  /* Text scale — all light for dark background */
-  --ink: #e4ecff;           /* primary text */
-  --ink-soft: #c2cce8;      /* secondary text */
-  --charcoal: #131929;      /* dark card surface */
-  --muted: #6877a0;         /* muted / helper text */
-  --stone: #3d4a68;         /* dividers */
+  /* Text scale */
+  --ink: #0a4d5c;
+  --ink-soft: #345b69;
+  --charcoal: #ffffff;      /* card surface (was dark card surface) */
+  --muted: #5a7682;
+  --stone: #c5dde0;         /* light dividers */
 
-  /* Alternate dark section background (replaces ivory for sections) */
-  --surface: #0f1628;
+  /* Alternate section background — subtly tinted white */
+  --surface: #f4f8f9;
 
-  --background: #080b14;
-  --foreground: #e4ecff;
-  --muted-foreground: #6877a0;
+  --background: #ffffff;
+  --foreground: #0a4d5c;
+  --muted-foreground: #5a7682;
 
-  --border: rgba(79, 114, 245, 0.16);
-  --border-strong: rgba(79, 114, 245, 0.28);
-  --ring: rgba(168, 85, 247, 0.4);
+  --border: rgba(10, 77, 92, 0.12);
+  --border-strong: rgba(10, 77, 92, 0.22);
+  --ring: rgba(10, 147, 150, 0.4);
 }
 
 @theme inline {
@@ -131,8 +135,8 @@ button {
 }
 
 ::selection {
-  background: rgba(168, 85, 247, 0.35);
-  color: var(--ivory);
+  background: rgba(10, 147, 150, 0.22);
+  color: var(--cream);
 }
 
 @keyframes marquee {
@@ -161,7 +165,7 @@ button {
 }
 
 .shimmer-text {
-  background: linear-gradient(90deg, rgba(168, 85, 247, 0.3) 0%, var(--wisteria) 50%, rgba(168, 85, 247, 0.3) 100%);
+  background: linear-gradient(90deg, rgba(10, 147, 150, 0.55) 0%, var(--sky-deep) 50%, rgba(10, 147, 150, 0.55) 100%);
   background-size: 200% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -205,7 +209,7 @@ button {
   content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(168, 85, 247, 0.45), transparent);
+  background: linear-gradient(90deg, transparent, rgba(10, 147, 150, 0.45), transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -214,37 +218,30 @@ button {
   }
 }
 
-/* ── Glow text utilities ─────────────────────────────────────── */
+/* ── Glow text utilities ─────────────────────────────────────────
+   Originally designed as vivid neon halos for the dark-themed site.
+   On the light theme they would create distracting white smears, so
+   they're toned down to subtle peacock-tinted depth. */
 
 .glow-purple {
-  text-shadow:
-    0 0 8px rgba(168, 85, 247, 0.7),
-    0 0 20px rgba(168, 85, 247, 0.4),
-    0 0 45px rgba(168, 85, 247, 0.2);
+  /* peacock-tinted depth — names kept for back-compat */
+  text-shadow: 0 1px 0 rgba(10, 147, 150, 0.18);
 }
 
 .glow-blue {
-  text-shadow:
-    0 0 8px rgba(79, 114, 245, 0.75),
-    0 0 22px rgba(79, 114, 245, 0.45),
-    0 0 50px rgba(79, 114, 245, 0.2);
+  text-shadow: 0 1px 0 rgba(0, 95, 115, 0.18);
 }
 
 .glow-green {
-  text-shadow:
-    0 0 8px rgba(74, 222, 128, 0.7),
-    0 0 20px rgba(74, 222, 128, 0.4),
-    0 0 40px rgba(74, 222, 128, 0.18);
+  text-shadow: 0 1px 0 rgba(26, 188, 156, 0.18);
 }
 
 .glow-white {
-  text-shadow:
-    0 0 6px rgba(228, 236, 255, 0.6),
-    0 0 18px rgba(228, 236, 255, 0.3),
-    0 0 40px rgba(228, 236, 255, 0.1);
+  /* deepest peacock for "primary heading" emphasis */
+  text-shadow: 0 1px 0 rgba(10, 77, 92, 0.1);
 }
 
-/* Glow chip — used for tag pills on about page */
+/* Glow chip — tag pills on about page (now uses peacock-teal). */
 .glow-chip {
   position: relative;
   transition:
@@ -257,20 +254,16 @@ button {
 
 .glow-chip:hover {
   transform: translateY(-4px) scale(1.08);
-  color: var(--ivory);
-  border-color: var(--wisteria-deep);
-  background: rgba(168, 85, 247, 0.12);
+  color: var(--sky-deep);
+  border-color: var(--sky);
+  background: rgba(10, 147, 150, 0.08);
   box-shadow:
-    0 0 12px rgba(168, 85, 247, 0.55),
-    0 0 30px rgba(168, 85, 247, 0.25),
-    0 8px 24px rgba(0, 0, 0, 0.35);
-  text-shadow:
-    0 0 8px rgba(168, 85, 247, 0.8),
-    0 0 20px rgba(168, 85, 247, 0.45);
+    0 6px 18px rgba(10, 147, 150, 0.18),
+    0 2px 6px rgba(10, 77, 92, 0.08);
 }
 
-/* Pulsing glow ring on active chip */
+/* Pulsing glow ring on active chip (kept selector for back-compat). */
 @keyframes glow-pulse {
-  0%, 100% { box-shadow: 0 0 10px rgba(168, 85, 247, 0.4), 0 0 28px rgba(168, 85, 247, 0.15); }
-  50%       { box-shadow: 0 0 18px rgba(168, 85, 247, 0.65), 0 0 42px rgba(168, 85, 247, 0.28); }
+  0%, 100% { box-shadow: 0 0 10px rgba(10, 147, 150, 0.28), 0 0 28px rgba(10, 147, 150, 0.1); }
+  50%       { box-shadow: 0 0 18px rgba(10, 147, 150, 0.45), 0 0 42px rgba(10, 147, 150, 0.18); }
 }

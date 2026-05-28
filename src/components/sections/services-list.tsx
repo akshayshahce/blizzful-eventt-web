@@ -106,7 +106,7 @@ export function ServicesList() {
                 onFocus={() => setActive(index)}
                 className={cn(
                   "group block w-full border-b border-[var(--ivory)]/10 py-9 text-left transition-colors duration-500",
-                  active === index ? "text-[var(--ivory)]" : "text-[var(--ivory)]/55 hover:text-[var(--ivory)]",
+                  active === index ? "text-[var(--ivory)]" : "text-[var(--ivory)]/75 hover:text-[var(--ivory)]",
                 )}
               >
                 <div className="grid gap-5 sm:grid-cols-[5rem_1fr]">
@@ -117,7 +117,7 @@ export function ServicesList() {
                     <h3 className="font-display text-3xl leading-[1.02] tracking-tight transition-transform duration-500 group-hover:translate-x-1.5 sm:text-4xl lg:text-5xl">
                       {service.title}
                     </h3>
-                    <p className="mt-4 max-w-xl text-[0.96rem] leading-[1.85] text-[var(--ivory)]/55">
+                    <p className="mt-4 max-w-xl text-[0.96rem] leading-[1.85] text-[var(--ivory)]/75">
                       {service.description}
                     </p>
                   </div>

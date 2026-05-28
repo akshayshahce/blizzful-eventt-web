@@ -324,7 +324,7 @@ export function Carousel3D({
         </button>
 
         {showCounter ? (
-          <p className="min-w-[4.5rem] text-center text-[0.66rem] uppercase tracking-[0.4em] text-[var(--ivory)]/55 tabular-nums">
+          <p className="min-w-[4.5rem] text-center text-[0.66rem] uppercase tracking-[0.4em] text-[var(--ivory)]/75 tabular-nums">
             {String(displayPosition).padStart(2, "0")} / {String(total).padStart(2, "0")}
           </p>
         ) : null}

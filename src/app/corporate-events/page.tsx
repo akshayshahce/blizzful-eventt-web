@@ -55,7 +55,7 @@ export default function CorporateEventsPage() {
         meta="Trusted by BSE, NSE & 150+ brands"
       />
 
-      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0d0620_0%,#0a1230_40%,#14082a_100%)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
+      <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f0f9fa_0%,#ffffff_40%,#f4f8f9_100%)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
         <div className="pointer-events-none absolute -left-40 top-0 h-[28rem] w-[28rem] rounded-full bg-[var(--navy)]/[0.15] blur-[120px]" />
         <div className="pointer-events-none absolute -right-40 bottom-0 h-[20rem] w-[20rem] rounded-full bg-[var(--wisteria-deep)]/[0.10] blur-[100px]" />
         <Wisteria className="absolute -left-10 -top-10 h-80 w-60" opacity={0.12} />
@@ -79,7 +79,7 @@ export default function CorporateEventsPage() {
                   key={point}
                   delay={index * 0.05}
                   className={[
-                    "group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-[#1a2842]/15 bg-white p-8 sm:p-10",
+                    "group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-[#0a4d5c]/15 bg-white p-8 sm:p-10",
                     "shadow-[0_10px_30px_-12px_rgba(26,40,66,0.18)]",
                     "transition-[transform,box-shadow,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
                     "hover:-translate-y-1.5 hover:border-transparent hover:shadow-[0_22px_55px_-14px_rgba(255,77,109,0.55)]",
@@ -89,13 +89,13 @@ export default function CorporateEventsPage() {
                     aria-hidden="true"
                     className="pointer-events-none absolute inset-0 -z-10 bg-[linear-gradient(135deg,#ff8c42_0%,#ff4d6d_100%)] opacity-0 transition-opacity duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:opacity-100"
                   />
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#1a2842]/10 bg-[#fff5ef] text-[#ff6b35] transition-[background-color,border-color,color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-white/40 group-hover:bg-white/15 group-hover:text-white">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-[#0a4d5c]/10 bg-[#fff5ef] text-[#ff6b35] transition-[background-color,border-color,color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:border-white/40 group-hover:bg-white/15 group-hover:text-white">
                     <Icon className="h-5 w-5" aria-hidden="true" />
                   </div>
                   <p className="mt-6 text-[0.6rem] font-semibold uppercase tracking-[0.4em] text-[#ff6b35] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white/85">
                     Format {String(index + 1).padStart(2, "0")}
                   </p>
-                  <p className="mt-3 font-display text-3xl leading-[1.06] tracking-tight text-[#1a2842] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white sm:text-[2.2rem]">
+                  <p className="mt-3 font-display text-3xl leading-[1.06] tracking-tight text-[#0a4d5c] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white sm:text-[2.2rem]">
                     {point}
                   </p>
                 </Reveal>

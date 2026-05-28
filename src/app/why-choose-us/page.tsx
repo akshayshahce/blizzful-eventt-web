@@ -64,7 +64,7 @@ export default function WhyChooseUsPage() {
                   <article
                     className={[
                       // Base card: white surface, subtle border, rounded
-                      "group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-[#1a2842]/15 bg-white p-8 sm:p-10",
+                      "group relative isolate flex h-full flex-col overflow-hidden rounded-2xl border border-[#0a4d5c]/15 bg-white p-8 sm:p-10",
                       // Resting shadow + smooth lift + shadow transition
                       "shadow-[0_10px_30px_-12px_rgba(26,40,66,0.18)]",
                       "transition-[transform,box-shadow,border-color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
@@ -89,7 +89,7 @@ export default function WhyChooseUsPage() {
                     <div
                       className={[
                         "flex h-12 w-12 items-center justify-center rounded-xl",
-                        "border border-[#1a2842]/10 bg-[#fff5ef] text-[#ff6b35]",
+                        "border border-[#0a4d5c]/10 bg-[#fff5ef] text-[#ff6b35]",
                         "transition-[background-color,border-color,color] duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)]",
                         "group-hover:border-white/40 group-hover:bg-white/15 group-hover:text-white",
                       ].join(" ")}
@@ -101,11 +101,11 @@ export default function WhyChooseUsPage() {
                       Reason {String.fromCharCode(65 + index)}
                     </p>
 
-                    <h3 className="mt-3 font-display text-3xl leading-[1.06] tracking-tight text-[#1a2842] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white sm:text-[2.2rem]">
+                    <h3 className="mt-3 font-display text-3xl leading-[1.06] tracking-tight text-[#0a4d5c] transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white sm:text-[2.2rem]">
                       {reason.title}
                     </h3>
 
-                    <p className="mt-4 text-[0.95rem] leading-[1.8] text-[#1a2842]/70 transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white/90">
+                    <p className="mt-4 text-[0.95rem] leading-[1.8] text-[#0a4d5c]/70 transition-colors duration-[400ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:text-white/90">
                       {reason.description}
                     </p>
                   </article>

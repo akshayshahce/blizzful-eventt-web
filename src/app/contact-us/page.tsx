@@ -65,7 +65,7 @@ export default function ContactPage() {
                         {company.phone[0]}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/60 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </a>
                 </Reveal>
                 <Reveal delay={0.05}>
@@ -79,7 +79,7 @@ export default function ContactPage() {
                         {company.phone[1]}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/60 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </a>
                 </Reveal>
                 <Reveal delay={0.1}>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                         {company.email}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/60 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </a>
                 </Reveal>
                 <Reveal delay={0.15}>
@@ -108,7 +108,7 @@ export default function ContactPage() {
                         @{company.instagram}
                       </span>
                     </span>
-                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/30 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
+                    <FiArrowUpRight className="h-5 w-5 text-[var(--ivory)]/60 transition-transform duration-500 group-hover:-translate-y-1 group-hover:translate-x-1" />
                   </Link>
                 </Reveal>
               </div>
@@ -140,7 +140,7 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-                <p className="mt-10 text-sm leading-[1.85] text-[var(--ivory)]/55">
+                <p className="mt-10 text-sm leading-[1.85] text-[var(--ivory)]/75">
                   We hold capacity for a limited number of weddings and corporate
                   productions each year. Inquiries are reviewed in the order they
                   are received.

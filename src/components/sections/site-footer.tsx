@@ -87,7 +87,7 @@ export function SiteFooter() {
             </h3>
             <Link
               href="/contact-us"
-              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy-deep)]"
+              className="group mt-7 inline-flex items-center gap-3 rounded-full border border-[var(--wisteria-deep)] bg-[var(--wisteria-deep)] px-6 py-3 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-white transition-all duration-300 hover:bg-[var(--navy-deep)]"
             >
               Start the conversation
               <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -95,9 +95,17 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col items-center justify-between gap-3 border-t border-[var(--ivory)]/10 pt-7 text-[0.62rem] uppercase tracking-[0.4em] text-[var(--ivory)]/35 sm:flex-row">
+        <div className="mt-20 flex flex-col items-center justify-between gap-3 border-t border-[var(--ivory)]/10 pt-7 text-[0.62rem] uppercase tracking-[0.4em] text-[var(--ivory)]/65 sm:flex-row">
           <span>© {new Date().getFullYear()} {company.name}</span>
-          <span>Designed in Mumbai · Crafted with love</span>
+          <span>
+            Designed by{" "}
+            <a
+              href="mailto:Akshayshah.ce@gmail.com"
+              className="link-underline text-[var(--ivory)] transition-colors hover:text-[var(--wisteria-deep)]"
+            >
+              Akshay Shah
+            </a> · Crafted with love
+          </span>
         </div>
       </div>
     </footer>

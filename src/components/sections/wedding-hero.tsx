@@ -20,7 +20,7 @@ export function WeddingHero() {
   return (
     <section
       ref={ref}
-      className="relative h-[100vh] min-h-[640px] max-h-[1080px] overflow-hidden bg-[var(--background)] text-[var(--ivory)]"
+      className="relative h-[100vh] min-h-[640px] max-h-[1080px] overflow-hidden bg-black text-white"
     >
       <motion.div
         style={{ y: imgY, scale: imgScale }}
@@ -40,7 +40,7 @@ export function WeddingHero() {
       </motion.div>
 
       {/* Decorative side rails */}
-      <div className="pointer-events-none absolute inset-y-0 left-6 hidden flex-col items-center justify-between py-32 text-[0.55rem] uppercase tracking-[0.5em] text-[var(--ivory)]/55 lg:flex">
+      <div className="pointer-events-none absolute inset-y-0 left-6 hidden flex-col items-center justify-between py-32 text-[0.55rem] uppercase tracking-[0.5em] text-white/70 lg:flex">
         <span className="origin-top -rotate-90 whitespace-nowrap">
           Est. 2014 — Mumbai
         </span>
@@ -48,7 +48,7 @@ export function WeddingHero() {
           Scroll to discover
         </span>
       </div>
-      <div className="pointer-events-none absolute inset-y-0 right-6 hidden flex-col items-center justify-between py-32 text-[0.55rem] uppercase tracking-[0.5em] text-[var(--ivory)]/55 lg:flex">
+      <div className="pointer-events-none absolute inset-y-0 right-6 hidden flex-col items-center justify-between py-32 text-[0.55rem] uppercase tracking-[0.5em] text-white/70 lg:flex">
         <span className="origin-top rotate-90 whitespace-nowrap">
           A Forever Story
         </span>
@@ -65,7 +65,7 @@ export function WeddingHero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.9, delay: 0.25, ease: [0.22, 1, 0.36, 1] }}
-          className="text-[0.62rem] uppercase tracking-[0.6em] text-[var(--wisteria-deep)] glow-purple"
+          className="text-[0.62rem] font-semibold uppercase tracking-[0.6em] text-[#c084fc]"
         >
           Weddings By
         </motion.p>
@@ -74,9 +74,9 @@ export function WeddingHero() {
           initial={{ opacity: 0, y: 22 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.1, delay: 0.45, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-6 font-display text-[clamp(2.8rem,8vw,7.5rem)] font-light leading-[0.96] tracking-tight text-[var(--ivory)] glow-white"
+          className="mt-6 font-display text-[clamp(2.8rem,8vw,7.5rem)] font-light leading-[0.96] tracking-tight text-white drop-shadow-[0_2px_18px_rgba(0,0,0,0.45)]"
         >
-          <span className="block font-script italic text-[var(--wisteria)]">
+          <span className="block font-script italic text-[#e9d5ff]">
             Blizzful Pink
           </span>
           <span className="mt-1 block uppercase tracking-[0.04em]">Eventt</span>
@@ -86,7 +86,7 @@ export function WeddingHero() {
           initial={{ opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mx-auto mt-8 max-w-2xl text-[0.95rem] leading-[1.85] text-[var(--ivory)]/72 sm:text-[1.05rem]"
+          className="mx-auto mt-8 max-w-2xl text-[0.95rem] leading-[1.85] text-white/85 sm:text-[1.05rem]"
         >
           A nine-chapter celebration — from the first &lsquo;yes&rsquo; on a quiet evening
           to the lamp lit at your forever home. Every function is designed
@@ -101,14 +101,14 @@ export function WeddingHero() {
         >
           <Link
             href="#chapter-1"
-            className="group inline-flex items-center gap-3 rounded-full bg-[var(--wisteria-deep)] px-7 py-4 text-[0.66rem] font-medium uppercase tracking-[0.34em] text-[var(--ivory)] transition-all duration-500 hover:-translate-y-0.5 hover:bg-[var(--wisteria)] hover:shadow-[0_18px_60px_rgba(168,85,247,0.45)]"
+            className="group inline-flex items-center gap-3 rounded-full bg-[var(--wisteria-deep)] px-7 py-4 text-[0.66rem] font-medium uppercase tracking-[0.34em] text-white transition-all duration-500 hover:-translate-y-0.5 hover:bg-[var(--wisteria)] hover:shadow-[0_18px_60px_rgba(10,147,150,0.45)]"
           >
             Read our story
             <FiArrowDown className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-y-0.5" />
           </Link>
           <Link
             href="/contact-us"
-            className="group inline-flex items-center gap-3 rounded-full border border-[var(--ivory)]/30 px-7 py-4 text-[0.66rem] font-medium uppercase tracking-[0.34em] text-[var(--ivory)] backdrop-blur-md transition-all duration-500 hover:-translate-y-0.5 hover:border-[var(--wisteria)] hover:text-[var(--wisteria)]"
+            className="group inline-flex items-center gap-3 rounded-full border border-white/40 px-7 py-4 text-[0.66rem] font-medium uppercase tracking-[0.34em] text-white backdrop-blur-md transition-all duration-500 hover:-translate-y-0.5 hover:border-white hover:bg-white/10"
           >
             Plan your wedding
             <FiArrowUpRight className="h-3.5 w-3.5 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -126,9 +126,9 @@ export function WeddingHero() {
         <motion.div
           animate={{ y: [0, 8, 0] }}
           transition={{ duration: 2.4, repeat: Infinity, ease: "easeInOut" }}
-          className="flex flex-col items-center gap-3 text-[0.58rem] uppercase tracking-[0.5em] text-[var(--ivory)]/70"
+          className="flex flex-col items-center gap-3 text-[0.58rem] uppercase tracking-[0.5em] text-white/80"
         >
-          <span className="h-9 w-px bg-[linear-gradient(180deg,transparent,rgba(228,236,255,0.7))]" />
+          <span className="h-9 w-px bg-[linear-gradient(180deg,transparent,rgba(255,255,255,0.8))]" />
           Scroll
         </motion.div>
       </motion.div>

@@ -47,7 +47,7 @@ export function SiteHeader() {
         className={cn(
           "fixed inset-x-0 top-0 z-[60] transition-colors duration-500",
           scrolled
-            ? "bg-[rgba(8,11,20,0.92)] backdrop-blur-xl shadow-[0_8px_30px_rgba(0,0,0,0.45)]"
+            ? "bg-[rgba(255,255,255,0.92)] backdrop-blur-xl shadow-[0_8px_30px_rgba(10,77,92,0.10)] border-b border-[var(--border)]"
             : "bg-transparent",
         )}
       >
@@ -72,7 +72,7 @@ export function SiteHeader() {
                     "relative px-3 py-2 text-[0.74rem] font-medium uppercase tracking-[0.28em] transition-colors duration-300",
                     active
                       ? "text-[var(--ivory)]"
-                      : "text-[var(--ivory)]/55 hover:text-[var(--ivory)]",
+                      : "text-[var(--ivory)]/75 hover:text-[var(--ivory)]",
                   )}
                 >
                   <span className="relative z-10">{item.label}</span>
@@ -98,7 +98,7 @@ export function SiteHeader() {
             </a>
             <Link
               href="/contact-us"
-              className="hidden items-center gap-2 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-5 py-2.5 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:bg-[var(--navy-deep)] hover:border-[var(--navy-deep)] sm:inline-flex"
+              className="hidden items-center gap-2 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-5 py-2.5 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-white transition-all duration-300 hover:bg-[var(--navy-deep)] hover:border-[var(--navy-deep)] sm:inline-flex"
             >
               Plan with us
             </Link>
@@ -198,7 +198,7 @@ export function SiteHeader() {
                   @{company.instagram}
                 </a>
               </div>
-              <div className="mt-auto flex items-center justify-between border-t border-[var(--ivory)]/12 pt-6 text-[0.58rem] uppercase tracking-[0.4em] text-[var(--ivory)]/35">
+              <div className="mt-auto flex items-center justify-between border-t border-[var(--ivory)]/12 pt-6 text-[0.58rem] uppercase tracking-[0.4em] text-[var(--ivory)]/65">
                 <span>Mumbai · Pan-India</span>
                 <span>© {new Date().getFullYear()}</span>
               </div>

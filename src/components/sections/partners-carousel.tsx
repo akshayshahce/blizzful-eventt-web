@@ -54,7 +54,7 @@ function PartnerCard({ partner }: { partner: Partner }) {
           <span>{monogram.slice(0, 3)}</span>
         </div>
       )}
-      <span className="line-clamp-1 text-center text-[0.72rem] font-medium leading-tight text-[#1a2842]/80 sm:text-[0.76rem]">
+      <span className="line-clamp-1 text-center text-[0.72rem] font-medium leading-tight text-[#0a4d5c]/80 sm:text-[0.76rem]">
         {partner.name}
       </span>
     </div>
@@ -94,7 +94,7 @@ function PartnerRow({
         <p className={cn("text-[0.62rem] font-medium uppercase tracking-[0.42em]", accentClass)}>
           {group.label}
         </p>
-        <p className="mt-1 text-sm text-[var(--ivory)]/55">{group.subtitle}</p>
+        <p className="mt-1 text-sm text-[var(--ivory)]/75">{group.subtitle}</p>
       </div>
 
       <div className="group/marquee relative overflow-hidden">
@@ -134,7 +134,7 @@ export function PartnersCarousel() {
           <a
             key={g.id}
             href={`#partner-${g.id}`}
-            className="inline-flex items-center gap-2 rounded-full border border-[var(--ivory)]/20 px-5 py-2.5 text-[0.6rem] font-medium uppercase tracking-[0.34em] text-[var(--ivory)]/75 transition-all duration-300 hover:border-[var(--ivory)]/40 hover:text-[var(--ivory)]"
+            className="glow-chip inline-flex items-center gap-2 rounded-full border border-[var(--ivory)]/25 px-5 py-2.5 text-[0.6rem] font-medium uppercase tracking-[0.34em] text-[var(--ivory)]/75"
           >
             <span
               className={cn(

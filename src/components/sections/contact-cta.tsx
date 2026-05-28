@@ -37,7 +37,7 @@ export function ContactCta() {
           <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <Link
               href="/contact-us"
-              className="group inline-flex items-center gap-3 rounded-full bg-[var(--navy)] px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-[var(--ivory)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--navy-deep)]"
+              className="group inline-flex items-center gap-3 rounded-full bg-[var(--navy)] px-7 py-4 text-[0.7rem] font-medium uppercase tracking-[0.32em] text-white transition-all duration-300 hover:-translate-y-0.5 hover:bg-[var(--navy-deep)]"
             >
               Start the conversation
               <FiArrowUpRight className="h-4 w-4 transition-transform duration-500 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />

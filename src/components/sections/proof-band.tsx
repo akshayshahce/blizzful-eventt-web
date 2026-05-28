@@ -7,7 +7,7 @@ import { Wisteria } from "@/components/ui/wisteria";
 
 export function ProofBand() {
   return (
-    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#0d0620_0%,#0a1230_40%,#14082a_100%)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
+    <section className="relative overflow-hidden bg-[linear-gradient(135deg,#f0f9fa_0%,#ffffff_40%,#f4f8f9_100%)] py-24 text-[var(--ivory)] sm:py-32 lg:py-36">
       {/* Ambient glows */}
       <div className="pointer-events-none absolute -left-40 top-0 h-[28rem] w-[28rem] rounded-full bg-[var(--wisteria-deep)]/[0.12] blur-[120px]" />
       <div className="pointer-events-none absolute -right-40 bottom-0 h-[24rem] w-[24rem] rounded-full bg-[var(--navy)]/[0.18] blur-[100px]" />
@@ -52,7 +52,7 @@ export function ProofBand() {
               <p className="mt-3 text-[0.66rem] uppercase tracking-[0.36em] text-[var(--forest-soft)]">
                 {stat.label}
               </p>
-              <p className="mt-4 text-sm leading-[1.8] text-[var(--ivory)]/55">
+              <p className="mt-4 text-sm leading-[1.8] text-[var(--ivory)]/75">
                 {stat.detail}
               </p>
             </motion.div>

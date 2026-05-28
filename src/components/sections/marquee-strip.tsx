@@ -16,8 +16,8 @@ export function MarqueeStrip({
   theme = "sky",
   italic = true,
 }: MarqueeStripProps) {
-  // Single consistent dark style across all themes
-  const surface = "bg-[#07091200] bg-[linear-gradient(90deg,#0f0828_0%,#080b14_50%,#0f0828_100%)] border-y border-[var(--ivory)]/8 text-[var(--ivory)]";
+  // Light-theme strip: subtly tinted white gradient with peacock text
+  const surface = "bg-[linear-gradient(90deg,#f0f9fa_0%,#ffffff_50%,#f0f9fa_100%)] border-y border-[var(--border)] text-[var(--ivory)]";
 
   // Dot color varies subtly per theme
   const dotColor =

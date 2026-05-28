@@ -102,7 +102,7 @@ export default function AboutPage() {
                 <p className="mt-3 text-[0.62rem] uppercase tracking-[0.36em] text-[var(--forest-soft)]">
                   {stat.label}
                 </p>
-                <p className="mt-4 text-sm leading-[1.8] text-[var(--ivory)]/55">
+                <p className="mt-4 text-sm leading-[1.8] text-[var(--ivory)]/75">
                   {stat.detail}
                 </p>
               </Reveal>

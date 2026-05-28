@@ -98,7 +98,7 @@ export function HomeHero() {
                   <p className="font-display text-3xl text-[var(--ivory)] glow-white sm:text-4xl">
                     {stat.value}
                   </p>
-                  <p className="mt-1 text-[0.58rem] uppercase tracking-[0.38em] text-[var(--ivory)]/40">
+                  <p className="mt-1 text-[0.58rem] uppercase tracking-[0.38em] text-[var(--ivory)]/65">
                     {stat.label}
                   </p>
                 </div>
