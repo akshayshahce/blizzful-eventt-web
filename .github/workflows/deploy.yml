@@ -3,6 +3,13 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches: [main]
+  # Periodic re-sync so client uploads to the Drive "Gallery" folder appear
+  # on the live site without anyone touching the repo. 6h cadence keeps the
+  # GitHub Actions minute usage modest.
+  schedule:
+    - cron: "0 */6 * * *"
+  # Lets the client (or anyone with repo access) press "Run workflow" in the
+  # GitHub Actions UI to force an immediate gallery refresh.
   workflow_dispatch:
 
 permissions:
@@ -32,6 +39,16 @@ jobs:
 
       - name: Install dependencies
         run: npm ci
+
+      # Fetches subfolders + images from the Drive "Gallery" folder and
+      # writes src/data/gallery-snapshot.json which the Next build imports.
+      # If GOOGLE_API_KEY is unset the script logs a warning and exits 0 —
+      # the build falls back to the committed snapshot.
+      - name: Sync gallery from Google Drive
+        run: npm run sync-gallery
+        env:
+          GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+          GOOGLE_DRIVE_GALLERY_FOLDER_ID: ${{ secrets.GOOGLE_DRIVE_GALLERY_FOLDER_ID }}
 
       - name: Build
         run: npm run build
