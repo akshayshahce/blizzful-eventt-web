@@ -4,6 +4,18 @@ import { motion } from "framer-motion";
 import { partnerGroups, type Partner, type PartnerGroup } from "@/data/site-data";
 import { cn } from "@/lib/utils";
 
+// Logos are referenced with absolute `/images/...` paths in the data, which
+// works under the dev server (root) but breaks on GitHub Pages where the site
+// is served from `/blizzful-eventt-web/`. `next/image` handles this via the
+// custom loader, but the partner cards use a plain <img> for full SVG / PNG
+// control, so we prefix manually here.
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+function withBasePath(src: string): string {
+  if (!src) return src;
+  if (src.startsWith("http") || src.startsWith("//") || src.startsWith("data:")) return src;
+  return `${BASE_PATH}${src}`;
+}
+
 function autoMonogram(name: string): string {
   return name
     .split(/\s+/)
@@ -24,7 +36,7 @@ function PartnerCard({ partner }: { partner: Partner }) {
         <div className="relative flex h-[68px] w-full items-center justify-center px-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src={partner.logo}
+            src={withBasePath(partner.logo)}
             alt={`${partner.name} logo`}
             loading="lazy"
             decoding="async"
