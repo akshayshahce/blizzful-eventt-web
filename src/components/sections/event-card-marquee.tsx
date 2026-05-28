@@ -43,7 +43,7 @@ function Card({ card }: { card: EventCard }) {
   const { Icon } = card;
   return (
     <div
-      className="pointer-events-none relative flex h-full w-full flex-col items-center justify-center gap-4 rounded-[1.4rem] border border-[rgba(10,77,92,0.12)] bg-white shadow-[0_22px_50px_-18px_rgba(10,77,92,0.25)]"
+      className="pointer-events-none relative flex h-full w-full flex-col items-center justify-center gap-4 rounded-[1.4rem] border border-[var(--event-card-border)] bg-[var(--event-card-bg)] shadow-[var(--event-card-shadow)]"
     >
       {/* Top accent line — thin colored edge */}
       <span
@@ -63,14 +63,14 @@ function Card({ card }: { card: EventCard }) {
 
       {/* Icon chip */}
       <div
-        className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[rgba(10,77,92,0.1)] bg-[#f4f8f9]"
+        className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[var(--event-card-border)] bg-[var(--event-card-icon-bg)]"
         style={{ boxShadow: `inset 0 0 0 1px ${card.tint}33` }}
       >
         <Icon className="h-7 w-7" style={{ color: card.tint }} />
       </div>
 
       {/* Label */}
-      <span className="px-4 text-center font-display text-[1.15rem] italic leading-tight tracking-tight text-[#0a4d5c]">
+      <span className="px-4 text-center font-display text-[1.15rem] italic leading-tight tracking-tight text-[var(--event-card-fg)]">
         {card.label}
       </span>
 

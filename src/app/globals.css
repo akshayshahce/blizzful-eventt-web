@@ -53,6 +53,86 @@
   --border: rgba(10, 77, 92, 0.12);
   --border-strong: rgba(10, 77, 92, 0.22);
   --ring: rgba(10, 147, 150, 0.4);
+
+  /* Theme-aware tokens for things that hardcoded gradients/colours during
+     the light flip. Components reference these so flipping `data-theme="dark"`
+     on <html> swaps them. */
+  --section-gradient: linear-gradient(135deg, #f0f9fa 0%, #ffffff 40%, #f4f8f9 100%);
+  --marquee-strip-bg: linear-gradient(90deg, #f0f9fa 0%, #ffffff 50%, #f0f9fa 100%);
+  --header-scrolled-bg: rgba(255, 255, 255, 0.92);
+  --header-scrolled-shadow: 0 8px 30px rgba(10, 77, 92, 0.10);
+  --event-card-bg: #ffffff;
+  --event-card-fg: #0a4d5c;
+  --event-card-border: rgba(10, 77, 92, 0.12);
+  --event-card-icon-bg: #f4f8f9;
+  --event-card-shadow: 0 22px 50px -18px rgba(10, 77, 92, 0.25);
+}
+
+/* ── Dark theme — palette restore (original Blizzful dark theme) ──────
+   Activated via `data-theme="dark"` on <html>. Keeps the current
+   layout / component design but swaps every colour token back to the
+   pre-refactor dark palette so the whole site reads as the legacy theme. */
+[data-theme="dark"] {
+  --ivory: #e4ecff;
+  --ivory-soft: #c2cce8;
+  --ivory-warm: #9aaac8;
+  --cream: #d0daf5;
+  --paper: #1a2842;
+
+  --sky: #60a5fa;
+  --sky-soft: #080b14;
+  --sky-deep: #3b82f6;
+
+  --wisteria: #c084fc;
+  --wisteria-soft: #1e1640;
+  --wisteria-deep: #a855f7;
+
+  --blush: #fb7185;
+  --blush-deep: #f43f5e;
+
+  --navy: #4f72f5;
+  --navy-deep: #3455d8;
+  --royal: #818cf8;
+  --forest: #22c55e;
+  --forest-soft: #4ade80;
+  --gold: #fbbf24;
+
+  --ink: #e4ecff;
+  --ink-soft: #c2cce8;
+  --charcoal: #131929;
+  --muted: #6877a0;
+  --stone: #3d4a68;
+
+  --surface: #0f1628;
+
+  --background: #080b14;
+  --foreground: #e4ecff;
+  --muted-foreground: #6877a0;
+
+  --border: rgba(79, 114, 245, 0.16);
+  --border-strong: rgba(79, 114, 245, 0.28);
+  --ring: rgba(168, 85, 247, 0.4);
+
+  /* Theme-aware tokens — dark equivalents */
+  --section-gradient: linear-gradient(135deg, #0d0620 0%, #0a1230 40%, #14082a 100%);
+  --marquee-strip-bg: linear-gradient(90deg, #0f0828 0%, #080b14 50%, #0f0828 100%);
+  --header-scrolled-bg: rgba(8, 11, 20, 0.92);
+  --header-scrolled-shadow: 0 8px 30px rgba(0, 0, 0, 0.45);
+  --event-card-bg: #0c1426;
+  --event-card-fg: #ffffff;
+  --event-card-border: rgba(255, 255, 255, 0.12);
+  --event-card-icon-bg: rgba(255, 255, 255, 0.04);
+  --event-card-shadow: 0 30px 60px -20px rgba(0, 0, 0, 0.7);
+}
+
+/* Helper utility classes for things that need a gradient background-image
+   (Tailwind's bg-[var(...)] resolves to background-color, which can't hold a
+   gradient string). */
+.bg-section-gradient {
+  background-image: var(--section-gradient);
+}
+.bg-marquee-strip {
+  background-image: var(--marquee-strip-bg);
 }
 
 @theme inline {
@@ -266,4 +346,46 @@ button {
 @keyframes glow-pulse {
   0%, 100% { box-shadow: 0 0 10px rgba(10, 147, 150, 0.28), 0 0 28px rgba(10, 147, 150, 0.1); }
   50%       { box-shadow: 0 0 18px rgba(10, 147, 150, 0.45), 0 0 42px rgba(10, 147, 150, 0.18); }
+}
+
+/* ── Dark-theme glow overrides — bring the original neon halos back ── */
+[data-theme="dark"] .glow-purple {
+  text-shadow:
+    0 0 8px rgba(168, 85, 247, 0.7),
+    0 0 20px rgba(168, 85, 247, 0.4),
+    0 0 45px rgba(168, 85, 247, 0.2);
+}
+[data-theme="dark"] .glow-blue {
+  text-shadow:
+    0 0 8px rgba(79, 114, 245, 0.75),
+    0 0 22px rgba(79, 114, 245, 0.45),
+    0 0 50px rgba(79, 114, 245, 0.2);
+}
+[data-theme="dark"] .glow-green {
+  text-shadow:
+    0 0 8px rgba(74, 222, 128, 0.7),
+    0 0 20px rgba(74, 222, 128, 0.4),
+    0 0 40px rgba(74, 222, 128, 0.18);
+}
+[data-theme="dark"] .glow-white {
+  text-shadow:
+    0 0 6px rgba(228, 236, 255, 0.6),
+    0 0 18px rgba(228, 236, 255, 0.3),
+    0 0 40px rgba(228, 236, 255, 0.1);
+}
+[data-theme="dark"] .glow-chip:hover {
+  color: var(--ivory);
+  border-color: var(--wisteria-deep);
+  background: rgba(168, 85, 247, 0.12);
+  box-shadow:
+    0 0 12px rgba(168, 85, 247, 0.55),
+    0 0 30px rgba(168, 85, 247, 0.25),
+    0 8px 24px rgba(0, 0, 0, 0.35);
+  text-shadow:
+    0 0 8px rgba(168, 85, 247, 0.8),
+    0 0 20px rgba(168, 85, 247, 0.45);
+}
+[data-theme="dark"] ::selection {
+  background: rgba(168, 85, 247, 0.35);
+  color: var(--ivory);
 }

@@ -71,7 +71,7 @@ export function ServiceGrid({
       className={cn(
         "relative overflow-hidden py-24 sm:py-32 lg:py-36",
         dark
-          ? "bg-[linear-gradient(135deg,#f0f9fa_0%,#ffffff_40%,#f4f8f9_100%)] text-[var(--ivory)]"
+          ? "bg-section-gradient text-[var(--ivory)]"
           : "bg-[var(--surface)] text-[var(--ivory)]",
       )}
     >

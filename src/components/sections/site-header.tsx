@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 import { FiPhone } from "react-icons/fi";
 import { company, navigation } from "@/data/site-data";
 import { Logo } from "@/components/ui/logo";
+import { ThemeToggle } from "@/components/ui/theme-toggle";
 import { cn } from "@/lib/utils";
 
 export function SiteHeader() {
@@ -47,7 +48,7 @@ export function SiteHeader() {
         className={cn(
           "fixed inset-x-0 top-0 z-[60] transition-colors duration-500",
           scrolled
-            ? "bg-[rgba(255,255,255,0.92)] backdrop-blur-xl shadow-[0_8px_30px_rgba(10,77,92,0.10)] border-b border-[var(--border)]"
+            ? "bg-[var(--header-scrolled-bg)] backdrop-blur-xl shadow-[var(--header-scrolled-shadow)] border-b border-[var(--border)]"
             : "bg-transparent",
         )}
       >
@@ -96,6 +97,7 @@ export function SiteHeader() {
               <FiPhone className="h-3.5 w-3.5" />
               {company.phone[0]}
             </a>
+            <ThemeToggle />
             <Link
               href="/contact-us"
               className="hidden items-center gap-2 rounded-full border border-[var(--navy)] bg-[var(--navy)] px-5 py-2.5 text-[0.66rem] font-medium uppercase tracking-[0.32em] text-white transition-all duration-300 hover:bg-[var(--navy-deep)] hover:border-[var(--navy-deep)] sm:inline-flex"
