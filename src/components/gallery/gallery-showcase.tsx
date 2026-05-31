@@ -192,9 +192,6 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
                         <div className="flex items-center justify-between text-[0.58rem] font-semibold uppercase tracking-[0.4em] text-white/90">
                           <span className="text-[#e9d5ff]">{item.category}</span>
                         </div>
-                        <h3 className="mt-4 font-display text-2xl leading-tight text-white sm:text-3xl">
-                          {formatImageTitle(item.name)}
-                        </h3>
                         <div className="mt-4 flex items-center gap-2 text-[0.58rem] font-semibold uppercase tracking-[0.36em] text-white opacity-0 transition-opacity duration-500 group-hover:opacity-100">
                           View frame
                           <FiArrowUpRight className="h-3.5 w-3.5" />
@@ -286,10 +283,7 @@ export function GalleryShowcase({ preview = false }: GalleryShowcaseProps) {
               <p className="text-[0.72rem] font-semibold uppercase tracking-[0.32em] text-white/80">
                 {openIndex + 1} / {slides.length}
               </p>
-              <h3 className="mt-3 font-display text-3xl leading-tight text-white sm:text-4xl">
-                {activeSlide.title}
-              </h3>
-              <p className="mx-auto mt-2 max-w-3xl text-sm leading-7 text-white/85 sm:text-base">
+              <p className="mx-auto mt-3 max-w-3xl text-sm leading-7 text-white/85 sm:text-base">
                 {activeSlide.category}
               </p>
             </div>
