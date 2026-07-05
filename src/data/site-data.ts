@@ -47,7 +47,7 @@ export const company = {
   description:
     "A wedding planner is a professional who assists with the design, planning, and management of a client's wedding. Blizzful Pink Eventt curates beautiful celebrations designed with elegance, love, and unforgettable moments — from traditional ceremonies to grand celebrations.",
   phone: ["+91 98703 59555", "+91 85919 61749"],
-  email: "blizzfulpinkeventt@gmail.com",
+  email: "contact@blizzfulpinkeventt.com",
   instagram: "blizzfulpinkeventt",
   location: "Mumbai, India",
 };
